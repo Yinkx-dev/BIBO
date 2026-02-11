@@ -1,0 +1,11 @@
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\bin\Debug\Bibo.exe.config
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\bin\Debug\Bibo.exe
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\bin\Debug\Bibo.pdb
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.csproj.AssemblyReference.cache
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.Form1.resources
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.HomeKunde.resources
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.Properties.Resources.resources
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.csproj.GenerateResource.cache
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.csproj.CoreCompileInputs.cache
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.exe
+C:\Users\sonja.sinn\source\repos\Bibo\Bibo\obj\Debug\Bibo.pdb
