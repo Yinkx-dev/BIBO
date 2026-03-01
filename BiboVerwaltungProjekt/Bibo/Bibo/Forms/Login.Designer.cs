@@ -112,6 +112,7 @@
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Passwort anzeigen";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -135,6 +136,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.login_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;

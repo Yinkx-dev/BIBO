@@ -29,177 +29,166 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeKunde));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.homeHeaderBackground = new System.Windows.Forms.Panel();
+            this.pictureHome = new System.Windows.Forms.PictureBox();
+            this.homeText = new System.Windows.Forms.Label();
+            this.buchlisteHeader = new System.Windows.Forms.Label();
+            this.nameText = new System.Windows.Forms.Label();
+            this.birthdateText = new System.Windows.Forms.Label();
+            this.addressText = new System.Windows.Forms.Label();
+            this.discoverNewButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.PictureBox();
+            this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
+            this.tableKundeHome = new System.Windows.Forms.DataGridView();
+            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.homeHeaderBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // homeHeaderBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(87)))), ((int)(((byte)(138)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, -3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 42);
-            this.panel1.TabIndex = 0;
+            this.homeHeaderBackground.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.homeHeaderBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(87)))), ((int)(((byte)(138)))));
+            this.homeHeaderBackground.Controls.Add(this.pictureHome);
+            this.homeHeaderBackground.Controls.Add(this.homeText);
+            this.homeHeaderBackground.Location = new System.Drawing.Point(0, 0);
+            this.homeHeaderBackground.Name = "homeHeaderBackground";
+            this.homeHeaderBackground.Size = new System.Drawing.Size(1008, 51);
+            this.homeHeaderBackground.TabIndex = 0;
             // 
-            // pictureBox1
+            // pictureHome
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(289, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pictureHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureHome.BackColor = System.Drawing.Color.Transparent;
+            this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
+            this.pictureHome.Location = new System.Drawing.Point(408, 3);
+            this.pictureHome.Name = "pictureHome";
+            this.pictureHome.Size = new System.Drawing.Size(44, 51);
+            this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureHome.TabIndex = 1;
+            this.pictureHome.TabStop = false;
             // 
-            // label1
+            // homeText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(335, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.homeText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeText.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.homeText.Location = new System.Drawing.Point(0, 0);
+            this.homeText.Margin = new System.Windows.Forms.Padding(0);
+            this.homeText.MinimumSize = new System.Drawing.Size(90, 31);
+            this.homeText.Name = "homeText";
+            this.homeText.Size = new System.Drawing.Size(1008, 51);
+            this.homeText.TabIndex = 0;
+            this.homeText.Text = "Home";
+            this.homeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // buchlisteHeader
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Meine Bücher";
+            this.buchlisteHeader.AutoSize = true;
+            this.buchlisteHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buchlisteHeader.Location = new System.Drawing.Point(19, 67);
+            this.buchlisteHeader.Name = "buchlisteHeader";
+            this.buchlisteHeader.Size = new System.Drawing.Size(119, 20);
+            this.buchlisteHeader.TabIndex = 1;
+            this.buchlisteHeader.Text = "Meine Bücher";
             // 
-            // textBox1
+            // nameText
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(83, 474);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 22);
-            this.textBox1.TabIndex = 3;
+            this.nameText.AutoSize = true;
+            this.nameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameText.Location = new System.Drawing.Point(86, 451);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(52, 18);
+            this.nameText.TabIndex = 6;
+            this.nameText.Text = "Name:";
             // 
-            // textBox2
+            // birthdateText
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(83, 546);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 22);
-            this.textBox2.TabIndex = 4;
+            this.birthdateText.AutoSize = true;
+            this.birthdateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdateText.Location = new System.Drawing.Point(86, 524);
+            this.birthdateText.Name = "birthdateText";
+            this.birthdateText.Size = new System.Drawing.Size(106, 18);
+            this.birthdateText.TabIndex = 7;
+            this.birthdateText.Text = "Geburtsdatum:";
             // 
-            // textBox3
+            // addressText
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(271, 475);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(118, 22);
-            this.textBox3.TabIndex = 5;
+            this.addressText.AutoSize = true;
+            this.addressText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressText.Location = new System.Drawing.Point(274, 452);
+            this.addressText.Name = "addressText";
+            this.addressText.Size = new System.Drawing.Size(66, 18);
+            this.addressText.TabIndex = 8;
+            this.addressText.Text = "Adresse:";
             // 
-            // label4
+            // discoverNewButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(86, 451);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Name:";
+            this.discoverNewButton.AutoSize = true;
+            this.discoverNewButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.discoverNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.discoverNewButton.FlatAppearance.BorderSize = 0;
+            this.discoverNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.discoverNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discoverNewButton.Location = new System.Drawing.Point(363, 363);
+            this.discoverNewButton.Name = "discoverNewButton";
+            this.discoverNewButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.discoverNewButton.Size = new System.Drawing.Size(285, 48);
+            this.discoverNewButton.TabIndex = 9;
+            this.discoverNewButton.Text = "Neue Meisterwerke entdecken";
+            this.discoverNewButton.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // logoutButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(86, 524);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 18);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Geburtsdatum:";
+            this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
+            this.logoutButton.Location = new System.Drawing.Point(937, 67);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(59, 28);
+            this.logoutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoutButton.TabIndex = 10;
+            this.logoutButton.TabStop = false;
             // 
-            // label6
+            // sqLiteCommandBuilder1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(274, 452);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Adresse:";
+            this.sqLiteCommandBuilder1.DataAdapter = null;
+            this.sqLiteCommandBuilder1.QuoteSuffix = "]";
             // 
-            // button1
+            // tableKundeHome
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(83, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(318, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Neue Meisterwerke entdecken";
-            this.button1.UseVisualStyleBackColor = false;
+            this.tableKundeHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableKundeHome.Location = new System.Drawing.Point(23, 102);
+            this.tableKundeHome.Name = "tableKundeHome";
+            this.tableKundeHome.Size = new System.Drawing.Size(240, 150);
+            this.tableKundeHome.TabIndex = 12;
             // 
-            // pictureBox2
+            // sqLiteCommand1
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(726, 45);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(59, 28);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(628, 124);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 47);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
+            this.sqLiteCommand1.CommandText = null;
             // 
             // HomeKunde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(797, 595);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.tableKundeHome);
+            this.Controls.Add(this.logoutButton);
+            this.Controls.Add(this.discoverNewButton);
+            this.Controls.Add(this.addressText);
+            this.Controls.Add(this.birthdateText);
+            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.buchlisteHeader);
+            this.Controls.Add(this.homeHeaderBackground);
             this.Name = "HomeKunde";
             this.Text = "Bibo";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.homeHeaderBackground.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,18 +196,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel homeHeaderBackground;
+        private System.Windows.Forms.Label homeText;
+        private System.Windows.Forms.Label buchlisteHeader;
+        private System.Windows.Forms.Label nameText;
+        private System.Windows.Forms.Label birthdateText;
+        private System.Windows.Forms.Label addressText;
+        private System.Windows.Forms.Button discoverNewButton;
+        private System.Windows.Forms.PictureBox pictureHome;
+        private System.Windows.Forms.PictureBox logoutButton;
+        private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
+        private System.Windows.Forms.DataGridView tableKundeHome;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
     }
 }

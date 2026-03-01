@@ -17,9 +17,6 @@ namespace Bibo
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(Directory.GetCurrentDirectory());
-
-
             string username = username_tb.Text.Trim();
             string password = pw_tb.Text.Trim();
 
@@ -37,7 +34,12 @@ namespace Bibo
                 {
                     Globals.CurrentKunde = kunde;
 
-                    Console.WriteLine($"Hello, {Globals.CurrentKunde.KundenID}!");
+                    HomeKunde homeKundeForm = new HomeKunde();
+                    homeKundeForm.Show();
+                    Hide();
+
+                    //KONTROLLAUSGABE
+                    //Console.WriteLine($"Hello, {Globals.CurrentKunde.KundenID}!");
                 }
                 else
                 {
@@ -49,6 +51,18 @@ namespace Bibo
         private void pw_tb_TextChanged(object sender, EventArgs e)
         {
             pw_tb.UseSystemPasswordChar = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(pw_tb.UseSystemPasswordChar)
+            {
+                pw_tb.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                pw_tb.UseSystemPasswordChar = true;
+            }
         }
     }
 }
