@@ -17,7 +17,17 @@ namespace Bibo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+
+            // LoginForm in Variable speichern
+            Login loginForm = new Login();
+            Globals.SessionLogin = loginForm;
+
+            // Run starten
+            Application.Run(Globals.SessionLogin);
+
+
+
+            //Application.Run(new Login());
         }
     }
 }

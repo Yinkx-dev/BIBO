@@ -33,14 +33,18 @@
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.homeText = new System.Windows.Forms.Label();
             this.buchlisteHeader = new System.Windows.Forms.Label();
-            this.nameText = new System.Windows.Forms.Label();
-            this.birthdateText = new System.Windows.Forms.Label();
-            this.addressText = new System.Windows.Forms.Label();
+            this.nameHeader = new System.Windows.Forms.Label();
+            this.birthdateHeader = new System.Windows.Forms.Label();
+            this.addressHeader = new System.Windows.Forms.Label();
             this.discoverNewButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.tableKundeHome = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.panelTable = new System.Windows.Forms.Panel();
+            this.birthdateText = new System.Windows.Forms.Label();
+            this.nameText = new System.Windows.Forms.Label();
+            this.addressText = new System.Windows.Forms.Label();
             this.homeHeaderBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
@@ -89,42 +93,42 @@
             // buchlisteHeader
             // 
             this.buchlisteHeader.AutoSize = true;
-            this.buchlisteHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buchlisteHeader.Location = new System.Drawing.Point(19, 67);
+            this.buchlisteHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buchlisteHeader.Location = new System.Drawing.Point(19, 71);
             this.buchlisteHeader.Name = "buchlisteHeader";
-            this.buchlisteHeader.Size = new System.Drawing.Size(119, 20);
+            this.buchlisteHeader.Size = new System.Drawing.Size(141, 24);
             this.buchlisteHeader.TabIndex = 1;
             this.buchlisteHeader.Text = "Meine Bücher";
             // 
-            // nameText
+            // nameHeader
             // 
-            this.nameText.AutoSize = true;
-            this.nameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameText.Location = new System.Drawing.Point(86, 451);
-            this.nameText.Name = "nameText";
-            this.nameText.Size = new System.Drawing.Size(52, 18);
-            this.nameText.TabIndex = 6;
-            this.nameText.Text = "Name:";
+            this.nameHeader.AutoSize = true;
+            this.nameHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameHeader.Location = new System.Drawing.Point(94, 634);
+            this.nameHeader.Name = "nameHeader";
+            this.nameHeader.Size = new System.Drawing.Size(52, 18);
+            this.nameHeader.TabIndex = 6;
+            this.nameHeader.Text = "Name";
             // 
-            // birthdateText
+            // birthdateHeader
             // 
-            this.birthdateText.AutoSize = true;
-            this.birthdateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdateText.Location = new System.Drawing.Point(86, 524);
-            this.birthdateText.Name = "birthdateText";
-            this.birthdateText.Size = new System.Drawing.Size(106, 18);
-            this.birthdateText.TabIndex = 7;
-            this.birthdateText.Text = "Geburtsdatum:";
+            this.birthdateHeader.AutoSize = true;
+            this.birthdateHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdateHeader.Location = new System.Drawing.Point(798, 634);
+            this.birthdateHeader.Name = "birthdateHeader";
+            this.birthdateHeader.Size = new System.Drawing.Size(114, 18);
+            this.birthdateHeader.TabIndex = 7;
+            this.birthdateHeader.Text = "Geburtsdatum";
             // 
-            // addressText
+            // addressHeader
             // 
-            this.addressText.AutoSize = true;
-            this.addressText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressText.Location = new System.Drawing.Point(274, 452);
-            this.addressText.Name = "addressText";
-            this.addressText.Size = new System.Drawing.Size(66, 18);
-            this.addressText.TabIndex = 8;
-            this.addressText.Text = "Adresse:";
+            this.addressHeader.AutoSize = true;
+            this.addressHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressHeader.Location = new System.Drawing.Point(440, 634);
+            this.addressHeader.Name = "addressHeader";
+            this.addressHeader.Size = new System.Drawing.Size(69, 18);
+            this.addressHeader.TabIndex = 8;
+            this.addressHeader.Text = "Adresse";
             // 
             // discoverNewButton
             // 
@@ -133,11 +137,11 @@
             this.discoverNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
             this.discoverNewButton.FlatAppearance.BorderSize = 0;
             this.discoverNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.discoverNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discoverNewButton.Location = new System.Drawing.Point(363, 363);
+            this.discoverNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discoverNewButton.Location = new System.Drawing.Point(350, 532);
             this.discoverNewButton.Name = "discoverNewButton";
             this.discoverNewButton.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-            this.discoverNewButton.Size = new System.Drawing.Size(285, 48);
+            this.discoverNewButton.Size = new System.Drawing.Size(301, 50);
             this.discoverNewButton.TabIndex = 9;
             this.discoverNewButton.Text = "Neue Meisterwerke entdecken";
             this.discoverNewButton.UseVisualStyleBackColor = false;
@@ -151,6 +155,7 @@
             this.logoutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoutButton.TabIndex = 10;
             this.logoutButton.TabStop = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // sqLiteCommandBuilder1
             // 
@@ -159,15 +164,62 @@
             // 
             // tableKundeHome
             // 
+            this.tableKundeHome.AllowUserToAddRows = false;
+            this.tableKundeHome.AllowUserToDeleteRows = false;
+            this.tableKundeHome.AllowUserToResizeColumns = false;
+            this.tableKundeHome.AllowUserToResizeRows = false;
+            this.tableKundeHome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableKundeHome.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.tableKundeHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableKundeHome.Enabled = false;
+            this.tableKundeHome.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.tableKundeHome.Location = new System.Drawing.Point(23, 102);
             this.tableKundeHome.Name = "tableKundeHome";
-            this.tableKundeHome.Size = new System.Drawing.Size(240, 150);
+            this.tableKundeHome.ReadOnly = true;
+            this.tableKundeHome.RowHeadersVisible = false;
+            this.tableKundeHome.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tableKundeHome.Size = new System.Drawing.Size(957, 150);
             this.tableKundeHome.TabIndex = 12;
             // 
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
+            // 
+            // panelTable
+            // 
+            this.panelTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelTable.BackColor = System.Drawing.Color.Silver;
+            this.panelTable.Location = new System.Drawing.Point(23, 102);
+            this.panelTable.Name = "panelTable";
+            this.panelTable.Size = new System.Drawing.Size(957, 387);
+            this.panelTable.TabIndex = 13;
+            // 
+            // birthdateText
+            // 
+            this.birthdateText.AutoSize = true;
+            this.birthdateText.Location = new System.Drawing.Point(800, 661);
+            this.birthdateText.Name = "birthdateText";
+            this.birthdateText.Size = new System.Drawing.Size(68, 13);
+            this.birthdateText.TabIndex = 14;
+            this.birthdateText.Text = "Geburtseeee";
+            // 
+            // nameText
+            // 
+            this.nameText.AutoSize = true;
+            this.nameText.Location = new System.Drawing.Point(94, 661);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(65, 13);
+            this.nameText.TabIndex = 15;
+            this.nameText.Text = "Nameeeeee";
+            // 
+            // addressText
+            // 
+            this.addressText.AutoSize = true;
+            this.addressText.Location = new System.Drawing.Point(440, 661);
+            this.addressText.Name = "addressText";
+            this.addressText.Size = new System.Drawing.Size(64, 13);
+            this.addressText.TabIndex = 16;
+            this.addressText.Text = "Adreseeeee";
             // 
             // HomeKunde
             // 
@@ -175,14 +227,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.addressText);
+            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.birthdateText);
             this.Controls.Add(this.tableKundeHome);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.discoverNewButton);
-            this.Controls.Add(this.addressText);
-            this.Controls.Add(this.birthdateText);
-            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.addressHeader);
+            this.Controls.Add(this.birthdateHeader);
+            this.Controls.Add(this.nameHeader);
             this.Controls.Add(this.buchlisteHeader);
             this.Controls.Add(this.homeHeaderBackground);
+            this.Controls.Add(this.panelTable);
             this.Name = "HomeKunde";
             this.Text = "Bibo";
             this.homeHeaderBackground.ResumeLayout(false);
@@ -199,14 +255,18 @@
         private System.Windows.Forms.Panel homeHeaderBackground;
         private System.Windows.Forms.Label homeText;
         private System.Windows.Forms.Label buchlisteHeader;
-        private System.Windows.Forms.Label nameText;
-        private System.Windows.Forms.Label birthdateText;
-        private System.Windows.Forms.Label addressText;
+        private System.Windows.Forms.Label nameHeader;
+        private System.Windows.Forms.Label birthdateHeader;
+        private System.Windows.Forms.Label addressHeader;
         private System.Windows.Forms.Button discoverNewButton;
         private System.Windows.Forms.PictureBox pictureHome;
         private System.Windows.Forms.PictureBox logoutButton;
         private System.Data.SQLite.SQLiteCommandBuilder sqLiteCommandBuilder1;
         private System.Windows.Forms.DataGridView tableKundeHome;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
+        private System.Windows.Forms.Panel panelTable;
+        private System.Windows.Forms.Label birthdateText;
+        private System.Windows.Forms.Label nameText;
+        private System.Windows.Forms.Label addressText;
     }
 }
