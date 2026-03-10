@@ -72,17 +72,17 @@
     <Compile Include="Forms\Kunden\BücherlisteKunde.Designer.cs">
       <DependentUpon>BücherlisteKunde.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Kunden\BewertungKunde.cs">
+    <Compile Include="Forms\Kunden\BewertungBuch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Kunden\BewertungKunde.Designer.cs">
-      <DependentUpon>BewertungKunde.cs</DependentUpon>
+    <Compile Include="Forms\Kunden\BewertungBuch.Designer.cs">
+      <DependentUpon>BewertungBuch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Kunden\BuchdatenKunden.cs">
+    <Compile Include="Forms\Kunden\Buchdaten.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Kunden\BuchdatenKunden.Designer.cs">
-      <DependentUpon>BuchdatenKunden.cs</DependentUpon>
+    <Compile Include="Forms\Kunden\Buchdaten.Designer.cs">
+      <DependentUpon>Buchdaten.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Login.cs">
       <SubType>Form</SubType>
@@ -96,15 +96,20 @@
     <Compile Include="Forms\Kunden\HomeKunde.Designer.cs">
       <DependentUpon>HomeKunde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ausleihen.cs" />
+    <Compile Include="Models\Bewertung.cs" />
+    <Compile Include="Models\Buch.cs" />
     <Compile Include="Models\Globals.cs" />
     <Compile Include="Models\Kunde.cs" />
+    <Compile Include="Models\KundeAusgeliehen.cs" />
+    <Compile Include="Models\Personal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Kunden\BewertungKunde.resx">
-      <DependentUpon>BewertungKunde.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Kunden\BewertungBuch.resx">
+      <DependentUpon>BewertungBuch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Kunden\BuchdatenKunden.resx">
-      <DependentUpon>BuchdatenKunden.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Kunden\Buchdaten.resx">
+      <DependentUpon>Buchdaten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -181,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Personal\" />
+    <Folder Include="Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

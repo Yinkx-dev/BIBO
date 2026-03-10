@@ -14,6 +14,8 @@ namespace Bibo.Models
     {
         [Key]
         public int KundenID { get; set; }
+        public string Nutzername { get; set; }
+        public string Passwort { get; set; }
         public string Name { get; set; }
         public string Geburtsdatum { get; set; }
         public string Strasse { get; set; }

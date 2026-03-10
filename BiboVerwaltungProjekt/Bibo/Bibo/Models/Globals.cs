@@ -15,47 +15,34 @@ namespace Bibo.Models
 
 
 
-        public static void AdjustDataGridView(DataGridView dgv, int maxHeight, int maxWidth)
+        public static void AdjustDataGridView(DataGridView dgv)
         {
-            // Height
-            int totalHeight= 0;
+            // Smart Auto-Size
+            dgv.SuspendLayout();
+            dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            int contentWidth = 0;
 
-            foreach (DataGridViewRow row in dgv.Rows)
+            //Falls Row Header sichtbar
+            if (dgv.RowHeadersVisible)
             {
-                totalHeight += row.Height;
+                contentWidth += dgv.RowHeadersWidth;
             }
 
-            dgv.Height = Math.Min(totalHeight, maxHeight);
-
-
-            // Width
-            int totalWidth = 0;
 
             foreach (DataGridViewColumn col in dgv.Columns)
+                contentWidth += col.Width;
+
+            int freeSpace = dgv.ClientSize.Width - contentWidth;
+            
+            if (freeSpace > 0 && dgv.Columns.Count > 0)
             {
-                totalWidth += col.Width;
+                int extraPerColumn = freeSpace / dgv.Columns.Count;
+
+                foreach (DataGridViewColumn col in dgv.Columns)
+                    col.Width += extraPerColumn;
             }
 
-            dgv.Width = Math.Min(totalWidth, maxWidth);
-
-
-            //Scrollbars
-            if (totalHeight > maxHeight)
-            {
-                dgv.ScrollBars =ScrollBars.Vertical;
-            }
-            else if (totalHeight > maxHeight)
-            {
-                dgv.ScrollBars = ScrollBars.Horizontal;
-            }
-            else if (totalHeight > maxHeight && totalHeight > maxHeight)
-            {
-                dgv.ScrollBars = ScrollBars.Both;
-            }
-            else
-            {
-                dgv.ScrollBars = ScrollBars.None;
-            }
+            dgv.ResumeLayout();
         }
     }
 }

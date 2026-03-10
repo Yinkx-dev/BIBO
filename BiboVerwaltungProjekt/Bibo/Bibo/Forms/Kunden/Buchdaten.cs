@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibo.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Bibo
 {
-    public partial class BuchdatenKunden: Form
+    public partial class Buchdaten: Form
     {
-        public BuchdatenKunden()
+        public Buchdaten(string isbnSelectedBook)
         {
             InitializeComponent();
         }

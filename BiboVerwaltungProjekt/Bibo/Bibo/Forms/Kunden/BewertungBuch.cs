@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bibo
 {
-    public partial class BewertungKunde: Form
+    public partial class BewertungBuch: Form
     {
-        public BewertungKunde()
+        public BewertungBuch(string isbnSelectedBook)
         {
             InitializeComponent();
         }

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeKunde));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.homeHeaderBackground = new System.Windows.Forms.Panel();
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.homeText = new System.Windows.Forms.Label();
@@ -45,10 +48,16 @@
             this.birthdateText = new System.Windows.Forms.Label();
             this.nameText = new System.Windows.Forms.Label();
             this.addressText = new System.Windows.Forms.Label();
+            this.colCover = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLeihfrist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBewertung = new System.Windows.Forms.DataGridViewImageColumn();
             this.homeHeaderBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).BeginInit();
+            this.panelTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeHeaderBackground
@@ -169,17 +178,46 @@
             this.tableKundeHome.AllowUserToResizeColumns = false;
             this.tableKundeHome.AllowUserToResizeRows = false;
             this.tableKundeHome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableKundeHome.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableKundeHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tableKundeHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableKundeHome.Enabled = false;
+            this.tableKundeHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCover,
+            this.colTitle,
+            this.colAutor,
+            this.colLeihfrist,
+            this.colBewertung});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableKundeHome.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tableKundeHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableKundeHome.EnableHeadersVisualStyles = false;
             this.tableKundeHome.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tableKundeHome.Location = new System.Drawing.Point(23, 102);
+            this.tableKundeHome.Location = new System.Drawing.Point(0, 0);
+            this.tableKundeHome.MultiSelect = false;
             this.tableKundeHome.Name = "tableKundeHome";
             this.tableKundeHome.ReadOnly = true;
             this.tableKundeHome.RowHeadersVisible = false;
-            this.tableKundeHome.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tableKundeHome.Size = new System.Drawing.Size(957, 150);
-            this.tableKundeHome.TabIndex = 12;
+            this.tableKundeHome.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.tableKundeHome.RowTemplate.Height = 75;
+            this.tableKundeHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableKundeHome.Size = new System.Drawing.Size(957, 387);
+            this.tableKundeHome.TabIndex = 1;
+            this.tableKundeHome.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundeHome_CellMouseClick);
+            this.tableKundeHome.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableKundeHome_CellMouseEnter);
+            this.tableKundeHome.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableKundeHome_CellMouseLeave);
             // 
             // sqLiteCommand1
             // 
@@ -189,6 +227,7 @@
             // 
             this.panelTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelTable.BackColor = System.Drawing.Color.Silver;
+            this.panelTable.Controls.Add(this.tableKundeHome);
             this.panelTable.Location = new System.Drawing.Point(23, 102);
             this.panelTable.Name = "panelTable";
             this.panelTable.Size = new System.Drawing.Size(957, 387);
@@ -221,6 +260,48 @@
             this.addressText.TabIndex = 16;
             this.addressText.Text = "Adreseeeee";
             // 
+            // colCover
+            // 
+            this.colCover.FillWeight = 30F;
+            this.colCover.HeaderText = "Cover";
+            this.colCover.Image = ((System.Drawing.Image)(resources.GetObject("colCover.Image")));
+            this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colCover.Name = "colCover";
+            this.colCover.ReadOnly = true;
+            this.colCover.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colTitle
+            // 
+            this.colTitle.HeaderText = "Titel";
+            this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
+            // 
+            // colAutor
+            // 
+            this.colAutor.FillWeight = 25F;
+            this.colAutor.HeaderText = "Autor";
+            this.colAutor.Name = "colAutor";
+            this.colAutor.ReadOnly = true;
+            // 
+            // colLeihfrist
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colLeihfrist.FillWeight = 25F;
+            this.colLeihfrist.HeaderText = "Leihfrist";
+            this.colLeihfrist.Name = "colLeihfrist";
+            this.colLeihfrist.ReadOnly = true;
+            // 
+            // colBewertung
+            // 
+            this.colBewertung.FillWeight = 25F;
+            this.colBewertung.HeaderText = "Rezension schreiben";
+            this.colBewertung.Image = ((System.Drawing.Image)(resources.GetObject("colBewertung.Image")));
+            this.colBewertung.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colBewertung.Name = "colBewertung";
+            this.colBewertung.ReadOnly = true;
+            // 
             // HomeKunde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,7 +311,6 @@
             this.Controls.Add(this.addressText);
             this.Controls.Add(this.nameText);
             this.Controls.Add(this.birthdateText);
-            this.Controls.Add(this.tableKundeHome);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.discoverNewButton);
             this.Controls.Add(this.addressHeader);
@@ -245,6 +325,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).EndInit();
+            this.panelTable.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +349,10 @@
         private System.Windows.Forms.Label birthdateText;
         private System.Windows.Forms.Label nameText;
         private System.Windows.Forms.Label addressText;
+        private System.Windows.Forms.DataGridViewImageColumn colCover;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAutor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLeihfrist;
+        private System.Windows.Forms.DataGridViewImageColumn colBewertung;
     }
 }

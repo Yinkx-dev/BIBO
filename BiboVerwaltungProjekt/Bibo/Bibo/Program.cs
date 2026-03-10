@@ -24,10 +24,6 @@ namespace Bibo
 
             // Run starten
             Application.Run(Globals.SessionLogin);
-
-
-
-            //Application.Run(new Login());
         }
     }
 }
