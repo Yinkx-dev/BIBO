@@ -66,11 +66,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Kunden\BücherlisteKunde.cs">
+    <Compile Include="Classes\FormsGenerals.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Kunden\BücherlisteKunde.Designer.cs">
-      <DependentUpon>BücherlisteKunde.cs</DependentUpon>
+    <Compile Include="Forms\Kunden\Buecherliste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kunden\Buecherliste.Designer.cs">
+      <DependentUpon>Buecherliste.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Kunden\BewertungBuch.cs">
       <SubType>Form</SubType>
@@ -99,7 +102,7 @@
     <Compile Include="Models\Ausleihen.cs" />
     <Compile Include="Models\Bewertung.cs" />
     <Compile Include="Models\Buch.cs" />
-    <Compile Include="Models\Globals.cs" />
+    <Compile Include="Classes\Globals.cs" />
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="Models\KundeAusgeliehen.cs" />
     <Compile Include="Models\Personal.cs" />
@@ -110,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Kunden\Buchdaten.resx">
       <DependentUpon>Buchdaten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kunden\Buecherliste.resx">
+      <DependentUpon>Buecherliste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -143,6 +149,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\Bewertung_Black.png" />
+    <Content Include="Icons\Bewertung_White.png" />
+    <Content Include="Icons\Buch_Black.png" />
+    <Content Include="Icons\Buch_White.png" />
+    <Content Include="Icons\home-symbol-weiss-einfach-isoliert-vector-illustration-rx94tc.jpg" />
+    <Content Include="Icons\Home.png" />
+    <Content Include="Icons\HomeBLack.png" />
+    <Content Include="Icons\OIP.jpg" />
     <Content Include="Images\978-1837906598.jpg" />
     <Content Include="Images\978-3257247107.jpg" />
     <Content Include="Images\978-3423230285.jpg" />
@@ -178,6 +192,7 @@
     <Content Include="Images\978-3982585703.jpg" />
     <Content Include="Images\979-8241279385.jpg" />
     <Content Include="Images\979-8278444916.jpg" />
+    <Content Include="Images\DefaultCover.jpg" />
     <Content Include="Images\‎978-3365005347.jpg" />
     <Content Include="Images\‎978-3492235471.jpg" />
     <Content Include="Images\‎978-3492282482.jpg" />
@@ -186,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Personal\" />
-    <Folder Include="Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />

@@ -2,18 +2,15 @@
 using Dapper;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Bibo
 {
-    public partial class HomeKunde: Form
+    public partial class HomeKunde: FormsGenerals
     {
         private Kunde _kunde;
         public HomeKunde()
@@ -22,7 +19,6 @@ namespace Bibo
             _kunde = Globals.CurrentKunde;
             InsertData();
         }
-
 
 
         private void InsertData()
@@ -126,6 +122,20 @@ namespace Bibo
                 }
             }
 
+        }
+
+        private void discoverNewButton_Click(object sender, EventArgs e)
+        {
+            Buecherliste form = new Buecherliste();
+            form.Show();
+            Hide();
+        }
+
+
+        //Anwendung beenden, wenn das Fenster geschlossen wird
+        protected override bool ConfirmApplicationExit()
+        {
+            return true;
         }
     }
 }
