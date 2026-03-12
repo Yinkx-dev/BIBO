@@ -1,35 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Bibo
 {
-    public partial class BewertungBuch: Form
+    public partial class BewertungBuch: UI_Helper
     {
         public BewertungBuch(string isbnSelectedBook)
         {
             InitializeComponent();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BewertungKunde_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

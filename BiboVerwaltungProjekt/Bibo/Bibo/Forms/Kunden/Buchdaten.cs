@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Bibo
 {
-    public partial class Buchdaten: Form
+    public partial class Buchdaten: UI_Helper
     {
         public Buchdaten(string isbnSelectedBook)
         {
