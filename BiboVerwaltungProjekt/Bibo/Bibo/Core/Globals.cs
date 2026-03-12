@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Bibo.Models
 {
@@ -12,6 +7,9 @@ namespace Bibo.Models
         public static Kunde CurrentKunde { get; set; }
 
         public static Login SessionLogin { get; set; }
+       
+        //Dateipfad relativ zu bin/Debug
+        public static Database Db = new Database(@"Data Source=..\..\Data\database_BiBO.db;Version=3");
 
 
 

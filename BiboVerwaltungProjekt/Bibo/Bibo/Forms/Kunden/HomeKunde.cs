@@ -1,49 +1,45 @@
-﻿using Bibo.Models;
-using Dapper;
+﻿using Bibo.Core;
+using Bibo.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Bibo
 {
-    public partial class HomeKunde: FormsGenerals
+    public partial class HomeKunde: UI_Helper
     {
+        private CursorManager cursorManager;
         private Kunde _kunde;
         public HomeKunde()
         {
             InitializeComponent();
             _kunde = Globals.CurrentKunde;
             InsertData();
+            CursorChangeOnInteractiveElements();
         }
 
 
         private void InsertData()
         {
-            //Dateipfad relativ zu bin/Debug
-            string connectionString = @"Data Source=..\..\Database\database_BiBO.db;Version=3";
-
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
-            {
-                conn.Open();
-
-                string databaseCommand = @"
+            //Datenbank Connection
+            var result = Globals.Db.QueryList<KundeAusgeliehen>(
+                @"
                 SELECT b.ISBN, b.Titel, b.Autor, a.Rueckgabedatum
                 FROM Buch b
                 JOIN Ausleihen a ON b.ISBN = a.ISBN
-                WHERE a.KundenID = @KundenID";
+                WHERE a.KundenID = @KundenID",
+                new { Globals.CurrentKunde.KundenID }
+            );
 
-                var result = conn.Query<KundeAusgeliehen>(databaseCommand, new {Globals.CurrentKunde.KundenID}).ToList();
-                FillRows(result, tableKundeHome);
+            FillRows(result, tableKundeHome);
 
-                nameText.Text = Globals.CurrentKunde.Name;
-                string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.Wohnort}";
-                addressText.Text = stringAddress;
-                birthdateText.Text = Globals.CurrentKunde.Geburtsdatum;
-            }
+            nameText.Text = Globals.CurrentKunde.Name;
+            string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.Wohnort}";
+            addressText.Text = stringAddress;
+            birthdateText.Text = Globals.CurrentKunde.Geburtsdatum;
         }
 
         private void FillRows(List<KundeAusgeliehen> buecher, DataGridView dgv)
@@ -75,29 +71,29 @@ namespace Bibo
                 //ISBN "speichern"
                 dgvRow.Tag = isbn;
             }
+            //Nach Leihfrist sortieren, kürzeste zuerst
+            dgv.Sort(dgv.Columns["colLeihfrist"], ListSortDirection.Ascending);
         }
+
+        //Mauszeiger anpassen bei bestimmten ELementen
+        private void CursorChangeOnInteractiveElements()
+        {
+            cursorManager = new CursorManager();
+
+            cursorManager.AttachDataGridViewColumn(tableKundeHome, "colBewertung");
+            cursorManager.AttachHandCursor(logoutButton);
+        }
+
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Globals.CurrentKunde = new Kunde();
             Globals.SessionLogin = new Login();
             Globals.SessionLogin.Show();
+
+            //Fenster schließen ohne App zu schließen
+            this.CloseApplicationOnUserClose = false;
             Close();
-        }
-
-        //Mauszeiger Veränderung auf Button für Rezension schreiben
-        private void tableKundeHome_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.ColumnIndex == tableKundeHome.Columns["colBewertung"].Index && e.RowIndex >= 0)
-            {
-                tableKundeHome.Cursor = Cursors.Hand;
-            }
-        }
-
-        private void tableKundeHome_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            tableKundeHome.Cursor = Cursors.Default;
-
         }
 
 
@@ -124,18 +120,13 @@ namespace Bibo
 
         }
 
+
+        //Weiterleitung an Buecherliste
         private void discoverNewButton_Click(object sender, EventArgs e)
         {
             Buecherliste form = new Buecherliste();
             form.Show();
             Hide();
-        }
-
-
-        //Anwendung beenden, wenn das Fenster geschlossen wird
-        protected override bool ConfirmApplicationExit()
-        {
-            return true;
         }
     }
 }

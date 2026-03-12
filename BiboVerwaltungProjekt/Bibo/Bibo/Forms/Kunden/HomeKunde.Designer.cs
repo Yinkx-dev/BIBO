@@ -70,7 +70,7 @@
             this.homeHeaderBackground.Location = new System.Drawing.Point(0, 0);
             this.homeHeaderBackground.Margin = new System.Windows.Forms.Padding(4);
             this.homeHeaderBackground.Name = "homeHeaderBackground";
-            this.homeHeaderBackground.Size = new System.Drawing.Size(1262, 49);
+            this.homeHeaderBackground.Size = new System.Drawing.Size(1264, 49);
             this.homeHeaderBackground.TabIndex = 0;
             // 
             // pictureHome
@@ -79,7 +79,7 @@
             this.pictureHome.BackColor = System.Drawing.Color.Transparent;
             this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
-            this.pictureHome.Location = new System.Drawing.Point(529, 0);
+            this.pictureHome.Location = new System.Drawing.Point(535, 4);
             this.pictureHome.Margin = new System.Windows.Forms.Padding(4);
             this.pictureHome.Name = "pictureHome";
             this.pictureHome.Size = new System.Drawing.Size(41, 45);
@@ -96,7 +96,7 @@
             this.homeText.Margin = new System.Windows.Forms.Padding(0);
             this.homeText.MinimumSize = new System.Drawing.Size(120, 38);
             this.homeText.Name = "homeText";
-            this.homeText.Size = new System.Drawing.Size(1262, 49);
+            this.homeText.Size = new System.Drawing.Size(1264, 49);
             this.homeText.TabIndex = 0;
             this.homeText.Text = "Home";
             this.homeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,7 +108,7 @@
             this.buchlisteHeader.Location = new System.Drawing.Point(13, 65);
             this.buchlisteHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.buchlisteHeader.Name = "buchlisteHeader";
-            this.buchlisteHeader.Size = new System.Drawing.Size(174, 29);
+            this.buchlisteHeader.Size = new System.Drawing.Size(141, 24);
             this.buchlisteHeader.TabIndex = 1;
             this.buchlisteHeader.Text = "Meine Bücher";
             // 
@@ -119,7 +119,7 @@
             this.nameHeader.Location = new System.Drawing.Point(122, 699);
             this.nameHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameHeader.Name = "nameHeader";
-            this.nameHeader.Size = new System.Drawing.Size(68, 25);
+            this.nameHeader.Size = new System.Drawing.Size(55, 20);
             this.nameHeader.TabIndex = 6;
             this.nameHeader.Text = "Name";
             // 
@@ -130,7 +130,7 @@
             this.birthdateHeader.Location = new System.Drawing.Point(1031, 699);
             this.birthdateHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.birthdateHeader.Name = "birthdateHeader";
-            this.birthdateHeader.Size = new System.Drawing.Size(147, 25);
+            this.birthdateHeader.Size = new System.Drawing.Size(124, 20);
             this.birthdateHeader.TabIndex = 7;
             this.birthdateHeader.Text = "Geburtsdatum";
             // 
@@ -141,7 +141,7 @@
             this.addressHeader.Location = new System.Drawing.Point(583, 699);
             this.addressHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.addressHeader.Name = "addressHeader";
-            this.addressHeader.Size = new System.Drawing.Size(92, 25);
+            this.addressHeader.Size = new System.Drawing.Size(75, 20);
             this.addressHeader.TabIndex = 8;
             this.addressHeader.Text = "Adresse";
             // 
@@ -158,7 +158,7 @@
             this.discoverNewButton.Margin = new System.Windows.Forms.Padding(4);
             this.discoverNewButton.Name = "discoverNewButton";
             this.discoverNewButton.Padding = new System.Windows.Forms.Padding(27, 12, 27, 12);
-            this.discoverNewButton.Size = new System.Drawing.Size(367, 59);
+            this.discoverNewButton.Size = new System.Drawing.Size(315, 54);
             this.discoverNewButton.TabIndex = 9;
             this.discoverNewButton.Text = "Neue Meisterwerke entdecken";
             this.discoverNewButton.UseVisualStyleBackColor = false;
@@ -167,10 +167,10 @@
             // logoutButton
             // 
             this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
-            this.logoutButton.Location = new System.Drawing.Point(1183, 60);
+            this.logoutButton.Location = new System.Drawing.Point(1211, 60);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(79, 34);
+            this.logoutButton.Size = new System.Drawing.Size(38, 34);
             this.logoutButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoutButton.TabIndex = 10;
             this.logoutButton.TabStop = false;
@@ -227,8 +227,6 @@
             this.tableKundeHome.Size = new System.Drawing.Size(1236, 476);
             this.tableKundeHome.TabIndex = 1;
             this.tableKundeHome.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundeHome_CellMouseClick);
-            this.tableKundeHome.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableKundeHome_CellMouseEnter);
-            this.tableKundeHome.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableKundeHome_CellMouseLeave);
             // 
             // colCover
             // 
@@ -299,7 +297,7 @@
             this.birthdateText.Location = new System.Drawing.Point(1034, 733);
             this.birthdateText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.birthdateText.Name = "birthdateText";
-            this.birthdateText.Size = new System.Drawing.Size(105, 20);
+            this.birthdateText.Size = new System.Drawing.Size(91, 17);
             this.birthdateText.TabIndex = 14;
             this.birthdateText.Text = "Geburtseeee";
             // 
@@ -310,7 +308,7 @@
             this.nameText.Location = new System.Drawing.Point(123, 733);
             this.nameText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameText.Name = "nameText";
-            this.nameText.Size = new System.Drawing.Size(98, 20);
+            this.nameText.Size = new System.Drawing.Size(85, 17);
             this.nameText.TabIndex = 15;
             this.nameText.Text = "Nameeeeee";
             // 
@@ -321,7 +319,7 @@
             this.addressText.Location = new System.Drawing.Point(584, 733);
             this.addressText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.addressText.Name = "addressText";
-            this.addressText.Size = new System.Drawing.Size(98, 20);
+            this.addressText.Size = new System.Drawing.Size(85, 17);
             this.addressText.TabIndex = 16;
             this.addressText.Text = "Adreseeeee";
             // 
@@ -329,7 +327,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1262, 773);
+            this.ClientSize = new System.Drawing.Size(1264, 781);
             this.Controls.Add(this.addressText);
             this.Controls.Add(this.nameText);
             this.Controls.Add(this.birthdateText);
@@ -341,6 +339,7 @@
             this.Controls.Add(this.buchlisteHeader);
             this.Controls.Add(this.homeHeaderBackground);
             this.Controls.Add(this.panelTable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "HomeKunde";
