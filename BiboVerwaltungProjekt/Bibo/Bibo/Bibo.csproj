@@ -101,6 +101,42 @@
     <Compile Include="Forms\Kunden\HomeKunde.Designer.cs">
       <DependentUpon>HomeKunde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Personal\Buchmodifikation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\Buchmodifikation.Designer.cs">
+      <DependentUpon>Buchmodifikation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\BuecherlistePersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\BuecherlistePersonal.Designer.cs">
+      <DependentUpon>BuecherlistePersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\HomePersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\HomePersonal.Designer.cs">
+      <DependentUpon>HomePersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\Kundenliste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\Kundenliste.Designer.cs">
+      <DependentUpon>Kundenliste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\Kundenmodifikation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\Kundenmodifikation.Designer.cs">
+      <DependentUpon>Kundenmodifikation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Personal\LeihstatusPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\LeihstatusPersonal.Designer.cs">
+      <DependentUpon>LeihstatusPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ausleihen.cs" />
     <Compile Include="Models\Bewertung.cs" />
     <Compile Include="Models\Buch.cs" />
@@ -125,6 +161,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Kunden\HomeKunde.resx">
       <DependentUpon>HomeKunde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\Buchmodifikation.resx">
+      <DependentUpon>Buchmodifikation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\BuecherlistePersonal.resx">
+      <DependentUpon>BuecherlistePersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\HomePersonal.resx">
+      <DependentUpon>HomePersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\Kundenliste.resx">
+      <DependentUpon>Kundenliste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\Kundenmodifikation.resx">
+      <DependentUpon>Kundenmodifikation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\LeihstatusPersonal.resx">
+      <DependentUpon>LeihstatusPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -213,9 +267,7 @@
     <Content Include="Images\‎978-3833890789.jpg" />
     <Content Include="Images\‎979-8270796754.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Personal\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
