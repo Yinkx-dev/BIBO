@@ -4,11 +4,22 @@ using System.Windows.Forms;
 public class UI_Helper : Form
 {
     protected bool CloseApplicationOnUserClose { get; set; } = true;
+    public int Sterneanzahl { get; private set; }
 
+
+    //Schließen bei Kreuz oder Alt+F4
     protected UI_Helper()
     {
         this.FormClosing += FormsGenerals_FormClosing;
     }
+
+    //Sterne von Bewertungen richtig darstellen
+    protected UI_Helper(int sterneanzahl) : this()
+    {
+        Sterneanzahl = sterneanzahl;
+    }
+
+    
 
     private void FormsGenerals_FormClosing(object sender, FormClosingEventArgs e)
     {

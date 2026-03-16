@@ -23,7 +23,7 @@ namespace Bibo
             Globals.SessionLogin = loginForm;
 
             // Run starten
-            Application.Run(new Buecherliste());
+            Application.Run(loginForm);
         }
     }
 }

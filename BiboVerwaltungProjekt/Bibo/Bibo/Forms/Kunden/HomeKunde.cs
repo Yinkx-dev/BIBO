@@ -25,7 +25,7 @@ namespace Bibo
         private void InsertData()
         {
             //Datenbank Connection
-            var result = Globals.Db.QueryList<KundeAusgeliehen>(
+            var result = Globals.Db.QueryList<KundeAusgeliehenViewModel>(
                 @"
                 SELECT b.ISBN, b.Titel, b.Autor, a.Rueckgabedatum
                 FROM Buch b
@@ -42,7 +42,7 @@ namespace Bibo
             birthdateText.Text = Globals.CurrentKunde.Geburtsdatum;
         }
 
-        private void FillRows(List<KundeAusgeliehen> buecher, DataGridView dgv)
+        private void FillRows(List<KundeAusgeliehenViewModel> buecher, DataGridView dgv)
         {
             //Bewertungs-Button verkleinern
             dgv.Columns["colBewertung"].DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
@@ -126,7 +126,9 @@ namespace Bibo
         {
             Buecherliste form = new Buecherliste();
             form.Show();
-            Hide();
+            //Fenster schließen ohne App zu schließen
+            this.CloseApplicationOnUserClose = false;
+            Close();
         }
     }
 }

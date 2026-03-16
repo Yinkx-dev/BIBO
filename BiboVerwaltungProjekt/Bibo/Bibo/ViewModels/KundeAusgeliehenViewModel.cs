@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Bibo.Models
 {
-    public class KundeAusgeliehen
+    public class KundeAusgeliehenViewModel
     {
-        [Key]
         public string ISBN { get; set; }
         public string Titel { get; set; }
         public string Autor { get; set; }

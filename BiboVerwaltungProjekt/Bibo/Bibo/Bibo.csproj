@@ -105,8 +105,9 @@
     <Compile Include="Models\Bewertung.cs" />
     <Compile Include="Models\Buch.cs" />
     <Compile Include="Core\Globals.cs" />
+    <Compile Include="ViewModels\BuecherlisteViewModel.cs" />
     <Compile Include="Models\Kunde.cs" />
-    <Compile Include="Models\KundeAusgeliehen.cs" />
+    <Compile Include="ViewModels\KundeAusgeliehenViewModel.cs" />
     <Compile Include="Models\Personal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,18 +152,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\268025_book-stack-icon.png" />
+    <Content Include="Icons\268026_open-book-icon.png" />
+    <Content Include="Icons\268030_open-book-icon.png" />
+    <Content Include="Icons\269060_padlock-icon.png" />
+    <Content Include="Icons\269061_person-icon.png" />
+    <Content Include="Icons\269071_question-icon.png" />
+    <Content Include="Icons\269074_house-icon.png" />
     <Content Include="Icons\Bewertung_Black.png" />
     <Content Include="Icons\Bewertung_White.png" />
+    <Content Include="Icons\buchstapel_weiss.png" />
     <Content Include="Icons\Buch_Black.png" />
     <Content Include="Icons\Buch_White.png" />
     <Content Include="Icons\home-symbol-weiss-einfach-isoliert-vector-illustration-rx94tc.jpg" />
     <Content Include="Icons\Home.png" />
     <Content Include="Icons\HomeBLack.png" />
-    <Content Include="Icons\Icon_Anwendung.png" />
     <Content Include="Icons\Icon_Anwendung_schwarz.ico" />
-    <Content Include="Icons\Icon_Anwendung_schwarz.jpg" />
-    <Content Include="Icons\Icon_Anwendung_weiss.jpg" />
+    <Content Include="Icons\Lupe.png" />
     <Content Include="Icons\OIP.jpg" />
+    <Content Include="Icons\Sterne_Default.png" />
     <Content Include="Images\978-1837906598.jpg" />
     <Content Include="Images\978-3257247107.jpg" />
     <Content Include="Images\978-3423230285.jpg" />
