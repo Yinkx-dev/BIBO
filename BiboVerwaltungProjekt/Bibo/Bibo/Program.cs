@@ -1,4 +1,5 @@
-﻿using Bibo.Models;
+﻿using Bibo.Forms.Personal;
+using Bibo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Bibo
             Globals.SessionLogin = loginForm;
 
             // Run starten
-            Application.Run(new Buecherliste());
+            Application.Run(new LeihstatusPersonal());
         }
     }
 }
