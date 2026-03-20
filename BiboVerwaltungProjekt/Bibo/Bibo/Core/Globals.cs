@@ -12,7 +12,7 @@ namespace Bibo.Models
         public static Database Db = new Database(@"Data Source=..\..\Data\database_BiBO.db;Version=3");
 
 
-
+        //Funktioniert aktuell nur mittelprächtig
         public static void AdjustDataGridView(DataGridView dgv)
         {
             // Smart Auto-Size

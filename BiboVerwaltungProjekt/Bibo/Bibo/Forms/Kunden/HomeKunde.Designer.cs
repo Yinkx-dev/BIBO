@@ -225,7 +225,7 @@
             this.tableKundeHome.RowTemplate.Height = 75;
             this.tableKundeHome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableKundeHome.Size = new System.Drawing.Size(1236, 476);
-            this.tableKundeHome.TabIndex = 1;
+            this.tableKundeHome.TabIndex = 0;
             this.tableKundeHome.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundeHome_CellMouseClick);
             // 
             // colCover
@@ -325,6 +325,7 @@
             // 
             // HomeKunde
             // 
+            this.AcceptButton = this.discoverNewButton;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);

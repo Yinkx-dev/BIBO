@@ -20,7 +20,7 @@ namespace Bibo.Models
         public string Geburtsdatum { get; set; }
         public string Strasse { get; set; }
         public string Hausnummer { get; set; }
-        PLZ!!!!!
+        public int PLZ { get; set; }
         public string Wohnort { get; set; } 
     }
 }

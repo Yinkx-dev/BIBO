@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Bibo
@@ -19,6 +20,7 @@ namespace Bibo
             _kunde = Globals.CurrentKunde;
             InsertData();
             CursorChangeOnInteractiveElements();
+            SetupEnterClickHandlers();
         }
 
 
@@ -37,7 +39,7 @@ namespace Bibo
             FillRows(result, tableKundeHome);
 
             nameText.Text = Globals.CurrentKunde.Name;
-            string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.Wohnort}";
+            string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.PLZ} {Globals.CurrentKunde.Wohnort}";
             addressText.Text = stringAddress;
             birthdateText.Text = Globals.CurrentKunde.Geburtsdatum;
         }
@@ -69,11 +71,12 @@ namespace Bibo
                 dgvRow.Cells["colLeihfrist"].Value = DateTime.Parse(buch.Rueckgabedatum);
                 dgvRow.Cells["colBewertung"].Value = Image.FromFile($@"..\..\Icons\Bewertung_Black.png");
                 //ISBN "speichern"
-                dgvRow.Tag = isbn;
+                dgvRow.Tag = buch.ISBN;
             }
             //Nach Leihfrist sortieren, kürzeste zuerst
             dgv.Sort(dgv.Columns["colLeihfrist"], ListSortDirection.Ascending);
         }
+
 
         //Mauszeiger anpassen bei bestimmten ELementen
         private void CursorChangeOnInteractiveElements()
@@ -85,6 +88,7 @@ namespace Bibo
         }
 
 
+        //Ausloggen
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Globals.CurrentKunde = new Kunde();
@@ -121,10 +125,25 @@ namespace Bibo
         }
 
 
+        //Doppelklick/Enter auf gewählter Zeile für Buchansicht
+        private void SetupEnterClickHandlers()
+        {
+            //Weiterleitung an Buchübersicht für ausgewähltes Buch
+            ActionOnDoubleclickOrEnterDatagridview(tableKundeHome, row =>
+            {
+                string isbnSelectedBook = (string) row.Tag;
+                Buchdaten selectedBook = new Buchdaten(isbnSelectedBook);
+                selectedBook.Show();
+                //Fenster schließen ohne App zu schließen
+                this.CloseApplicationOnUserClose = false;
+                Close();
+            });
+        }
+
         //Weiterleitung an Buecherliste
         private void discoverNewButton_Click(object sender, EventArgs e)
         {
-            Buecherliste form = new Buecherliste();
+            BuecherlisteKunde form = new BuecherlisteKunde();
             form.Show();
             //Fenster schließen ohne App zu schließen
             this.CloseApplicationOnUserClose = false;
