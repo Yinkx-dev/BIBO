@@ -71,11 +71,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Data\Database.cs" />
-    <Compile Include="Forms\Kunden\Buecherliste.cs">
+    <Compile Include="Forms\Kunden\BuecherlisteKunde.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Kunden\Buecherliste.Designer.cs">
-      <DependentUpon>Buecherliste.cs</DependentUpon>
+    <Compile Include="Forms\Kunden\BuecherlisteKunde.Designer.cs">
+      <DependentUpon>BuecherlisteKunde.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Kunden\BewertungBuch.cs">
       <SubType>Form</SubType>
@@ -153,8 +153,8 @@
     <EmbeddedResource Include="Forms\Kunden\Buchdaten.resx">
       <DependentUpon>Buchdaten.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Kunden\Buecherliste.resx">
-      <DependentUpon>Buecherliste.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Kunden\BuecherlisteKunde.resx">
+      <DependentUpon>BuecherlisteKunde.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -218,10 +218,12 @@
     <Content Include="Icons\buchstapel_weiss.png" />
     <Content Include="Icons\Buch_Black.png" />
     <Content Include="Icons\Buch_White.png" />
+    <Content Include="Icons\HakenGruen.png" />
     <Content Include="Icons\home-symbol-weiss-einfach-isoliert-vector-illustration-rx94tc.jpg" />
     <Content Include="Icons\Home.png" />
     <Content Include="Icons\HomeBLack.png" />
     <Content Include="Icons\Icon_Anwendung_schwarz.ico" />
+    <Content Include="Icons\KreuzRot.png" />
     <Content Include="Icons\Lupe.png" />
     <Content Include="Icons\OIP.jpg" />
     <Content Include="Icons\Sterne_Default.png" />

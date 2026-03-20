@@ -3,9 +3,8 @@ using System.Windows.Forms;
 
 public class UI_Helper : Form
 {
-    protected bool CloseApplicationOnUserClose { get; set; } = true;
+    internal bool CloseApplicationOnUserClose { get; set; } = true;
 
-    
     protected UI_Helper()
     {
         this.FormClosing += FormsGenerals_FormClosing;
@@ -37,7 +36,7 @@ public class UI_Helper : Form
 
 
     // Methode für Sternanzeige
-    public static string GetStarString(int mengeSterne)
+    protected static string GetStarString(int mengeSterne)
     {
         int maxStars = 5;
         string stars = "";
@@ -60,23 +59,8 @@ public class UI_Helper : Form
     }
 
 
-    //Methode für Nutzen von "Enter" auf "normalem" Element des Forms
-    public static void ActionOnClickOrEnter(Control control, Action action)
-    {
-        control.Click += (s,e) => action();
-        control.KeyDown += (s, e) =>
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-                action();
-            }
-        };
-    }
-
     //Methode für Nutzen von "Enter"/Doppelklick auf Datagridview-Zeile des Forms
-    public static void ActionOnDoubleclickOrEnterDatagridview(DataGridView dgv, Action<DataGridViewRow> action)
+    protected static void ActionOnDoubleclickOrEnterDatagridview(DataGridView dgv, Action<DataGridViewRow> action)
     {
         //Für Enter
         dgv.KeyDown += (s, e) =>
@@ -104,6 +88,22 @@ public class UI_Helper : Form
                 dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[0];
                 //Aktion wie Enter, aber mit geklickter Zeile
                 action(dgv.Rows[e.RowIndex]);
+            }
+        };
+    }
+
+
+    //Methode für Nutzen von "Enter" auf "normalem" Element des Forms, falls sinnvoll
+    protected static void ActionOnClickOrEnter(Control control, Action action)
+    {
+        control.Click += (s, e) => action();
+        control.KeyDown += (s, e) =>
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                action();
             }
         };
     }

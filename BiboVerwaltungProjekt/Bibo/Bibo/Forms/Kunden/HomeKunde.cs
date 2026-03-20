@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace Bibo
@@ -20,7 +19,7 @@ namespace Bibo
             _kunde = Globals.CurrentKunde;
             InsertData();
             CursorChangeOnInteractiveElements();
-            SetupEnterClickHandlers();
+            DoubleclickOrEnterOnTable();
         }
 
 
@@ -92,12 +91,7 @@ namespace Bibo
         private void logoutButton_Click(object sender, EventArgs e)
         {
             Globals.CurrentKunde = new Kunde();
-            Globals.SessionLogin = new Login();
-            Globals.SessionLogin.Show();
-
-            //Fenster schließen ohne App zu schließen
-            this.CloseApplicationOnUserClose = false;
-            Close();
+            Globals.NavigateToNextForm<Login>(this);
         }
 
 
@@ -108,13 +102,11 @@ namespace Bibo
             {
                 var row = tableKundeHome.Rows[e.RowIndex];
 
-                string isbn = row.Tag as string;
+                string isbnSelectedBook = row.Tag as string;
 
-                if (!string.IsNullOrEmpty(isbn))
+                if (!string.IsNullOrEmpty(isbnSelectedBook))
                 {
-                    BewertungBuch form = new BewertungBuch(isbn);
-                    form.Show();
-                    Hide();
+                    Globals.NavigateToNextForm<BewertungBuch>(this, isbnSelectedBook);
                 }
                 else
                 {
@@ -126,28 +118,20 @@ namespace Bibo
 
 
         //Doppelklick/Enter auf gewählter Zeile für Buchansicht
-        private void SetupEnterClickHandlers()
+        private void DoubleclickOrEnterOnTable()
         {
             //Weiterleitung an Buchübersicht für ausgewähltes Buch
             ActionOnDoubleclickOrEnterDatagridview(tableKundeHome, row =>
             {
                 string isbnSelectedBook = (string) row.Tag;
-                Buchdaten selectedBook = new Buchdaten(isbnSelectedBook);
-                selectedBook.Show();
-                //Fenster schließen ohne App zu schließen
-                this.CloseApplicationOnUserClose = false;
-                Close();
+                Globals.NavigateToNextForm<Buchdaten>(this, isbnSelectedBook);
             });
         }
 
         //Weiterleitung an Buecherliste
         private void discoverNewButton_Click(object sender, EventArgs e)
         {
-            BuecherlisteKunde form = new BuecherlisteKunde();
-            form.Show();
-            //Fenster schließen ohne App zu schließen
-            this.CloseApplicationOnUserClose = false;
-            Close();
+            Globals.NavigateToNextForm<BuecherlisteKunde>(this);
         }
     }
 }

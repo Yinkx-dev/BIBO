@@ -19,12 +19,8 @@ namespace Bibo
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // LoginForm in Variable speichern
-            Login loginForm = new Login();
-            Globals.SessionLogin = loginForm;
-
             // Run starten
-            Application.Run(new LeihstatusPersonal());
+            Application.Run(new Login());
         }
     }
 }

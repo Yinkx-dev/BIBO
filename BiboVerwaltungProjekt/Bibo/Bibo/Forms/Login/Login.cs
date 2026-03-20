@@ -8,11 +8,12 @@ using System.Linq;
 
 namespace Bibo
 {
-    public partial class Login: Form
+    public partial class Login: UI_Helper
     {
         public Login()
         {
             InitializeComponent();
+            CloseApplicationOnUserClose = true;
         }
 
 
@@ -30,7 +31,6 @@ namespace Bibo
             if (kunde != null)
             {
                 Globals.CurrentKunde = kunde;
-
                 HomeKunde homeKundeForm = new HomeKunde();
                 homeKundeForm.Show();
                 Hide();
