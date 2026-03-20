@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
-    public partial class LeihstatusPersonal : Form
+    public partial class LeihstatusPersonal : UI_Helper
     {
         public LeihstatusPersonal()
         {

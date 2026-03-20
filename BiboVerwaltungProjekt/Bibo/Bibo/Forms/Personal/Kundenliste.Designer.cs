@@ -81,7 +81,7 @@
             this.pictureHome.BackColor = System.Drawing.Color.Transparent;
             this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
-            this.pictureHome.Location = new System.Drawing.Point(481, 4);
+            this.pictureHome.Location = new System.Drawing.Point(500, 4);
             this.pictureHome.Margin = new System.Windows.Forms.Padding(4);
             this.pictureHome.Name = "pictureHome";
             this.pictureHome.Size = new System.Drawing.Size(46, 36);
@@ -129,7 +129,7 @@
             this.textBoxSucheKundenListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSucheKundenListe.Location = new System.Drawing.Point(52, 8);
             this.textBoxSucheKundenListe.Name = "textBoxSucheKundenListe";
-            this.textBoxSucheKundenListe.Size = new System.Drawing.Size(370, 30);
+            this.textBoxSucheKundenListe.Size = new System.Drawing.Size(370, 26);
             this.textBoxSucheKundenListe.TabIndex = 6;
             // 
             // panel2

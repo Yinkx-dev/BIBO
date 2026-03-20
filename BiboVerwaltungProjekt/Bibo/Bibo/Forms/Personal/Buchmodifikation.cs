@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
-    public partial class Buchmodifikation : Form
+    public partial class Buchmodifikation : UI_Helper
     {
         public Buchmodifikation()
         {

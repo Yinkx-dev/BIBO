@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
-    public partial class Kundenliste : Form
+    public partial class Kundenliste : UI_Helper
     {
         public Kundenliste()
         {

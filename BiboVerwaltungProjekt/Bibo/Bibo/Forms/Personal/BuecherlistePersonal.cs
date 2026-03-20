@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
-    public partial class BuecherlistePersonal : Form
+    public partial class BuecherlistePersonal : UI_Helper
     {
         public BuecherlistePersonal()
         {

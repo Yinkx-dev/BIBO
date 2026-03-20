@@ -83,7 +83,7 @@
             this.pictureHome.BackColor = System.Drawing.Color.Transparent;
             this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
-            this.pictureHome.Location = new System.Drawing.Point(430, 0);
+            this.pictureHome.Location = new System.Drawing.Point(454, 0);
             this.pictureHome.Margin = new System.Windows.Forms.Padding(4);
             this.pictureHome.Name = "pictureHome";
             this.pictureHome.Size = new System.Drawing.Size(60, 49);
@@ -110,7 +110,7 @@
             this.textBoxTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTitel.Location = new System.Drawing.Point(158, 134);
             this.textBoxTitel.Name = "textBoxTitel";
-            this.textBoxTitel.Size = new System.Drawing.Size(344, 30);
+            this.textBoxTitel.Size = new System.Drawing.Size(344, 26);
             this.textBoxTitel.TabIndex = 2;
             // 
             // dropdownGenre
@@ -119,7 +119,7 @@
             this.dropdownGenre.FormattingEnabled = true;
             this.dropdownGenre.Location = new System.Drawing.Point(158, 304);
             this.dropdownGenre.Name = "dropdownGenre";
-            this.dropdownGenre.Size = new System.Drawing.Size(344, 33);
+            this.dropdownGenre.Size = new System.Drawing.Size(344, 28);
             this.dropdownGenre.TabIndex = 4;
             // 
             // dropdownAlter
@@ -128,7 +128,7 @@
             this.dropdownAlter.FormattingEnabled = true;
             this.dropdownAlter.Location = new System.Drawing.Point(772, 304);
             this.dropdownAlter.Name = "dropdownAlter";
-            this.dropdownAlter.Size = new System.Drawing.Size(344, 33);
+            this.dropdownAlter.Size = new System.Drawing.Size(344, 28);
             this.dropdownAlter.TabIndex = 7;
             // 
             // panel1
@@ -201,7 +201,7 @@
             this.buttonSpeichernBuchmodi.Location = new System.Drawing.Point(290, 666);
             this.buttonSpeichernBuchmodi.Name = "buttonSpeichernBuchmodi";
             this.buttonSpeichernBuchmodi.Padding = new System.Windows.Forms.Padding(70, 15, 70, 15);
-            this.buttonSpeichernBuchmodi.Size = new System.Drawing.Size(273, 69);
+            this.buttonSpeichernBuchmodi.Size = new System.Drawing.Size(247, 64);
             this.buttonSpeichernBuchmodi.TabIndex = 10;
             this.buttonSpeichernBuchmodi.Text = "Speichern";
             this.buttonSpeichernBuchmodi.UseVisualStyleBackColor = false;
@@ -249,7 +249,7 @@
             this.labelTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitel.Location = new System.Drawing.Point(155, 102);
             this.labelTitel.Name = "labelTitel";
-            this.labelTitel.Size = new System.Drawing.Size(61, 29);
+            this.labelTitel.Size = new System.Drawing.Size(45, 24);
             this.labelTitel.TabIndex = 14;
             this.labelTitel.Text = "Titel";
             // 
@@ -259,7 +259,7 @@
             this.labelISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelISBN.Location = new System.Drawing.Point(769, 102);
             this.labelISBN.Name = "labelISBN";
-            this.labelISBN.Size = new System.Drawing.Size(69, 29);
+            this.labelISBN.Size = new System.Drawing.Size(52, 24);
             this.labelISBN.TabIndex = 15;
             this.labelISBN.Text = "ISBN";
             // 
@@ -269,7 +269,7 @@
             this.labelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAutor.Location = new System.Drawing.Point(155, 174);
             this.labelAutor.Name = "labelAutor";
-            this.labelAutor.Size = new System.Drawing.Size(69, 29);
+            this.labelAutor.Size = new System.Drawing.Size(55, 24);
             this.labelAutor.TabIndex = 16;
             this.labelAutor.Text = "Autor";
             // 
@@ -279,7 +279,7 @@
             this.labelErscheinungsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErscheinungsdatum.Location = new System.Drawing.Point(769, 186);
             this.labelErscheinungsdatum.Name = "labelErscheinungsdatum";
-            this.labelErscheinungsdatum.Size = new System.Drawing.Size(225, 29);
+            this.labelErscheinungsdatum.Size = new System.Drawing.Size(179, 24);
             this.labelErscheinungsdatum.TabIndex = 17;
             this.labelErscheinungsdatum.Text = "Erscheinungsdatum";
             // 
@@ -289,7 +289,7 @@
             this.labelGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGenre.Location = new System.Drawing.Point(155, 272);
             this.labelGenre.Name = "labelGenre";
-            this.labelGenre.Size = new System.Drawing.Size(80, 29);
+            this.labelGenre.Size = new System.Drawing.Size(63, 24);
             this.labelGenre.TabIndex = 18;
             this.labelGenre.Text = "Genre";
             // 
@@ -299,7 +299,7 @@
             this.labelAlter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlter.Location = new System.Drawing.Point(769, 272);
             this.labelAlter.Name = "labelAlter";
-            this.labelAlter.Size = new System.Drawing.Size(151, 29);
+            this.labelAlter.Size = new System.Drawing.Size(118, 24);
             this.labelAlter.TabIndex = 19;
             this.labelAlter.Text = "Altersgruppe";
             // 
@@ -309,7 +309,7 @@
             this.labelKurzbeschreibung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKurzbeschreibung.Location = new System.Drawing.Point(364, 383);
             this.labelKurzbeschreibung.Name = "labelKurzbeschreibung";
-            this.labelKurzbeschreibung.Size = new System.Drawing.Size(208, 29);
+            this.labelKurzbeschreibung.Size = new System.Drawing.Size(165, 24);
             this.labelKurzbeschreibung.TabIndex = 20;
             this.labelKurzbeschreibung.Text = "Kurzbeschreibung";
             // 
@@ -318,7 +318,7 @@
             this.textBoxErscheinungsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxErscheinungsdatum.Location = new System.Drawing.Point(772, 218);
             this.textBoxErscheinungsdatum.Name = "textBoxErscheinungsdatum";
-            this.textBoxErscheinungsdatum.Size = new System.Drawing.Size(344, 30);
+            this.textBoxErscheinungsdatum.Size = new System.Drawing.Size(344, 26);
             this.textBoxErscheinungsdatum.TabIndex = 6;
             // 
             // textBoxAutor
@@ -326,7 +326,7 @@
             this.textBoxAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAutor.Location = new System.Drawing.Point(158, 206);
             this.textBoxAutor.Name = "textBoxAutor";
-            this.textBoxAutor.Size = new System.Drawing.Size(344, 30);
+            this.textBoxAutor.Size = new System.Drawing.Size(344, 26);
             this.textBoxAutor.TabIndex = 3;
             // 
             // textBoxISBN
@@ -334,7 +334,7 @@
             this.textBoxISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxISBN.Location = new System.Drawing.Point(772, 134);
             this.textBoxISBN.Name = "textBoxISBN";
-            this.textBoxISBN.Size = new System.Drawing.Size(344, 30);
+            this.textBoxISBN.Size = new System.Drawing.Size(344, 26);
             this.textBoxISBN.TabIndex = 5;
             // 
             // richTextBoxKurzbeschreibung

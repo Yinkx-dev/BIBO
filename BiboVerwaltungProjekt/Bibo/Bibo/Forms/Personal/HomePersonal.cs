@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
-    public partial class HomePersonal : Form
+    public partial class HomePersonal : UI_Helper
     {
         public HomePersonal()
         {
