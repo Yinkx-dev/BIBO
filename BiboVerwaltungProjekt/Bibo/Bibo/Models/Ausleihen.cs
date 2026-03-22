@@ -16,6 +16,6 @@ namespace Bibo.Models
         public int KundenID { get; set; }
         public string ISBN { get; set; }
         public string Ausleihdatum { get; set; }
-        public string Rueckgabedatum { get; set; }
+        public string Rueckgabedatum { get; set; } = "";
     }
 }

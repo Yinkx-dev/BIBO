@@ -102,7 +102,7 @@
             // buttonHomeBuecherlisteKunde
             // 
             this.buttonHomeBuecherlisteKunde.Image = ((System.Drawing.Image)(resources.GetObject("buttonHomeBuecherlisteKunde.Image")));
-            this.buttonHomeBuecherlisteKunde.Location = new System.Drawing.Point(-1, -1);
+            this.buttonHomeBuecherlisteKunde.Location = new System.Drawing.Point(-1, 2);
             this.buttonHomeBuecherlisteKunde.Name = "buttonHomeBuecherlisteKunde";
             this.buttonHomeBuecherlisteKunde.Size = new System.Drawing.Size(49, 38);
             this.buttonHomeBuecherlisteKunde.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -184,7 +184,7 @@
             this.tableBuecherliste.RowTemplate.Height = 75;
             this.tableBuecherliste.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableBuecherliste.Size = new System.Drawing.Size(1236, 628);
-            this.tableBuecherliste.TabIndex = 1;
+            this.tableBuecherliste.TabIndex = 10;
             // 
             // colBewertung
             // 
@@ -291,7 +291,7 @@
             this.textBoxSucheBuecherlisteKunde.Location = new System.Drawing.Point(46, 9);
             this.textBoxSucheBuecherlisteKunde.Name = "textBoxSucheBuecherlisteKunde";
             this.textBoxSucheBuecherlisteKunde.Size = new System.Drawing.Size(370, 26);
-            this.textBoxSucheBuecherlisteKunde.TabIndex = 6;
+            this.textBoxSucheBuecherlisteKunde.TabIndex = 0;
             this.textBoxSucheBuecherlisteKunde.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSucheBuecherlisteKunde_KeyDown);
             // 
             // BuecherlisteKunde

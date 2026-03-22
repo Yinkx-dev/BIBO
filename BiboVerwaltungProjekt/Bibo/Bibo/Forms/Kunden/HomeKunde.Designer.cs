@@ -43,16 +43,16 @@
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.tableKundeHome = new System.Windows.Forms.DataGridView();
-            this.colCover = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLeihfrist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBewertung = new System.Windows.Forms.DataGridViewImageColumn();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
             this.panelTable = new System.Windows.Forms.Panel();
             this.birthdateText = new System.Windows.Forms.Label();
             this.nameText = new System.Windows.Forms.Label();
             this.addressText = new System.Windows.Forms.Label();
+            this.colCover = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLeihfrist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBewertung = new System.Windows.Forms.DataGridViewImageColumn();
             this.homeHeaderBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
@@ -228,53 +228,6 @@
             this.tableKundeHome.TabIndex = 0;
             this.tableKundeHome.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundeHome_CellMouseClick);
             // 
-            // colCover
-            // 
-            this.colCover.FillWeight = 30F;
-            this.colCover.HeaderText = "Cover";
-            this.colCover.Image = ((System.Drawing.Image)(resources.GetObject("colCover.Image")));
-            this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colCover.MinimumWidth = 6;
-            this.colCover.Name = "colCover";
-            this.colCover.ReadOnly = true;
-            this.colCover.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colTitle
-            // 
-            this.colTitle.HeaderText = "Titel";
-            this.colTitle.MinimumWidth = 6;
-            this.colTitle.Name = "colTitle";
-            this.colTitle.ReadOnly = true;
-            // 
-            // colAutor
-            // 
-            this.colAutor.FillWeight = 25F;
-            this.colAutor.HeaderText = "Autor";
-            this.colAutor.MinimumWidth = 6;
-            this.colAutor.Name = "colAutor";
-            this.colAutor.ReadOnly = true;
-            // 
-            // colLeihfrist
-            // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colLeihfrist.FillWeight = 25F;
-            this.colLeihfrist.HeaderText = "Leihfrist";
-            this.colLeihfrist.MinimumWidth = 6;
-            this.colLeihfrist.Name = "colLeihfrist";
-            this.colLeihfrist.ReadOnly = true;
-            // 
-            // colBewertung
-            // 
-            this.colBewertung.FillWeight = 25F;
-            this.colBewertung.HeaderText = "Rezension schreiben";
-            this.colBewertung.Image = ((System.Drawing.Image)(resources.GetObject("colBewertung.Image")));
-            this.colBewertung.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colBewertung.MinimumWidth = 6;
-            this.colBewertung.Name = "colBewertung";
-            this.colBewertung.ReadOnly = true;
-            // 
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
@@ -322,6 +275,53 @@
             this.addressText.Size = new System.Drawing.Size(85, 17);
             this.addressText.TabIndex = 16;
             this.addressText.Text = "Adreseeeee";
+            // 
+            // colCover
+            // 
+            this.colCover.FillWeight = 30F;
+            this.colCover.HeaderText = "Cover";
+            this.colCover.Image = ((System.Drawing.Image)(resources.GetObject("colCover.Image")));
+            this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colCover.MinimumWidth = 6;
+            this.colCover.Name = "colCover";
+            this.colCover.ReadOnly = true;
+            this.colCover.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colTitle
+            // 
+            this.colTitle.HeaderText = "Titel";
+            this.colTitle.MinimumWidth = 6;
+            this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
+            // 
+            // colAutor
+            // 
+            this.colAutor.FillWeight = 25F;
+            this.colAutor.HeaderText = "Autor";
+            this.colAutor.MinimumWidth = 6;
+            this.colAutor.Name = "colAutor";
+            this.colAutor.ReadOnly = true;
+            // 
+            // colLeihfrist
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colLeihfrist.FillWeight = 25F;
+            this.colLeihfrist.HeaderText = "Leihfrist";
+            this.colLeihfrist.MinimumWidth = 6;
+            this.colLeihfrist.Name = "colLeihfrist";
+            this.colLeihfrist.ReadOnly = true;
+            // 
+            // colBewertung
+            // 
+            this.colBewertung.FillWeight = 25F;
+            this.colBewertung.HeaderText = "Rezension schreiben";
+            this.colBewertung.Image = ((System.Drawing.Image)(resources.GetObject("colBewertung.Image")));
+            this.colBewertung.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colBewertung.MinimumWidth = 6;
+            this.colBewertung.Name = "colBewertung";
+            this.colBewertung.ReadOnly = true;
             // 
             // HomeKunde
             // 

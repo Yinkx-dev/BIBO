@@ -14,10 +14,10 @@ namespace Bibo.Models
         [Key]
         public int BewertungsID { get; set; }
         public int BuchID { get; set; }
+        public int KundenID { get; set; }
         public int Sterne { get; set; }
         public string Ueberschrift { get; set; }
         public string Text { get; set; }
-        public string Name { get; set; }
         public string Datum { get; set; }
         public bool MitName { get; set; }
     }

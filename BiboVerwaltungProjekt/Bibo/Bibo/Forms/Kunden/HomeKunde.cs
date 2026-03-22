@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 
@@ -67,8 +68,21 @@ namespace Bibo
 
                 dgvRow.Cells["colTitle"].Value = buch.Titel;
                 dgvRow.Cells["colAutor"].Value = buch.Autor;
-                dgvRow.Cells["colLeihfrist"].Value = DateTime.Parse(buch.Rueckgabedatum);
+
+                //TryParseExact falls Datum Fehler/null
+                DateTime datum;
+                if (DateTime.TryParseExact(buch.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out datum))
+                {
+                    dgvRow.Cells["colLeihfrist"].Value = datum;
+                }
+                else
+                {
+                    dgvRow.Cells["colLeihfrist"].Value = "66.66.6666";
+                }
+
+                //Bewertungs-"Button"
                 dgvRow.Cells["colBewertung"].Value = Image.FromFile($@"..\..\Icons\Bewertung_Black.png");
+
                 //ISBN "speichern"
                 dgvRow.Tag = buch.ISBN;
             }
