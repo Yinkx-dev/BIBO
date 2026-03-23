@@ -142,6 +142,7 @@
     <Compile Include="Models\Buch.cs" />
     <Compile Include="Core\Globals.cs" />
     <Compile Include="Services\BuchdatenService.cs" />
+    <Compile Include="ViewModels\BewertungBuchViewModel.cs" />
     <Compile Include="ViewModels\BuchdatenViewModel.cs" />
     <Compile Include="ViewModels\BuecherlisteViewModel.cs" />
     <Compile Include="Models\Kunde.cs" />

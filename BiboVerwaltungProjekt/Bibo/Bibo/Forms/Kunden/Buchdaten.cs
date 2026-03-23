@@ -4,14 +4,9 @@ using Bibo.Services;
 using Bibo.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibo
@@ -199,13 +194,25 @@ namespace Bibo
         //Zu BewertungBuch
         private void buttonBewertungSchreiben_Click(object sender, EventArgs e)
         {
+            //Bewertung von CurrentKunde vorhanden
             if (buchdaten.HatCurrentKundeBewertet)
             {
-                Globals.NavigateToNextForm<BewertungBuch>(this, buchdaten.BewertungCurrentKunde);
+                BewertungBuchViewModel viewModelBewBuch = new BewertungBuchViewModel
+                {
+                    selectedBook = buchdaten.Buch,
+                    bewertungBuch = buchdaten.BewertungCurrentKunde,
+                    vorhandeneBewBearbeiten = buchdaten.HatCurrentKundeBewertet
+                };
+                Globals.NavigateToNextForm<BewertungBuch>(this, viewModelBewBuch);
             }
+            //CurrentKunde hat Buch noch nicht bewertet
             else
             {
-                Globals.NavigateToNextForm<BewertungBuch>(this, new Bewertung());
+                BewertungBuchViewModel viewModelBewBuch = new BewertungBuchViewModel
+                {
+                    selectedBook = buchdaten.Buch,
+                };
+                Globals.NavigateToNextForm<BewertungBuch>(this, viewModelBewBuch);
             }
         }
 

@@ -12,7 +12,7 @@ public class Database
         _connectionString = connectionString;
     }
 
-    // Einzelne Objekte
+    // Einzelne Objekte aus db holen
     public T QuerySingle<T>(string sql, object param = null)
     {
         using (var conn = new SQLiteConnection(_connectionString))
@@ -22,7 +22,7 @@ public class Database
         }
     }
 
-    // Listen
+    // Listen aus db holen
     public List<T> QueryList<T>(string sql, object param = null)
     {
         using (var conn = new SQLiteConnection(_connectionString))

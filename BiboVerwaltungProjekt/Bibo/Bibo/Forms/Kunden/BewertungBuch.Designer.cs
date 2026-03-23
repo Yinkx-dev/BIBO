@@ -29,430 +29,610 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BewertungBuch));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dropdownSternezahl = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelAnonymJaNein = new System.Windows.Forms.Panel();
+            this.radioButtonAnonymNein = new System.Windows.Forms.RadioButton();
+            this.radioButtonAnonymJa = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.homeHeaderBackground = new System.Windows.Forms.Panel();
+            this.pictureHome = new System.Windows.Forms.PictureBox();
+            this.homeText = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonHomeBewertung = new System.Windows.Forms.PictureBox();
+            this.panelBeschreibung = new System.Windows.Forms.Panel();
+            this.richTextBoxBeschreibung = new System.Windows.Forms.RichTextBox();
+            this.panelTitel = new System.Windows.Forms.Panel();
+            this.richTextBoxTitel = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonZurueckBuecherliste = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelInfos = new System.Windows.Forms.Panel();
+            this.richTextBoxInfos = new System.Windows.Forms.RichTextBox();
+            this.panelCover = new System.Windows.Forms.Panel();
+            this.pictureBoxCover = new System.Windows.Forms.PictureBox();
+            this.buttonAbbrechenBewertung = new System.Windows.Forms.Button();
+            this.buttonSpeichernBewertung = new System.Windows.Forms.Button();
+            this.textBoxTitelBewertung = new System.Windows.Forms.TextBox();
+            this.richTextBoxTextBewertung = new System.Windows.Forms.RichTextBox();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panelAnonymJaNein.SuspendLayout();
+            this.homeHeaderBackground.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBewertung)).BeginInit();
+            this.panelBeschreibung.SuspendLayout();
+            this.panelTitel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckBuecherliste)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panelInfos.SuspendLayout();
+            this.panelCover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(87)))), ((int)(((byte)(138)))));
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(803, 42);
-            this.panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(295, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(335, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bewertung";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(261, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Bewertung von";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(342, 114);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(326, 41);
-            this.panel2.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "label7";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(342, 155);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(326, 41);
-            this.panel3.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "label8";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(65, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(153, 144);
-            this.panel4.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(14, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(126, 121);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(262, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Buchtitel:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(262, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Autor:";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Controls.Add(this.richTextBox1);
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(65, 252);
+            this.panel5.Location = new System.Drawing.Point(223, 349);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(603, 240);
+            this.panel5.Size = new System.Drawing.Size(819, 280);
             this.panel5.TabIndex = 8;
             // 
-            // richTextBox1
+            // panel4
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(10, 70);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(581, 163);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel10);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.panel8);
+            this.panel4.Location = new System.Drawing.Point(-1, -1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(819, 280);
+            this.panel4.TabIndex = 9;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.richTextBoxTextBewertung);
+            this.panel10.Location = new System.Drawing.Point(26, 131);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(762, 125);
+            this.panel10.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(22, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Text der Bewertung";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.textBoxTitelBewertung);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(819, 88);
+            this.panel8.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Titel der Bewertung:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.dropdownSternezahl);
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Location = new System.Drawing.Point(-2, -2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(494, 38);
+            this.panel9.TabIndex = 0;
+            // 
+            // dropdownSternezahl
+            // 
+            this.dropdownSternezahl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropdownSternezahl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSternezahl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dropdownSternezahl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropdownSternezahl.FormattingEnabled = true;
+            this.dropdownSternezahl.Location = new System.Drawing.Point(218, 2);
+            this.dropdownSternezahl.Name = "dropdownSternezahl";
+            this.dropdownSternezahl.Size = new System.Drawing.Size(263, 33);
+            this.dropdownSternezahl.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(190, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Anzahl Sterne auswählen";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Text der Bewertung";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(603, 66);
+            this.panel6.Size = new System.Drawing.Size(819, 88);
             this.panel6.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1, 41);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 18);
+            this.label6.Size = new System.Drawing.Size(179, 24);
             this.label6.TabIndex = 3;
             this.label6.Text = "Titel der Bewertung:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 24);
-            this.textBox1.TabIndex = 2;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Controls.Add(this.label5);
-            this.panel8.Controls.Add(this.checkBox2);
-            this.panel8.Controls.Add(this.checkBox1);
-            this.panel8.Location = new System.Drawing.Point(388, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(215, 30);
-            this.panel8.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 18);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Anonym";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(152, 7);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(48, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Nein";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(105, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(37, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Ja";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Controls.Add(this.pictureBox6);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Controls.Add(this.pictureBox4);
-            this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(-2, -2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(178, 31);
+            this.panel7.Size = new System.Drawing.Size(494, 38);
             this.panel7.TabIndex = 0;
             // 
-            // pictureBox7
+            // label2
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(139, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Anzahl Sterne auswählen";
             // 
-            // pictureBox6
+            // panelAnonymJaNein
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(108, 0);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
+            this.panelAnonymJaNein.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelAnonymJaNein.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAnonymJaNein.Controls.Add(this.radioButtonAnonymNein);
+            this.panelAnonymJaNein.Controls.Add(this.radioButtonAnonymJa);
+            this.panelAnonymJaNein.Controls.Add(this.label5);
+            this.panelAnonymJaNein.Location = new System.Drawing.Point(715, 349);
+            this.panelAnonymJaNein.Name = "panelAnonymJaNein";
+            this.panelAnonymJaNein.Size = new System.Drawing.Size(327, 38);
+            this.panelAnonymJaNein.TabIndex = 1;
             // 
-            // pictureBox5
+            // radioButtonAnonymNein
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(72, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
+            this.radioButtonAnonymNein.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAnonymNein.AutoSize = true;
+            this.radioButtonAnonymNein.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButtonAnonymNein.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(191)))));
+            this.radioButtonAnonymNein.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButtonAnonymNein.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonAnonymNein.Location = new System.Drawing.Point(243, 2);
+            this.radioButtonAnonymNein.Name = "radioButtonAnonymNein";
+            this.radioButtonAnonymNein.Size = new System.Drawing.Size(53, 32);
+            this.radioButtonAnonymNein.TabIndex = 4;
+            this.radioButtonAnonymNein.TabStop = true;
+            this.radioButtonAnonymNein.Text = "Nein";
+            this.radioButtonAnonymNein.UseVisualStyleBackColor = false;
             // 
-            // pictureBox4
+            // radioButtonAnonymJa
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(36, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
+            this.radioButtonAnonymJa.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAnonymJa.AutoSize = true;
+            this.radioButtonAnonymJa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButtonAnonymJa.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(191)))));
+            this.radioButtonAnonymJa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButtonAnonymJa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonAnonymJa.Location = new System.Drawing.Point(162, 2);
+            this.radioButtonAnonymJa.Name = "radioButtonAnonymJa";
+            this.radioButtonAnonymJa.Size = new System.Drawing.Size(38, 32);
+            this.radioButtonAnonymJa.TabIndex = 3;
+            this.radioButtonAnonymJa.TabStop = true;
+            this.radioButtonAnonymJa.Text = "Ja";
+            this.radioButtonAnonymJa.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // label5
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(41, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Anonym";
             // 
-            // pictureBox8
+            // homeHeaderBackground
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(745, 48);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(40, 24);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 9;
-            this.pictureBox8.TabStop = false;
+            this.homeHeaderBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(87)))), ((int)(((byte)(138)))));
+            this.homeHeaderBackground.Controls.Add(this.pictureHome);
+            this.homeHeaderBackground.Controls.Add(this.homeText);
+            this.homeHeaderBackground.Dock = System.Windows.Forms.DockStyle.Top;
+            this.homeHeaderBackground.Location = new System.Drawing.Point(0, 0);
+            this.homeHeaderBackground.Margin = new System.Windows.Forms.Padding(4);
+            this.homeHeaderBackground.Name = "homeHeaderBackground";
+            this.homeHeaderBackground.Size = new System.Drawing.Size(1264, 49);
+            this.homeHeaderBackground.TabIndex = 17;
             // 
-            // button1
+            // pictureHome
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(438, 515);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Speichern";
-            this.button1.UseVisualStyleBackColor = false;
+            this.pictureHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureHome.BackColor = System.Drawing.Color.Transparent;
+            this.pictureHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureHome.Image")));
+            this.pictureHome.Location = new System.Drawing.Point(484, 0);
+            this.pictureHome.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureHome.Name = "pictureHome";
+            this.pictureHome.Size = new System.Drawing.Size(52, 45);
+            this.pictureHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureHome.TabIndex = 1;
+            this.pictureHome.TabStop = false;
             // 
-            // button2
+            // homeText
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(65, 515);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(230, 33);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Abbrechen";
-            this.button2.UseVisualStyleBackColor = false;
+            this.homeText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeText.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.homeText.Location = new System.Drawing.Point(0, 0);
+            this.homeText.Margin = new System.Windows.Forms.Padding(0);
+            this.homeText.MinimumSize = new System.Drawing.Size(120, 38);
+            this.homeText.Name = "homeText";
+            this.homeText.Size = new System.Drawing.Size(1264, 49);
+            this.homeText.TabIndex = 0;
+            this.homeText.Text = "Bewertung von";
+            this.homeText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.buttonHomeBewertung);
+            this.panel3.Location = new System.Drawing.Point(1182, 98);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(49, 42);
+            this.panel3.TabIndex = 36;
+            // 
+            // buttonHomeBewertung
+            // 
+            this.buttonHomeBewertung.Image = ((System.Drawing.Image)(resources.GetObject("buttonHomeBewertung.Image")));
+            this.buttonHomeBewertung.Location = new System.Drawing.Point(-1, 2);
+            this.buttonHomeBewertung.Name = "buttonHomeBewertung";
+            this.buttonHomeBewertung.Size = new System.Drawing.Size(49, 38);
+            this.buttonHomeBewertung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonHomeBewertung.TabIndex = 11;
+            this.buttonHomeBewertung.TabStop = false;
+            this.buttonHomeBewertung.Click += new System.EventHandler(this.buttonHomeBewertung_Click);
+            // 
+            // panelBeschreibung
+            // 
+            this.panelBeschreibung.BackColor = System.Drawing.Color.LightGray;
+            this.panelBeschreibung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBeschreibung.Controls.Add(this.richTextBoxBeschreibung);
+            this.panelBeschreibung.Location = new System.Drawing.Point(267, 172);
+            this.panelBeschreibung.Name = "panelBeschreibung";
+            this.panelBeschreibung.Padding = new System.Windows.Forms.Padding(12, 6, 10, 5);
+            this.panelBeschreibung.Size = new System.Drawing.Size(880, 137);
+            this.panelBeschreibung.TabIndex = 29;
+            // 
+            // richTextBoxBeschreibung
+            // 
+            this.richTextBoxBeschreibung.BackColor = System.Drawing.Color.LightGray;
+            this.richTextBoxBeschreibung.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxBeschreibung.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBoxBeschreibung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxBeschreibung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxBeschreibung.Location = new System.Drawing.Point(12, 6);
+            this.richTextBoxBeschreibung.Name = "richTextBoxBeschreibung";
+            this.richTextBoxBeschreibung.ReadOnly = true;
+            this.richTextBoxBeschreibung.Size = new System.Drawing.Size(856, 124);
+            this.richTextBoxBeschreibung.TabIndex = 2;
+            this.richTextBoxBeschreibung.TabStop = false;
+            this.richTextBoxBeschreibung.Text = "";
+            // 
+            // panelTitel
+            // 
+            this.panelTitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.panelTitel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTitel.Controls.Add(this.richTextBoxTitel);
+            this.panelTitel.Location = new System.Drawing.Point(267, 98);
+            this.panelTitel.Name = "panelTitel";
+            this.panelTitel.Padding = new System.Windows.Forms.Padding(10, 8, 10, 5);
+            this.panelTitel.Size = new System.Drawing.Size(880, 44);
+            this.panelTitel.TabIndex = 31;
+            // 
+            // richTextBoxTitel
+            // 
+            this.richTextBoxTitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.richTextBoxTitel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTitel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBoxTitel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxTitel.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxTitel.Location = new System.Drawing.Point(10, 8);
+            this.richTextBoxTitel.Name = "richTextBoxTitel";
+            this.richTextBoxTitel.ReadOnly = true;
+            this.richTextBoxTitel.Size = new System.Drawing.Size(858, 29);
+            this.richTextBoxTitel.TabIndex = 0;
+            this.richTextBoxTitel.TabStop = false;
+            this.richTextBoxTitel.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonZurueckBuecherliste);
+            this.panel1.Location = new System.Drawing.Point(1182, 172);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(49, 42);
+            this.panel1.TabIndex = 30;
+            // 
+            // buttonZurueckBuecherliste
+            // 
+            this.buttonZurueckBuecherliste.Image = ((System.Drawing.Image)(resources.GetObject("buttonZurueckBuecherliste.Image")));
+            this.buttonZurueckBuecherliste.Location = new System.Drawing.Point(3, 2);
+            this.buttonZurueckBuecherliste.Name = "buttonZurueckBuecherliste";
+            this.buttonZurueckBuecherliste.Size = new System.Drawing.Size(41, 35);
+            this.buttonZurueckBuecherliste.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonZurueckBuecherliste.TabIndex = 11;
+            this.buttonZurueckBuecherliste.TabStop = false;
+            this.buttonZurueckBuecherliste.Click += new System.EventHandler(this.buttonZurueckBuecherliste_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panelInfos);
+            this.panel2.Location = new System.Drawing.Point(267, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(880, 211);
+            this.panel2.TabIndex = 28;
+            // 
+            // panelInfos
+            // 
+            this.panelInfos.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInfos.Controls.Add(this.richTextBoxInfos);
+            this.panelInfos.Location = new System.Drawing.Point(-1, 43);
+            this.panelInfos.Name = "panelInfos";
+            this.panelInfos.Padding = new System.Windows.Forms.Padding(10, 6, 10, 5);
+            this.panelInfos.Size = new System.Drawing.Size(880, 30);
+            this.panelInfos.TabIndex = 9;
+            // 
+            // richTextBoxInfos
+            // 
+            this.richTextBoxInfos.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.richTextBoxInfos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxInfos.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBoxInfos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxInfos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxInfos.ForeColor = System.Drawing.Color.White;
+            this.richTextBoxInfos.Location = new System.Drawing.Point(10, 6);
+            this.richTextBoxInfos.Name = "richTextBoxInfos";
+            this.richTextBoxInfos.ReadOnly = true;
+            this.richTextBoxInfos.Size = new System.Drawing.Size(858, 17);
+            this.richTextBoxInfos.TabIndex = 1;
+            this.richTextBoxInfos.TabStop = false;
+            this.richTextBoxInfos.Text = "";
+            // 
+            // panelCover
+            // 
+            this.panelCover.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelCover.Controls.Add(this.pictureBoxCover);
+            this.panelCover.Location = new System.Drawing.Point(54, 98);
+            this.panelCover.Name = "panelCover";
+            this.panelCover.Padding = new System.Windows.Forms.Padding(6);
+            this.panelCover.Size = new System.Drawing.Size(154, 211);
+            this.panelCover.TabIndex = 27;
+            // 
+            // pictureBoxCover
+            // 
+            this.pictureBoxCover.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxCover.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCover.Image")));
+            this.pictureBoxCover.Location = new System.Drawing.Point(6, 6);
+            this.pictureBoxCover.Name = "pictureBoxCover";
+            this.pictureBoxCover.Size = new System.Drawing.Size(142, 199);
+            this.pictureBoxCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCover.TabIndex = 0;
+            this.pictureBoxCover.TabStop = false;
+            // 
+            // buttonAbbrechenBewertung
+            // 
+            this.buttonAbbrechenBewertung.AutoSize = true;
+            this.buttonAbbrechenBewertung.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.buttonAbbrechenBewertung.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAbbrechenBewertung.FlatAppearance.BorderSize = 0;
+            this.buttonAbbrechenBewertung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAbbrechenBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAbbrechenBewertung.Location = new System.Drawing.Point(682, 666);
+            this.buttonAbbrechenBewertung.Name = "buttonAbbrechenBewertung";
+            this.buttonAbbrechenBewertung.Padding = new System.Windows.Forms.Padding(70, 15, 70, 15);
+            this.buttonAbbrechenBewertung.Size = new System.Drawing.Size(282, 71);
+            this.buttonAbbrechenBewertung.TabIndex = 38;
+            this.buttonAbbrechenBewertung.Text = "Abbrechen";
+            this.buttonAbbrechenBewertung.UseVisualStyleBackColor = false;
+            this.buttonAbbrechenBewertung.Click += new System.EventHandler(this.buttonAbbrechenBewertung_Click);
+            // 
+            // buttonSpeichernBewertung
+            // 
+            this.buttonSpeichernBewertung.AutoSize = true;
+            this.buttonSpeichernBewertung.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonSpeichernBewertung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.buttonSpeichernBewertung.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSpeichernBewertung.FlatAppearance.BorderSize = 0;
+            this.buttonSpeichernBewertung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSpeichernBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSpeichernBewertung.Location = new System.Drawing.Point(284, 666);
+            this.buttonSpeichernBewertung.Name = "buttonSpeichernBewertung";
+            this.buttonSpeichernBewertung.Padding = new System.Windows.Forms.Padding(70, 15, 70, 15);
+            this.buttonSpeichernBewertung.Size = new System.Drawing.Size(247, 64);
+            this.buttonSpeichernBewertung.TabIndex = 37;
+            this.buttonSpeichernBewertung.Text = "Speichern";
+            this.buttonSpeichernBewertung.UseVisualStyleBackColor = false;
+            this.buttonSpeichernBewertung.Click += new System.EventHandler(this.buttonSpeichernBewertung_Click);
+            // 
+            // textBoxTitelBewertung
+            // 
+            this.textBoxTitelBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxTitelBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitelBewertung.Location = new System.Drawing.Point(202, 47);
+            this.textBoxTitelBewertung.Name = "textBoxTitelBewertung";
+            this.textBoxTitelBewertung.Size = new System.Drawing.Size(585, 29);
+            this.textBoxTitelBewertung.TabIndex = 4;
+            // 
+            // richTextBoxTextBewertung
+            // 
+            this.richTextBoxTextBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBoxTextBewertung.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTextBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxTextBewertung.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxTextBewertung.Name = "richTextBoxTextBewertung";
+            this.richTextBoxTextBewertung.Size = new System.Drawing.Size(760, 123);
+            this.richTextBoxTextBewertung.TabIndex = 0;
+            this.richTextBoxTextBewertung.Text = "";
             // 
             // BewertungBuch
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.buttonAbbrechenBewertung);
+            this.Controls.Add(this.buttonSpeichernBewertung);
+            this.Controls.Add(this.panelAnonymJaNein);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panelBeschreibung);
+            this.Controls.Add(this.panelTitel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelCover);
+            this.Controls.Add(this.homeHeaderBackground);
+            this.Controls.Add(this.panel5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "BewertungBuch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bibo";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.BewertungBuch_Load);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel7.PerformLayout();
+            this.panelAnonymJaNein.ResumeLayout(false);
+            this.panelAnonymJaNein.PerformLayout();
+            this.homeHeaderBackground.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBewertung)).EndInit();
+            this.panelBeschreibung.ResumeLayout(false);
+            this.panelTitel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckBuecherliste)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panelInfos.ResumeLayout(false);
+            this.panelCover.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panelAnonymJaNein;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel homeHeaderBackground;
+        private System.Windows.Forms.PictureBox pictureHome;
+        private System.Windows.Forms.Label homeText;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox buttonHomeBewertung;
+        private System.Windows.Forms.Panel panelBeschreibung;
+        private System.Windows.Forms.RichTextBox richTextBoxBeschreibung;
+        private System.Windows.Forms.Panel panelTitel;
+        private System.Windows.Forms.RichTextBox richTextBoxTitel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox buttonZurueckBuecherliste;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelInfos;
+        private System.Windows.Forms.RichTextBox richTextBoxInfos;
+        private System.Windows.Forms.Panel panelCover;
+        private System.Windows.Forms.PictureBox pictureBoxCover;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonAbbrechenBewertung;
+        private System.Windows.Forms.Button buttonSpeichernBewertung;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton radioButtonAnonymNein;
+        private System.Windows.Forms.RadioButton radioButtonAnonymJa;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.ComboBox dropdownSternezahl;
+        private System.Windows.Forms.TextBox textBoxTitelBewertung;
+        private System.Windows.Forms.RichTextBox richTextBoxTextBewertung;
     }
 }
