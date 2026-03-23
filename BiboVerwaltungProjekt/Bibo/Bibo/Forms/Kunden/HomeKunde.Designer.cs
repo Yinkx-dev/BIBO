@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeKunde));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.homeHeaderBackground = new System.Windows.Forms.Panel();
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.homeText = new System.Windows.Forms.Label();
@@ -43,21 +43,23 @@
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.sqLiteCommandBuilder1 = new System.Data.SQLite.SQLiteCommandBuilder();
             this.tableKundeHome = new System.Windows.Forms.DataGridView();
-            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.panelTable = new System.Windows.Forms.Panel();
-            this.birthdateText = new System.Windows.Forms.Label();
-            this.nameText = new System.Windows.Forms.Label();
-            this.addressText = new System.Windows.Forms.Label();
             this.colCover = new System.Windows.Forms.DataGridViewImageColumn();
             this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLeihfrist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBewertung = new System.Windows.Forms.DataGridViewImageColumn();
+            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.panelTable = new System.Windows.Forms.Panel();
+            this.birthdateText = new System.Windows.Forms.Label();
+            this.nameText = new System.Windows.Forms.Label();
+            this.addressText = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.homeHeaderBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).BeginInit();
             this.panelTable.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // homeHeaderBackground
@@ -167,7 +169,7 @@
             // logoutButton
             // 
             this.logoutButton.Image = ((System.Drawing.Image)(resources.GetObject("logoutButton.Image")));
-            this.logoutButton.Location = new System.Drawing.Point(1211, 60);
+            this.logoutButton.Location = new System.Drawing.Point(4, 3);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(38, 34);
@@ -188,14 +190,14 @@
             this.tableKundeHome.AllowUserToResizeColumns = false;
             this.tableKundeHome.AllowUserToResizeRows = false;
             this.tableKundeHome.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableKundeHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableKundeHome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.tableKundeHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableKundeHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCover,
@@ -203,15 +205,15 @@
             this.colAutor,
             this.colLeihfrist,
             this.colBewertung});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableKundeHome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableKundeHome.DefaultCellStyle = dataGridViewCellStyle6;
             this.tableKundeHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableKundeHome.EnableHeadersVisualStyles = false;
             this.tableKundeHome.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -227,6 +229,53 @@
             this.tableKundeHome.Size = new System.Drawing.Size(1236, 476);
             this.tableKundeHome.TabIndex = 0;
             this.tableKundeHome.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundeHome_CellMouseClick);
+            // 
+            // colCover
+            // 
+            this.colCover.FillWeight = 30F;
+            this.colCover.HeaderText = "Cover";
+            this.colCover.Image = ((System.Drawing.Image)(resources.GetObject("colCover.Image")));
+            this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colCover.MinimumWidth = 6;
+            this.colCover.Name = "colCover";
+            this.colCover.ReadOnly = true;
+            this.colCover.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colTitle
+            // 
+            this.colTitle.HeaderText = "Titel";
+            this.colTitle.MinimumWidth = 6;
+            this.colTitle.Name = "colTitle";
+            this.colTitle.ReadOnly = true;
+            // 
+            // colAutor
+            // 
+            this.colAutor.FillWeight = 25F;
+            this.colAutor.HeaderText = "Autor";
+            this.colAutor.MinimumWidth = 6;
+            this.colAutor.Name = "colAutor";
+            this.colAutor.ReadOnly = true;
+            // 
+            // colLeihfrist
+            // 
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colLeihfrist.FillWeight = 25F;
+            this.colLeihfrist.HeaderText = "Leihfrist";
+            this.colLeihfrist.MinimumWidth = 6;
+            this.colLeihfrist.Name = "colLeihfrist";
+            this.colLeihfrist.ReadOnly = true;
+            // 
+            // colBewertung
+            // 
+            this.colBewertung.FillWeight = 25F;
+            this.colBewertung.HeaderText = "Rezension schreiben";
+            this.colBewertung.Image = ((System.Drawing.Image)(resources.GetObject("colBewertung.Image")));
+            this.colBewertung.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colBewertung.MinimumWidth = 6;
+            this.colBewertung.Name = "colBewertung";
+            this.colBewertung.ReadOnly = true;
             // 
             // sqLiteCommand1
             // 
@@ -276,52 +325,15 @@
             this.addressText.TabIndex = 16;
             this.addressText.Text = "Adreseeeee";
             // 
-            // colCover
+            // panel3
             // 
-            this.colCover.FillWeight = 30F;
-            this.colCover.HeaderText = "Cover";
-            this.colCover.Image = ((System.Drawing.Image)(resources.GetObject("colCover.Image")));
-            this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colCover.MinimumWidth = 6;
-            this.colCover.Name = "colCover";
-            this.colCover.ReadOnly = true;
-            this.colCover.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colTitle
-            // 
-            this.colTitle.HeaderText = "Titel";
-            this.colTitle.MinimumWidth = 6;
-            this.colTitle.Name = "colTitle";
-            this.colTitle.ReadOnly = true;
-            // 
-            // colAutor
-            // 
-            this.colAutor.FillWeight = 25F;
-            this.colAutor.HeaderText = "Autor";
-            this.colAutor.MinimumWidth = 6;
-            this.colAutor.Name = "colAutor";
-            this.colAutor.ReadOnly = true;
-            // 
-            // colLeihfrist
-            // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colLeihfrist.FillWeight = 25F;
-            this.colLeihfrist.HeaderText = "Leihfrist";
-            this.colLeihfrist.MinimumWidth = 6;
-            this.colLeihfrist.Name = "colLeihfrist";
-            this.colLeihfrist.ReadOnly = true;
-            // 
-            // colBewertung
-            // 
-            this.colBewertung.FillWeight = 25F;
-            this.colBewertung.HeaderText = "Rezension schreiben";
-            this.colBewertung.Image = ((System.Drawing.Image)(resources.GetObject("colBewertung.Image")));
-            this.colBewertung.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colBewertung.MinimumWidth = 6;
-            this.colBewertung.Name = "colBewertung";
-            this.colBewertung.ReadOnly = true;
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.logoutButton);
+            this.panel3.Location = new System.Drawing.Point(1200, 54);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(49, 42);
+            this.panel3.TabIndex = 37;
             // 
             // HomeKunde
             // 
@@ -329,10 +341,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.addressText);
             this.Controls.Add(this.nameText);
             this.Controls.Add(this.birthdateText);
-            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.discoverNewButton);
             this.Controls.Add(this.addressHeader);
             this.Controls.Add(this.birthdateHeader);
@@ -351,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableKundeHome)).EndInit();
             this.panelTable.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +392,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLeihfrist;
         private System.Windows.Forms.DataGridViewImageColumn colBewertung;
+        private System.Windows.Forms.Panel panel3;
     }
 }
