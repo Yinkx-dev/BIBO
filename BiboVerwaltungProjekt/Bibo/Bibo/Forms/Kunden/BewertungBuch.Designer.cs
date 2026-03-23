@@ -32,8 +32,10 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.richTextBoxTextBewertung = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.textBoxTitelBewertung = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dropdownSternezahl = new System.Windows.Forms.ComboBox();
@@ -65,8 +67,8 @@
             this.pictureBoxCover = new System.Windows.Forms.PictureBox();
             this.buttonAbbrechenBewertung = new System.Windows.Forms.Button();
             this.buttonSpeichernBewertung = new System.Windows.Forms.Button();
-            this.textBoxTitelBewertung = new System.Windows.Forms.TextBox();
-            this.richTextBoxTextBewertung = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -105,6 +107,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.panel10);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.panel8);
@@ -123,6 +126,17 @@
             this.panel10.Size = new System.Drawing.Size(762, 125);
             this.panel10.TabIndex = 39;
             // 
+            // richTextBoxTextBewertung
+            // 
+            this.richTextBoxTextBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBoxTextBewertung.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxTextBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxTextBewertung.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxTextBewertung.Name = "richTextBoxTextBewertung";
+            this.richTextBoxTextBewertung.Size = new System.Drawing.Size(760, 123);
+            this.richTextBoxTextBewertung.TabIndex = 0;
+            this.richTextBoxTextBewertung.Text = "";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -137,6 +151,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.textBoxTitelBewertung);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Controls.Add(this.panel9);
@@ -144,6 +159,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(819, 88);
             this.panel8.TabIndex = 0;
+            // 
+            // textBoxTitelBewertung
+            // 
+            this.textBoxTitelBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBoxTitelBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitelBewertung.Location = new System.Drawing.Point(202, 47);
+            this.textBoxTitelBewertung.Name = "textBoxTitelBewertung";
+            this.textBoxTitelBewertung.Size = new System.Drawing.Size(585, 29);
+            this.textBoxTitelBewertung.TabIndex = 4;
             // 
             // label4
             // 
@@ -521,25 +545,26 @@
             this.buttonSpeichernBewertung.UseVisualStyleBackColor = false;
             this.buttonSpeichernBewertung.Click += new System.EventHandler(this.buttonSpeichernBewertung_Click);
             // 
-            // textBoxTitelBewertung
+            // label8
             // 
-            this.textBoxTitelBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxTitelBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitelBewertung.Location = new System.Drawing.Point(202, 47);
-            this.textBoxTitelBewertung.Name = "textBoxTitelBewertung";
-            this.textBoxTitelBewertung.Size = new System.Drawing.Size(585, 29);
-            this.textBoxTitelBewertung.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(708, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 12);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Max. 100 Zeichen";
             // 
-            // richTextBoxTextBewertung
+            // label9
             // 
-            this.richTextBoxTextBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBoxTextBewertung.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxTextBewertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxTextBewertung.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxTextBewertung.Name = "richTextBoxTextBewertung";
-            this.richTextBoxTextBewertung.Size = new System.Drawing.Size(760, 123);
-            this.richTextBoxTextBewertung.TabIndex = 0;
-            this.richTextBoxTextBewertung.Text = "";
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(705, 256);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 14);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Max. 1000 Zeichen";
             // 
             // BewertungBuch
             // 
@@ -634,5 +659,7 @@
         private System.Windows.Forms.ComboBox dropdownSternezahl;
         private System.Windows.Forms.TextBox textBoxTitelBewertung;
         private System.Windows.Forms.RichTextBox richTextBoxTextBewertung;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

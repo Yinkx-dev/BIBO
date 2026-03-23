@@ -1,11 +1,14 @@
 ﻿using Bibo.Core;
 using Bibo.Models;
+using Bibo.Services;
+using Bibo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Bibo
@@ -120,7 +123,17 @@ namespace Bibo
 
                 if (!string.IsNullOrEmpty(isbnSelectedBook))
                 {
-                    Globals.NavigateToNextForm<BewertungBuch>(this, isbnSelectedBook);
+                    //Buchdaten-Service kann alle Daten liefern für nötiges BewertungBuchViewModel
+                    var service = new BuchdatenService(Globals.Db);
+                    var buchdatenVM = service.GetBuchdaten(isbnSelectedBook);
+
+                    Globals.NavigateToNextForm<BewertungBuch>(this, new BewertungBuchViewModel
+                    {
+                        selectedBook = buchdatenVM.Buch,
+                        //wenn keine von CurrentKunde vorhanden -> null, sonst gewünschte Bewertung
+                        bewertungBuch = buchdatenVM.BewertungCurrentKunde,
+                        vorhandeneBewBearbeiten = buchdatenVM.HatCurrentKundeBewertet
+                    });
                 }
                 else
                 {
