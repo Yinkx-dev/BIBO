@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibo.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace Bibo.Forms.Personal
 {
     public partial class Buchmodifikation : UI_Helper
     {
-        public Buchmodifikation()
+        private Buch _buch;
+
+        public Buchmodifikation(Buch buch)
         {
             InitializeComponent();
+            _buch = buch;
+        }
+
+        private void buttonHomeBuchModi_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateToNextForm<HomePersonal>(this);
+        }
+
+        private void buttonAbbrechenBuchmodi_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateToNextForm<HomePersonal>(this);
+        }
+
+        private void buttonZurueckBuecherliste_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateToNextForm<BuecherlistePersonal>(this);
         }
     }
 }

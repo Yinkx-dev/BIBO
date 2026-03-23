@@ -54,10 +54,14 @@
             this.labelPasswort = new System.Windows.Forms.Label();
             this.textBoxNutzername = new System.Windows.Forms.TextBox();
             this.labelNutzername = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonZurueckZuKundenliste = new System.Windows.Forms.PictureBox();
             this.HeaderBuchmodifaktion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeKundenModi)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckZuKundenliste)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNachname
@@ -65,7 +69,7 @@
             this.textBoxNachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNachname.Location = new System.Drawing.Point(774, 144);
             this.textBoxNachname.Name = "textBoxNachname";
-            this.textBoxNachname.Size = new System.Drawing.Size(344, 30);
+            this.textBoxNachname.Size = new System.Drawing.Size(344, 26);
             this.textBoxNachname.TabIndex = 26;
             // 
             // textBoxGeburtsdatum
@@ -73,7 +77,7 @@
             this.textBoxGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxGeburtsdatum.Location = new System.Drawing.Point(158, 216);
             this.textBoxGeburtsdatum.Name = "textBoxGeburtsdatum";
-            this.textBoxGeburtsdatum.Size = new System.Drawing.Size(344, 30);
+            this.textBoxGeburtsdatum.Size = new System.Drawing.Size(344, 26);
             this.textBoxGeburtsdatum.TabIndex = 27;
             // 
             // textBoxStrasse
@@ -81,7 +85,7 @@
             this.textBoxStrasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStrasse.Location = new System.Drawing.Point(160, 329);
             this.textBoxStrasse.Name = "textBoxStrasse";
-            this.textBoxStrasse.Size = new System.Drawing.Size(344, 30);
+            this.textBoxStrasse.Size = new System.Drawing.Size(344, 26);
             this.textBoxStrasse.TabIndex = 28;
             // 
             // labelStrasse
@@ -90,7 +94,7 @@
             this.labelStrasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStrasse.Location = new System.Drawing.Point(155, 297);
             this.labelStrasse.Name = "labelStrasse";
-            this.labelStrasse.Size = new System.Drawing.Size(85, 29);
+            this.labelStrasse.Size = new System.Drawing.Size(64, 24);
             this.labelStrasse.TabIndex = 29;
             this.labelStrasse.Text = "Straße";
             // 
@@ -100,7 +104,7 @@
             this.labelGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGeburtsdatum.Location = new System.Drawing.Point(155, 184);
             this.labelGeburtsdatum.Name = "labelGeburtsdatum";
-            this.labelGeburtsdatum.Size = new System.Drawing.Size(164, 29);
+            this.labelGeburtsdatum.Size = new System.Drawing.Size(128, 24);
             this.labelGeburtsdatum.TabIndex = 28;
             this.labelGeburtsdatum.Text = "Geburtsdatum";
             // 
@@ -110,7 +114,7 @@
             this.labelINachname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelINachname.Location = new System.Drawing.Point(769, 112);
             this.labelINachname.Name = "labelINachname";
-            this.labelINachname.Size = new System.Drawing.Size(129, 29);
+            this.labelINachname.Size = new System.Drawing.Size(103, 24);
             this.labelINachname.TabIndex = 27;
             this.labelINachname.Text = "Nachname";
             // 
@@ -120,7 +124,7 @@
             this.labelVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVorname.Location = new System.Drawing.Point(155, 112);
             this.labelVorname.Name = "labelVorname";
-            this.labelVorname.Size = new System.Drawing.Size(110, 29);
+            this.labelVorname.Size = new System.Drawing.Size(88, 24);
             this.labelVorname.TabIndex = 26;
             this.labelVorname.Text = "Vorname";
             // 
@@ -129,7 +133,7 @@
             this.textBoxVorname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxVorname.Location = new System.Drawing.Point(158, 144);
             this.textBoxVorname.Name = "textBoxVorname";
-            this.textBoxVorname.Size = new System.Drawing.Size(344, 30);
+            this.textBoxVorname.Size = new System.Drawing.Size(344, 26);
             this.textBoxVorname.TabIndex = 25;
             // 
             // HeaderBuchmodifaktion
@@ -192,6 +196,7 @@
             this.buttonHomeKundenModi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonHomeKundenModi.TabIndex = 2;
             this.buttonHomeKundenModi.TabStop = false;
+            this.buttonHomeKundenModi.Click += new System.EventHandler(this.buttonHomeKundenModi_Click);
             // 
             // buttonAbbrechenKundenmodi
             // 
@@ -208,6 +213,7 @@
             this.buttonAbbrechenKundenmodi.TabIndex = 35;
             this.buttonAbbrechenKundenmodi.Text = "Abbrechen";
             this.buttonAbbrechenKundenmodi.UseVisualStyleBackColor = false;
+            this.buttonAbbrechenKundenmodi.Click += new System.EventHandler(this.buttonAbbrechenKundenmodi_Click);
             // 
             // buttonSpeichernKundenmodi
             // 
@@ -221,7 +227,7 @@
             this.buttonSpeichernKundenmodi.Location = new System.Drawing.Point(296, 638);
             this.buttonSpeichernKundenmodi.Name = "buttonSpeichernKundenmodi";
             this.buttonSpeichernKundenmodi.Padding = new System.Windows.Forms.Padding(70, 15, 70, 15);
-            this.buttonSpeichernKundenmodi.Size = new System.Drawing.Size(273, 69);
+            this.buttonSpeichernKundenmodi.Size = new System.Drawing.Size(247, 64);
             this.buttonSpeichernKundenmodi.TabIndex = 34;
             this.buttonSpeichernKundenmodi.Text = "Speichern";
             this.buttonSpeichernKundenmodi.UseVisualStyleBackColor = false;
@@ -231,7 +237,7 @@
             this.textBoxHausnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxHausnummer.Location = new System.Drawing.Point(774, 329);
             this.textBoxHausnummer.Name = "textBoxHausnummer";
-            this.textBoxHausnummer.Size = new System.Drawing.Size(344, 30);
+            this.textBoxHausnummer.Size = new System.Drawing.Size(344, 26);
             this.textBoxHausnummer.TabIndex = 29;
             // 
             // labelHausnummer
@@ -240,7 +246,7 @@
             this.labelHausnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHausnummer.Location = new System.Drawing.Point(769, 297);
             this.labelHausnummer.Name = "labelHausnummer";
-            this.labelHausnummer.Size = new System.Drawing.Size(156, 29);
+            this.labelHausnummer.Size = new System.Drawing.Size(125, 24);
             this.labelHausnummer.TabIndex = 37;
             this.labelHausnummer.Text = "Hausnummer";
             // 
@@ -249,7 +255,7 @@
             this.textBoxPostleitzahl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPostleitzahl.Location = new System.Drawing.Point(160, 405);
             this.textBoxPostleitzahl.Name = "textBoxPostleitzahl";
-            this.textBoxPostleitzahl.Size = new System.Drawing.Size(344, 30);
+            this.textBoxPostleitzahl.Size = new System.Drawing.Size(344, 26);
             this.textBoxPostleitzahl.TabIndex = 30;
             // 
             // labelPostleitzahl
@@ -258,7 +264,7 @@
             this.labelPostleitzahl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPostleitzahl.Location = new System.Drawing.Point(155, 373);
             this.labelPostleitzahl.Name = "labelPostleitzahl";
-            this.labelPostleitzahl.Size = new System.Drawing.Size(136, 29);
+            this.labelPostleitzahl.Size = new System.Drawing.Size(103, 24);
             this.labelPostleitzahl.TabIndex = 39;
             this.labelPostleitzahl.Text = "Postleitzahl";
             // 
@@ -267,7 +273,7 @@
             this.textBoxWohnort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxWohnort.Location = new System.Drawing.Point(774, 412);
             this.textBoxWohnort.Name = "textBoxWohnort";
-            this.textBoxWohnort.Size = new System.Drawing.Size(344, 30);
+            this.textBoxWohnort.Size = new System.Drawing.Size(344, 26);
             this.textBoxWohnort.TabIndex = 31;
             // 
             // labelWohnort
@@ -276,7 +282,7 @@
             this.labelWohnort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWohnort.Location = new System.Drawing.Point(769, 380);
             this.labelWohnort.Name = "labelWohnort";
-            this.labelWohnort.Size = new System.Drawing.Size(103, 29);
+            this.labelWohnort.Size = new System.Drawing.Size(82, 24);
             this.labelWohnort.TabIndex = 41;
             this.labelWohnort.Text = "Wohnort";
             // 
@@ -285,7 +291,7 @@
             this.textBoxPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPasswort.Location = new System.Drawing.Point(774, 534);
             this.textBoxPasswort.Name = "textBoxPasswort";
-            this.textBoxPasswort.Size = new System.Drawing.Size(344, 30);
+            this.textBoxPasswort.Size = new System.Drawing.Size(344, 26);
             this.textBoxPasswort.TabIndex = 33;
             // 
             // labelPasswort
@@ -294,7 +300,7 @@
             this.labelPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswort.Location = new System.Drawing.Point(769, 502);
             this.labelPasswort.Name = "labelPasswort";
-            this.labelPasswort.Size = new System.Drawing.Size(112, 29);
+            this.labelPasswort.Size = new System.Drawing.Size(85, 24);
             this.labelPasswort.TabIndex = 45;
             this.labelPasswort.Text = "Passwort";
             // 
@@ -303,7 +309,7 @@
             this.textBoxNutzername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNutzername.Location = new System.Drawing.Point(160, 527);
             this.textBoxNutzername.Name = "textBoxNutzername";
-            this.textBoxNutzername.Size = new System.Drawing.Size(344, 30);
+            this.textBoxNutzername.Size = new System.Drawing.Size(344, 26);
             this.textBoxNutzername.TabIndex = 32;
             // 
             // labelNutzername
@@ -312,15 +318,38 @@
             this.labelNutzername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNutzername.Location = new System.Drawing.Point(155, 495);
             this.labelNutzername.Name = "labelNutzername";
-            this.labelNutzername.Size = new System.Drawing.Size(143, 29);
+            this.labelNutzername.Size = new System.Drawing.Size(113, 24);
             this.labelNutzername.TabIndex = 43;
             this.labelNutzername.Text = "Nutzername";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.buttonZurueckZuKundenliste);
+            this.panel1.Location = new System.Drawing.Point(1180, 144);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(49, 42);
+            this.panel1.TabIndex = 35;
+            // 
+            // buttonZurueckZuKundenliste
+            // 
+            this.buttonZurueckZuKundenliste.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonZurueckZuKundenliste.Image = ((System.Drawing.Image)(resources.GetObject("buttonZurueckZuKundenliste.Image")));
+            this.buttonZurueckZuKundenliste.Location = new System.Drawing.Point(-1, 3);
+            this.buttonZurueckZuKundenliste.Name = "buttonZurueckZuKundenliste";
+            this.buttonZurueckZuKundenliste.Size = new System.Drawing.Size(49, 34);
+            this.buttonZurueckZuKundenliste.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonZurueckZuKundenliste.TabIndex = 2;
+            this.buttonZurueckZuKundenliste.TabStop = false;
+            this.buttonZurueckZuKundenliste.Click += new System.EventHandler(this.buttonZurueckZuKundenliste_Click);
             // 
             // Kundenmodifikation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPasswort);
             this.Controls.Add(this.labelPasswort);
             this.Controls.Add(this.textBoxNutzername);
@@ -352,6 +381,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeKundenModi)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckZuKundenliste)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +415,7 @@
         private System.Windows.Forms.Label labelPasswort;
         private System.Windows.Forms.TextBox textBoxNutzername;
         private System.Windows.Forms.Label labelNutzername;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox buttonZurueckZuKundenliste;
     }
 }

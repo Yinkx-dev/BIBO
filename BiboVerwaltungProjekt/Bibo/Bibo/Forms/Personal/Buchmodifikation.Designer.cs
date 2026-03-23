@@ -55,6 +55,8 @@
             this.textBoxAutor = new System.Windows.Forms.TextBox();
             this.textBoxISBN = new System.Windows.Forms.TextBox();
             this.richTextBoxKurzbeschreibung = new System.Windows.Forms.RichTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonZurueckBuecherliste = new System.Windows.Forms.PictureBox();
             this.HeaderBuchmodifaktion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuchModi)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckBuecherliste)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderBuchmodifaktion
@@ -221,6 +225,7 @@
             this.buttonAbbrechenBuchmodi.TabIndex = 11;
             this.buttonAbbrechenBuchmodi.Text = "Abbrechen";
             this.buttonAbbrechenBuchmodi.UseVisualStyleBackColor = false;
+            this.buttonAbbrechenBuchmodi.Click += new System.EventHandler(this.buttonAbbrechenBuchmodi_Click);
             // 
             // panel2
             // 
@@ -242,6 +247,7 @@
             this.buttonHomeBuchModi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonHomeBuchModi.TabIndex = 2;
             this.buttonHomeBuchModi.TabStop = false;
+            this.buttonHomeBuchModi.Click += new System.EventHandler(this.buttonHomeBuchModi_Click);
             // 
             // labelTitel
             // 
@@ -346,11 +352,33 @@
             this.richTextBoxKurzbeschreibung.TabIndex = 8;
             this.richTextBoxKurzbeschreibung.Text = "";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.buttonZurueckBuecherliste);
+            this.panel4.Location = new System.Drawing.Point(1180, 156);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(49, 42);
+            this.panel4.TabIndex = 21;
+            // 
+            // buttonZurueckBuecherliste
+            // 
+            this.buttonZurueckBuecherliste.Image = ((System.Drawing.Image)(resources.GetObject("buttonZurueckBuecherliste.Image")));
+            this.buttonZurueckBuecherliste.Location = new System.Drawing.Point(3, 2);
+            this.buttonZurueckBuecherliste.Name = "buttonZurueckBuecherliste";
+            this.buttonZurueckBuecherliste.Size = new System.Drawing.Size(41, 35);
+            this.buttonZurueckBuecherliste.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonZurueckBuecherliste.TabIndex = 11;
+            this.buttonZurueckBuecherliste.TabStop = false;
+            this.buttonZurueckBuecherliste.Click += new System.EventHandler(this.buttonZurueckBuecherliste_Click);
+            // 
             // Buchmodifikation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.richTextBoxKurzbeschreibung);
             this.Controls.Add(this.textBoxISBN);
             this.Controls.Add(this.textBoxAutor);
@@ -383,6 +411,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuchModi)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.buttonZurueckBuecherliste)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,5 +446,7 @@
         private System.Windows.Forms.PictureBox buttonCoverhochladen2;
         private System.Windows.Forms.Button buttonCoverhochladen;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox buttonZurueckBuecherliste;
     }
 }

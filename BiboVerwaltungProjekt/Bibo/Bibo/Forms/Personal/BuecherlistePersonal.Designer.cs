@@ -111,6 +111,7 @@
             this.buttonHomeBuecherListePersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonHomeBuecherListePersonal.TabIndex = 2;
             this.buttonHomeBuecherListePersonal.TabStop = false;
+            this.buttonHomeBuecherListePersonal.Click += new System.EventHandler(this.buttonHomeBuecherListePersonal_Click);
             // 
             // buttonNeuesBuch
             // 
@@ -121,6 +122,7 @@
             this.buttonNeuesBuch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonNeuesBuch.TabIndex = 3;
             this.buttonNeuesBuch.TabStop = false;
+            this.buttonNeuesBuch.Click += new System.EventHandler(this.buttonNeuesBuch_Click);
             // 
             // panel1
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibo.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace Bibo.Forms.Personal
         public BuecherlistePersonal()
         {
             InitializeComponent();
+        }
+
+        private void buttonHomeBuecherListePersonal_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateToNextForm<HomePersonal>(this);
+        }
+
+        private void buttonNeuesBuch_Click(object sender, EventArgs e)
+        {
+            Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch());
         }
     }
 }
