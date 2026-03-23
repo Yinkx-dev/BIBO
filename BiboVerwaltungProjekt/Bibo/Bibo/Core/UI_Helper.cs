@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 public class UI_Helper : Form
@@ -7,6 +8,12 @@ public class UI_Helper : Form
 
     protected UI_Helper()
     {
+        //Wenn gerade Form noch aufgebaut wird, Finger weg hiervon sonst alles putt!!!
+        if(LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+        {
+            return;
+        }
+
         this.FormClosing += FormsGenerals_FormClosing;
     }
 
@@ -14,8 +21,14 @@ public class UI_Helper : Form
     //Überall Form schließen wenn Kreuz/Alt+F4
     private void FormsGenerals_FormClosing(object sender, FormClosingEventArgs e)
     {
+        //Wenn gerade Form noch aufgebaut wird, Finger weg hiervon sonst alles putt!!!
+        if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+        {
+            return;
+        }
+
         //Nur aufrufen, wenn schließen über kreuz oder Alt+F4, nicht bei Close()
-         if (CloseApplicationOnUserClose && e.CloseReason == CloseReason.UserClosing) // Nur, wenn User das X oder Alt+F4 drückt
+        if (CloseApplicationOnUserClose && e.CloseReason == CloseReason.UserClosing) // Nur, wenn User das X oder Alt+F4 drückt
         {
             // Form kann schließen abbrechen
             bool shouldClose = ConfirmApplicationExit();
