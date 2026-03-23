@@ -5,6 +5,7 @@ using Bibo.Models;
 using System.IO;
 using Dapper;
 using System.Linq;
+using Bibo.Forms.Personal;
 
 namespace Bibo
 {
@@ -22,7 +23,21 @@ namespace Bibo
             string username = username_tb.Text.Trim();
             string password = pw_tb.Text.Trim();
 
-            //Datenbank Connection
+            //PERSONAL-LOGIN!
+            //Prüfen, ob Admin sich einloggt, wenn ja, ab zu PersonalHome
+            var personal = Globals.Db.QuerySingle<Personal>("SELECT * FROM Personal");
+            
+            if(username == personal.Nutzername && password == personal.Kennwort)
+            {
+                HomePersonal homePersonal = new HomePersonal();
+                homePersonal.Show();
+                Hide();
+                return;
+            }
+
+
+            //KUNDEN-LOGIN!
+            //Datenbank Connection für Kunde
             var kunde = Globals.Db.QuerySingle<Kunde>(
                 "SELECT * FROM Kunde WHERE Nutzername = @username AND Passwort = @password",
                 new { username, password }
