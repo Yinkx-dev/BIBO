@@ -70,7 +70,7 @@
             this.pw_tb.Name = "pw_tb";
             this.pw_tb.Size = new System.Drawing.Size(164, 26);
             this.pw_tb.TabIndex = 3;
-            this.pw_tb.TextChanged += new System.EventHandler(this.pw_tb_TextChanged);
+            this.pw_tb.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -106,9 +106,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(88, 244);
+            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox1.Location = new System.Drawing.Point(90, 244);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 17);
+            this.checkBox1.Size = new System.Drawing.Size(112, 17);
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Passwort anzeigen";
             this.checkBox1.UseVisualStyleBackColor = true;

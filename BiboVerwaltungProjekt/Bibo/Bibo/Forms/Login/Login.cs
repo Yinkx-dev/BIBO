@@ -16,7 +16,7 @@ namespace Bibo
             CloseApplicationOnUserClose = true;
         }
 
-
+        //Login-Button Klick -> geht auch mit Enter
         private void login_btn_Click(object sender, EventArgs e)
         {
             string username = username_tb.Text.Trim();
@@ -27,7 +27,7 @@ namespace Bibo
                 "SELECT * FROM Kunde WHERE Nutzername = @username AND Passwort = @password",
                 new { username, password }
             );
-
+            //Nur einloggen versuchen, wenn ein Kunde vorhanden ist
             if (kunde != null)
             {
                 Globals.CurrentKunde = kunde;
@@ -41,16 +41,10 @@ namespace Bibo
             }
         }
 
-
-        private void pw_tb_TextChanged(object sender, EventArgs e)
-        {
-            pw_tb.UseSystemPasswordChar = true;
-        }
-
-
+        //Zwischen Passwort-Char und normalen Zeichen hin und herschalten mit der checkbox
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(pw_tb.UseSystemPasswordChar)
+            if(checkBox1.Checked)
             {
                 pw_tb.UseSystemPasswordChar = false;
             }
