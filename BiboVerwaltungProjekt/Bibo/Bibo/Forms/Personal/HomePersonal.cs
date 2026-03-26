@@ -1,21 +1,17 @@
-﻿using Bibo.Models;
+﻿using Bibo.Core;
+using Bibo.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
     public partial class HomePersonal : UI_Helper
     {
+        private CursorManager cursorManager;
+
         public HomePersonal()
         {
             InitializeComponent();
+            CursorChangeOnInteractiveElements();
         }
 
         //Logout
@@ -48,10 +44,13 @@ namespace Bibo.Forms.Personal
             Globals.NavigateToNextForm<BuecherlistePersonal>(this);
         }
 
-        //Zu LeihstatusPersonal
-        private void buttonLeihstatus_Click(object sender, EventArgs e)
+
+        //Mauszeiger anpassen bei bestimmten ELementen
+        private void CursorChangeOnInteractiveElements()
         {
-            Globals.NavigateToNextForm<LeihstatusPersonal>(this);
+            cursorManager = new CursorManager();
+
+            cursorManager.AttachHandCursor(logoutButtonPersonal);
         }
     }
 }

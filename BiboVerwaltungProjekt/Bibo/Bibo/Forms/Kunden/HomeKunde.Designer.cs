@@ -153,6 +153,7 @@
             this.discoverNewButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.discoverNewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
             this.discoverNewButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.discoverNewButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
             this.discoverNewButton.FlatAppearance.BorderSize = 0;
             this.discoverNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.discoverNewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
