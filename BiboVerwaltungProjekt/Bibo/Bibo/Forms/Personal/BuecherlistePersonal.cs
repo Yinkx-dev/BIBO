@@ -1,31 +1,244 @@
-﻿using Bibo.Models;
+﻿using Bibo.Core;
+using Bibo.Models;
+using Bibo.Services;
+using Bibo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
 {
     public partial class BuecherlistePersonal : UI_Helper
     {
+        private CursorManager cursorManager;
+        private BuecherlistePersonalService service = new BuecherlistePersonalService(Globals.Db);
+        private List<BuecherlistePersonalViewModel> _buecherlistePersonal;
+
+        //Zum umschalten des QuickfilterButtons ohne extra button
+        private int quickButtonZaehler = 0;
+
+
         public BuecherlistePersonal()
         {
             InitializeComponent();
+            InsertData();
+            CursorChangeOnInteractiveElements();
+            DoubleclickOrEnterOnTable();
         }
 
+
+        //Form befüllen
+        private void InsertData()
+        {
+            //Datenbank Connection + ViewModelListe füllen
+            var buecherlistePers = service.HoleGanzeBuecherlistePersonal();
+            _buecherlistePersonal = buecherlistePers;
+
+            FillRows(_buecherlistePersonal, tableBuecherliste);
+        }
+
+
+        //Tabelle füllen
+        private void FillRows(List<BuecherlistePersonalViewModel> bListePers, DataGridView dgv)
+        {
+            foreach (var buchdaten in bListePers)
+            {
+                //Zeile hinzufügen
+                int rowIndex = dgv.Rows.Add();
+                DataGridViewRow dgvRow = dgv.Rows[rowIndex];
+
+                //Cover setzen
+                string isbn = buchdaten.Buch.ISBN;
+                string coverPfad = $@"..\..\Images\{isbn}.jpg";
+
+                if (File.Exists(coverPfad))
+                {
+                    dgvRow.Cells["colCover"].Value = Image.FromFile(coverPfad);
+                }
+                else
+                {
+                    dgvRow.Cells["colCover"].Value = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
+                }
+
+
+                //Übrige "normale"/simple Zellen der Zeile befüllen
+                dgvRow.Cells["colISBN"].Value = buchdaten.Buch.ISBN;
+                dgvRow.Cells["colTitel"].Value = buchdaten.Buch.Titel;
+                dgvRow.Cells["colAutor"].Value = buchdaten.Buch.Autor;
+                dgvRow.Cells["colGenre"].Value = buchdaten.Buch.Genre;
+                dgvRow.Cells["colAlter"].Value = buchdaten.Buch.Altersgruppe;
+
+
+                //Leihfrist, entsprechend ausgeliehen oder nicht (inkl. optische Differenzierung)
+                //TryParseExact falls Datum Fehler/null
+                DateTime datum;
+                if(buchdaten.Ausleihen != null)
+                {
+                    if (DateTime.TryParseExact(buchdaten.Ausleihen.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out datum))
+                    {
+                        dgvRow.Cells["colLeihfrist"].Value = datum;
+
+                        //Datum rot, wenn Leihfrist überschritten
+                        if (datum < DateTime.Today)
+                        {
+                        dgvRow.Cells["colLeihfrist"].Style.ForeColor = Color.Red;
+                        }
+                    }
+                    else
+                    {
+                        dgvRow.Cells["colLeihfrist"].Value = null;
+                    }
+                }
+                else
+                {
+                    dgvRow.Cells["colLeihfrist"].Value = null;
+                }
+
+
+                //Ausgeliehen von
+                if(buchdaten.KundeLeih != null)
+                {
+                    string kundendatenString =
+                        buchdaten.KundeLeih.Name + "\n" +
+                        buchdaten.KundeLeih.Strasse + buchdaten.KundeLeih.Hausnummer + "\n" +
+                        buchdaten.KundeLeih.PLZ + buchdaten.KundeLeih.Wohnort;
+
+                    dgvRow.Cells["ColKundeLeih"].Value = kundendatenString;
+                }
+                else
+                {
+                    dgvRow.Cells["ColKundeLeih"].Value = "Nicht ausgeliehen";
+                }
+
+                //ISBN "speichern"
+                dgvRow.Tag = buchdaten.Buch;
+            }
+        }
+
+
+        //Weiterleitung zu entsprechendem Buchmodi Form bei Doppelklick/Enter Zeile
+        private void DoubleclickOrEnterOnTable()
+        {
+            //Doppelklick/Enter auf Tabellenzeile
+            ActionOnDoubleclickOrEnterDatagridview(tableBuecherliste, row =>
+            {
+                Buch selectedBook = (Buch)row.Tag;
+                Globals.NavigateToNextForm<Buchmodifikation>(this, selectedBook);
+            });
+        }
+
+
+
+        //Zurück zu Home
         private void buttonHomeBuecherListePersonal_Click(object sender, EventArgs e)
         {
             Globals.NavigateToNextForm<HomePersonal>(this);
         }
 
+
+        //Zu Neues Buch
         private void buttonNeuesBuch_Click(object sender, EventArgs e)
         {
             Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch());
+        }
+
+
+        //Quickfilter, nur überzogene zeigen
+        private void buttonQuick_Click(object sender, EventArgs e)
+        {
+            //wenn nicht angewendet -> Nur geliehene Bücher anzeigen
+            if (quickButtonZaehler == 0)
+            {
+                var buecherlisteAusgeliehen = service.HoleGelieheneBuecherlistePersonal();
+
+                //Tabelle leer und neu füllen
+                tableBuecherliste.Rows.Clear();
+                FillRows(buecherlisteAusgeliehen, tableBuecherliste);
+
+                //Sortieren, dass abgelaufene ganz oben bzw. kürzeste Leihfrist zuerst
+                tableBuecherliste.Sort(tableBuecherliste.Columns["colLeihfrist"], System.ComponentModel.ListSortDirection.Ascending);
+
+                quickButtonZaehler = 1;
+            }
+            //wenn gefiltert, wieder "entfiltern"
+            else
+            {
+                quickButtonZaehler = 0;
+                tableBuecherliste.Rows.Clear();
+                
+                InsertData();
+            }
+        }
+
+
+        //Mauszeiger anpassen bei bestimmten ELementen
+        private void CursorChangeOnInteractiveElements()
+        {
+            cursorManager = new CursorManager();
+
+            cursorManager.AttachHandCursor(buttonNeuesBuch);
+            cursorManager.AttachHandCursor(buttonSucheBuecherlistePersonal);
+            cursorManager.AttachHandCursor(buttonSucheaufheben);
+            cursorManager.AttachHandCursor(buttonQuick);
+            cursorManager.AttachHandCursor(buttonHomeBuecherListePersonal);
+            cursorManager.AttachHandCursor(tableBuecherliste);
+        }
+
+
+
+        //Suchleiste, sucht in Buch:ISBN,Titel,Autor und Kunde:Name
+        private void buttonSucheBuecherlistePersonal_Click(object sender, EventArgs e)
+        {
+            //input aus Eingabe in textbox
+            string input = textBoxSucheBuecherlistePersonal.Text;
+            if (input != null)
+            {
+                //ToLower, damit alles klein geschrieben, besser für Suche wenn alles klein
+                input = input.ToLower();
+            }
+            else
+            {
+                //null abfangen
+                input = "";
+            }
+
+            //hier auch ToLower, entsprechendes durchsuchen und Ergebnisliste erstellen
+            var resultListe = _buecherlistePersonal.Where(x =>
+                (x.Buch.ISBN != null && x.Buch.ISBN.ToLower().Contains(input)) ||
+                (x.Buch.Titel != null && x.Buch.Titel.ToLower().Contains(input)) ||
+                (x.Buch.Autor != null && x.Buch.Autor.ToLower().Contains(input)) ||
+                (x.KundeLeih != null && x.KundeLeih.Name != null && x.KundeLeih.Name.ToLower().Contains(input))
+            ).ToList();
+
+            //Tabelle leeren und mit Ergebnis füllen
+            tableBuecherliste.Rows.Clear();
+            FillRows(resultListe, tableBuecherliste);
+        }
+
+
+
+        //Suche "Löschen", Tabelle neu machen
+        private void buttonSucheaufheben_Click(object sender, EventArgs e)
+        {
+            tableBuecherliste.Rows.Clear();
+            FillRows(_buecherlistePersonal, tableBuecherliste);
+        }
+
+
+        //Enter in Suchleiste zum Auslösen von buttonSucheBuecherlistePersonal_Click
+        private void textBoxSucheBuecherlistePersonal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                buttonSucheBuecherlistePersonal_Click(buttonSucheBuecherlistePersonal, EventArgs.Empty);
+            }
         }
     }
 }

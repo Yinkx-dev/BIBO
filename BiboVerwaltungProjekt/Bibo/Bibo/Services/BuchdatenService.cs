@@ -17,6 +17,7 @@ namespace Bibo.Services
             _db = db;   
         }
 
+        //Liefert alle Daten aus den verschiedenen Tabellen zu einem Buch
         public BuchdatenViewModel GetBuchdaten(string isbn)
         {
             var buch = _db.QuerySingle<Buch>(
@@ -32,7 +33,7 @@ namespace Bibo.Services
                 new { isbn });
 
             //Buch unbewertet und verfügbar
-            if(bewertungen == null && leihdaten == null)
+            if(bewertungen == null || !bewertungen.Any() && leihdaten == null)
             {
                 return new BuchdatenViewModel
                 {
@@ -40,7 +41,7 @@ namespace Bibo.Services
                 };
             }
             //Buch ausgeliehen, aber unbewertet
-            if(bewertungen == null)
+            if(bewertungen == null || !bewertungen.Any())
             {
                 return new BuchdatenViewModel
                 {

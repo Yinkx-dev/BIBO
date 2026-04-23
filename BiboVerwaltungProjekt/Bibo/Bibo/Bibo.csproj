@@ -131,19 +131,15 @@
     <Compile Include="Forms\Personal\Kundenmodifikation.Designer.cs">
       <DependentUpon>Kundenmodifikation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Personal\LeihstatusPersonal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Personal\LeihstatusPersonal.Designer.cs">
-      <DependentUpon>LeihstatusPersonal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Ausleihen.cs" />
     <Compile Include="Models\Bewertung.cs" />
     <Compile Include="Models\Buch.cs" />
     <Compile Include="Core\Globals.cs" />
     <Compile Include="Services\BuchdatenService.cs" />
+    <Compile Include="Services\BuecherlistePersonalService.cs" />
     <Compile Include="ViewModels\BewertungBuchViewModel.cs" />
     <Compile Include="ViewModels\BuchdatenViewModel.cs" />
+    <Compile Include="ViewModels\BuecherlistePersonalViewModel.cs" />
     <Compile Include="ViewModels\BuecherlisteViewModel.cs" />
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="ViewModels\KundeAusgeliehenViewModel.cs" />
@@ -179,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Personal\Kundenmodifikation.resx">
       <DependentUpon>Kundenmodifikation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Personal\LeihstatusPersonal.resx">
-      <DependentUpon>LeihstatusPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
