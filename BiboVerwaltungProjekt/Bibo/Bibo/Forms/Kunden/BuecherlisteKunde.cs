@@ -41,9 +41,11 @@ namespace Bibo
         {
             foreach (var buch in buecher)
             {
+                //Zeile hinzufügen
                 int rowIndex = dgv.Rows.Add();
                 DataGridViewRow dgvRow = dgv.Rows[rowIndex];
 
+                //Cover setzen
                 string isbn = buch.ISBN;
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
 
@@ -56,13 +58,15 @@ namespace Bibo
                     dgvRow.Cells["colCover"].Value = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
                 }
 
+                //Übrige "normale"/simple Zellen der Zeile befüllen
                 dgvRow.Cells["colBewertung"].Value = GetStarString(buch.SterneDurchschnitt);
                 dgvRow.Cells["colTitel"].Value = buch.Titel;
                 dgvRow.Cells["colAutor"].Value = buch.Autor;
                 dgvRow.Cells["colGenre"].Value = buch.Genre;
                 dgvRow.Cells["colAlter"].Value = buch.Altersgruppe;
 
-                if (buch.IstAusgeliehen)
+                //Verfügbarkeit visualisieren
+                if (!buch.IstAusgeliehen)
                 {
                     dgvRow.Cells["colLeihstatus"].Value = Image.FromFile($@"..\..\Icons\HakenGruen.png");
                 }
@@ -126,6 +130,7 @@ namespace Bibo
             new { input = "%" + input + "%" }
             );
 
+            //Tabelle leeren und mit Ergebnis füllen
             tableBuecherliste.Rows.Clear();
             FillRows(result, tableBuecherliste);
         }

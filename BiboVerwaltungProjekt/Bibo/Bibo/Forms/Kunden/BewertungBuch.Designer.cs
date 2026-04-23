@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BewertungBuch));
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.richTextBoxTextBewertung = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.textBoxTitelBewertung = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -67,8 +69,6 @@
             this.pictureBoxCover = new System.Windows.Forms.PictureBox();
             this.buttonAbbrechenBewertung = new System.Windows.Forms.Button();
             this.buttonSpeichernBewertung = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -116,6 +116,16 @@
             this.panel4.Size = new System.Drawing.Size(819, 280);
             this.panel4.TabIndex = 9;
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(705, 256);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 14);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Max. 1000 Zeichen";
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -160,6 +170,17 @@
             this.panel8.Size = new System.Drawing.Size(819, 88);
             this.panel8.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(708, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 12);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Max. 100 Zeichen";
+            // 
             // textBoxTitelBewertung
             // 
             this.textBoxTitelBewertung.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -193,6 +214,7 @@
             // dropdownSternezahl
             // 
             this.dropdownSternezahl.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dropdownSternezahl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dropdownSternezahl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownSternezahl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dropdownSternezahl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,6 +302,7 @@
             this.radioButtonAnonymNein.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAnonymNein.AutoSize = true;
             this.radioButtonAnonymNein.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButtonAnonymNein.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonAnonymNein.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(191)))));
             this.radioButtonAnonymNein.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonAnonymNein.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,6 +319,7 @@
             this.radioButtonAnonymJa.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAnonymJa.AutoSize = true;
             this.radioButtonAnonymJa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButtonAnonymJa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonAnonymJa.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(146)))), ((int)(((byte)(191)))));
             this.radioButtonAnonymJa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButtonAnonymJa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -544,27 +568,6 @@
             this.buttonSpeichernBewertung.Text = "Speichern";
             this.buttonSpeichernBewertung.UseVisualStyleBackColor = false;
             this.buttonSpeichernBewertung.Click += new System.EventHandler(this.buttonSpeichernBewertung_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(708, 75);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 12);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Max. 100 Zeichen";
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(705, 256);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 14);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Max. 1000 Zeichen";
             // 
             // BewertungBuch
             // 

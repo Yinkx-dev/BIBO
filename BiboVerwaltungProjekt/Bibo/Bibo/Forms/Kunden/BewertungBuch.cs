@@ -231,15 +231,6 @@ namespace Bibo
         }
 
 
-        //Mauszeiger anpassen bei bestimmten ELementen
-        private void CursorChangeOnInteractiveElements()
-        {
-            cursorManager = new CursorManager();
-
-            cursorManager.AttachHandCursor(buttonZurueckBuecherliste);
-            cursorManager.AttachHandCursor(buttonHomeBewertung);
-        }
-
 
         //Sterne für Combobox manuell, da im designer nicht klappt + Default wegen Index -1
         private void BewertungBuch_Load(object sender, EventArgs e)
@@ -259,5 +250,17 @@ namespace Bibo
                 dropdownSternezahl.SelectedIndex = 4;
             }
         }
+
+
+
+        //Mauszeiger anpassen bei bestimmten ELementen
+        private void CursorChangeOnInteractiveElements()
+        {
+            cursorManager = new CursorManager();
+
+            cursorManager.AttachHandCursor(buttonZurueckBuecherliste);
+            cursorManager.AttachHandCursor(buttonHomeBewertung);
+        }
+
     }
 }

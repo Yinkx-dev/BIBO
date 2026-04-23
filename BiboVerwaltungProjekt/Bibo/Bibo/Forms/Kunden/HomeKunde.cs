@@ -89,6 +89,7 @@ namespace Bibo
                 //ISBN "speichern"
                 dgvRow.Tag = buch.ISBN;
             }
+
             //Nach Leihfrist sortieren, kürzeste zuerst
             dgv.Sort(dgv.Columns["colLeihfrist"], ListSortDirection.Ascending);
         }
