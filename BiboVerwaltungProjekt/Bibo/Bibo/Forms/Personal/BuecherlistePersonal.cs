@@ -74,7 +74,7 @@ namespace Bibo.Forms.Personal
                 dgvRow.Cells["colAlter"].Value = buchdaten.Buch.Altersgruppe;
 
 
-                //Leihfrist, entsprechend ausgeliehen oder nicht (inkl. optische Differenzierung)
+                //Leihfrist, entsprechend ausgeliehen oder nicht (inkl. optische Differenzierung) + ButtonLeihstatus
                 //TryParseExact falls Datum Fehler/null
                 DateTime datum;
                 if(buchdaten.Ausleihen != null)
@@ -88,15 +88,22 @@ namespace Bibo.Forms.Personal
                         {
                         dgvRow.Cells["colLeihfrist"].Style.ForeColor = Color.Red;
                         }
+
+                        //Button auf "Verlängern"
+                        dgvRow.Cells["colLeihfristButton"].Value = Image.FromFile($@"..\..\Icons\verlaengern.png");
                     }
                     else
                     {
                         dgvRow.Cells["colLeihfrist"].Value = null;
+                        //Button auf "Ausleihen"
+                        dgvRow.Cells["colLeihfristButton"].Value = Image.FromFile($@"..\..\Icons\bearbeiten.png");
                     }
                 }
                 else
                 {
                     dgvRow.Cells["colLeihfrist"].Value = null;
+                    //Button auf "Ausleihen"
+                    dgvRow.Cells["colLeihfristButton"].Value = Image.FromFile($@"..\..\Icons\bearbeiten.png");
                 }
 
 
@@ -239,6 +246,14 @@ namespace Bibo.Forms.Personal
                 e.SuppressKeyPress = true;
                 buttonSucheBuecherlistePersonal_Click(buttonSucheBuecherlistePersonal, EventArgs.Empty);
             }
+        }
+
+
+
+        //Klick auf Button für Leihstatus ändern
+        private void tableBuecherliste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

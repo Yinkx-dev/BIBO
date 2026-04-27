@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.SQLite;
 using Bibo.Models;
-using System.IO;
-using Dapper;
-using System.Linq;
 using Bibo.Forms.Personal;
 
 namespace Bibo
