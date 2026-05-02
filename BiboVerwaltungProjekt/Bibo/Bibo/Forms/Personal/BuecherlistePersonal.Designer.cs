@@ -42,12 +42,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableBuecherliste = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonQuick = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonSucheaufheben = new System.Windows.Forms.PictureBox();
-            this.buttonSucheBuecherlistePersonal = new System.Windows.Forms.PictureBox();
-            this.textBoxSucheBuecherlistePersonal = new System.Windows.Forms.TextBox();
             this.colCover = new System.Windows.Forms.DataGridViewImageColumn();
             this.colISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +51,12 @@
             this.colLeihfrist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColKundeLeih = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLeihfristButton = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonQuick = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonSucheaufheben = new System.Windows.Forms.PictureBox();
+            this.buttonSucheBuecherlistePersonal = new System.Windows.Forms.PictureBox();
+            this.textBoxSucheBuecherlistePersonal = new System.Windows.Forms.TextBox();
             this.HeaderBuecherliste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuecherListePersonal)).BeginInit();
@@ -216,71 +216,6 @@
             this.tableBuecherliste.TabIndex = 2;
             this.tableBuecherliste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableBuecherliste_CellMouseClick);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.buttonQuick);
-            this.panel5.Location = new System.Drawing.Point(1107, 70);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(49, 42);
-            this.panel5.TabIndex = 10;
-            // 
-            // buttonQuick
-            // 
-            this.buttonQuick.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonQuick.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuick.Image")));
-            this.buttonQuick.Location = new System.Drawing.Point(-1, 2);
-            this.buttonQuick.Name = "buttonQuick";
-            this.buttonQuick.Size = new System.Drawing.Size(49, 37);
-            this.buttonQuick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonQuick.TabIndex = 3;
-            this.buttonQuick.TabStop = false;
-            this.buttonQuick.Click += new System.EventHandler(this.buttonQuick_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.buttonSucheaufheben);
-            this.panel6.Controls.Add(this.buttonSucheBuecherlistePersonal);
-            this.panel6.Controls.Add(this.textBoxSucheBuecherlistePersonal);
-            this.panel6.Location = new System.Drawing.Point(368, 70);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(450, 46);
-            this.panel6.TabIndex = 15;
-            // 
-            // buttonSucheaufheben
-            // 
-            this.buttonSucheaufheben.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheaufheben.Image")));
-            this.buttonSucheaufheben.Location = new System.Drawing.Point(420, 9);
-            this.buttonSucheaufheben.Name = "buttonSucheaufheben";
-            this.buttonSucheaufheben.Size = new System.Drawing.Size(21, 26);
-            this.buttonSucheaufheben.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonSucheaufheben.TabIndex = 15;
-            this.buttonSucheaufheben.TabStop = false;
-            this.buttonSucheaufheben.Click += new System.EventHandler(this.buttonSucheaufheben_Click);
-            // 
-            // buttonSucheBuecherlistePersonal
-            // 
-            this.buttonSucheBuecherlistePersonal.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheBuecherlistePersonal.Image")));
-            this.buttonSucheBuecherlistePersonal.Location = new System.Drawing.Point(4, 6);
-            this.buttonSucheBuecherlistePersonal.Name = "buttonSucheBuecherlistePersonal";
-            this.buttonSucheBuecherlistePersonal.Size = new System.Drawing.Size(43, 30);
-            this.buttonSucheBuecherlistePersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonSucheBuecherlistePersonal.TabIndex = 3;
-            this.buttonSucheBuecherlistePersonal.TabStop = false;
-            this.buttonSucheBuecherlistePersonal.Click += new System.EventHandler(this.buttonSucheBuecherlistePersonal_Click);
-            // 
-            // textBoxSucheBuecherlistePersonal
-            // 
-            this.textBoxSucheBuecherlistePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSucheBuecherlistePersonal.Location = new System.Drawing.Point(46, 9);
-            this.textBoxSucheBuecherlistePersonal.Name = "textBoxSucheBuecherlistePersonal";
-            this.textBoxSucheBuecherlistePersonal.Size = new System.Drawing.Size(370, 26);
-            this.textBoxSucheBuecherlistePersonal.TabIndex = 0;
-            this.textBoxSucheBuecherlistePersonal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSucheBuecherlistePersonal_KeyDown);
-            // 
             // colCover
             // 
             this.colCover.HeaderText = "Cover";
@@ -356,6 +291,71 @@
             this.colLeihfristButton.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colLeihfristButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.buttonQuick);
+            this.panel5.Location = new System.Drawing.Point(1107, 70);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(49, 42);
+            this.panel5.TabIndex = 10;
+            // 
+            // buttonQuick
+            // 
+            this.buttonQuick.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonQuick.Image = ((System.Drawing.Image)(resources.GetObject("buttonQuick.Image")));
+            this.buttonQuick.Location = new System.Drawing.Point(-1, 2);
+            this.buttonQuick.Name = "buttonQuick";
+            this.buttonQuick.Size = new System.Drawing.Size(49, 37);
+            this.buttonQuick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonQuick.TabIndex = 3;
+            this.buttonQuick.TabStop = false;
+            this.buttonQuick.Click += new System.EventHandler(this.buttonQuick_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Control;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.buttonSucheaufheben);
+            this.panel6.Controls.Add(this.buttonSucheBuecherlistePersonal);
+            this.panel6.Controls.Add(this.textBoxSucheBuecherlistePersonal);
+            this.panel6.Location = new System.Drawing.Point(368, 70);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(450, 46);
+            this.panel6.TabIndex = 15;
+            // 
+            // buttonSucheaufheben
+            // 
+            this.buttonSucheaufheben.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheaufheben.Image")));
+            this.buttonSucheaufheben.Location = new System.Drawing.Point(420, 9);
+            this.buttonSucheaufheben.Name = "buttonSucheaufheben";
+            this.buttonSucheaufheben.Size = new System.Drawing.Size(21, 26);
+            this.buttonSucheaufheben.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSucheaufheben.TabIndex = 15;
+            this.buttonSucheaufheben.TabStop = false;
+            this.buttonSucheaufheben.Click += new System.EventHandler(this.buttonSucheaufheben_Click);
+            // 
+            // buttonSucheBuecherlistePersonal
+            // 
+            this.buttonSucheBuecherlistePersonal.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheBuecherlistePersonal.Image")));
+            this.buttonSucheBuecherlistePersonal.Location = new System.Drawing.Point(4, 6);
+            this.buttonSucheBuecherlistePersonal.Name = "buttonSucheBuecherlistePersonal";
+            this.buttonSucheBuecherlistePersonal.Size = new System.Drawing.Size(43, 30);
+            this.buttonSucheBuecherlistePersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSucheBuecherlistePersonal.TabIndex = 3;
+            this.buttonSucheBuecherlistePersonal.TabStop = false;
+            this.buttonSucheBuecherlistePersonal.Click += new System.EventHandler(this.buttonSucheBuecherlistePersonal_Click);
+            // 
+            // textBoxSucheBuecherlistePersonal
+            // 
+            this.textBoxSucheBuecherlistePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSucheBuecherlistePersonal.Location = new System.Drawing.Point(46, 9);
+            this.textBoxSucheBuecherlistePersonal.Name = "textBoxSucheBuecherlistePersonal";
+            this.textBoxSucheBuecherlistePersonal.Size = new System.Drawing.Size(370, 26);
+            this.textBoxSucheBuecherlistePersonal.TabIndex = 0;
+            this.textBoxSucheBuecherlistePersonal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSucheBuecherlistePersonal_KeyDown);
+            // 
             // BuecherlistePersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -371,7 +371,7 @@
             this.MaximizeBox = false;
             this.Name = "BuecherlistePersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bibo";
+            this.Text = "a";
             this.HeaderBuecherliste.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuecherListePersonal)).EndInit();
