@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Allow specific debug binaries
+!bin/
+!bin/Debug/
+!bin/Debug/x64/
+!bin/Debug/x86/
