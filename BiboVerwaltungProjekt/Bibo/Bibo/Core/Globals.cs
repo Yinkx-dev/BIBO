@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Bibo.Models
@@ -7,9 +8,31 @@ namespace Bibo.Models
     {
         public static Kunde CurrentKunde { get; set; }
 
-       
+
         //Dateipfad relativ zu bin/Debug
-        public static Database Db = new Database(@"Data Source=..\..\Data\database_BiBO.db;Version=3");
+        //public static Database Db = new Database(@"Data Source=..\..\Data\database_BiBO.db;Version=3");
+
+        public static Database Db = CreateDb();
+
+        private static Database CreateDb()
+        {
+            string binDir = AppDomain.CurrentDomain.BaseDirectory;
+
+            DirectoryInfo dir = new DirectoryInfo(binDir);
+
+            // 3 Ebenen hoch (typisch bin -> Debug -> netX -> project)
+            string projectDir = dir.Parent?.Parent?.Parent?.FullName;
+
+            string dbPath = Path.Combine(projectDir, "Bibo", "Data", "database_BiBO.db");
+
+            string conn = $"Data Source={dbPath};Version=3";
+
+            Console.WriteLine("binDir: " + binDir);
+            Console.WriteLine("projectDir: " + projectDir);
+            Console.WriteLine("DB Path: " + dbPath);
+
+            return new Database(conn);
+        }
 
 
         //Navigation zu neuer Seite -> [T = Ziel-Form]
