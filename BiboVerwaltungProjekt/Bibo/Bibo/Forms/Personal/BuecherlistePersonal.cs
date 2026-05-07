@@ -289,6 +289,15 @@ namespace Bibo.Forms.Personal
                             InsertData();
                         }
                     }
+                    else
+                    {
+                        IdEingabeKunde idEingabeForm = new IdEingabeKunde(buchVm);
+                        idEingabeForm.ShowDialog();
+
+                        //Tabelle aktualisieren
+                        tableBuecherliste.Rows.Clear();
+                        InsertData();
+                    }
                 }
             }
         }

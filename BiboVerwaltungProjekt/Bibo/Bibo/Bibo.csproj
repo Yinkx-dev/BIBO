@@ -123,6 +123,12 @@
     <Compile Include="Forms\Personal\HomePersonal.Designer.cs">
       <DependentUpon>HomePersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Personal\IdEingabeKunde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Personal\IdEingabeKunde.Designer.cs">
+      <DependentUpon>IdEingabeKunde.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Personal\Kundenliste.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Personal\HomePersonal.resx">
       <DependentUpon>HomePersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Personal\IdEingabeKunde.resx">
+      <DependentUpon>IdEingabeKunde.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Personal\Kundenliste.resx">
       <DependentUpon>Kundenliste.cs</DependentUpon>
