@@ -64,5 +64,12 @@ namespace Bibo
                 pw_tb.UseSystemPasswordChar = true;
             }
         }
+
+
+        //Fokus bei Start auf Nutzername Textbox
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            username_tb.Focus();
+        }
     }
 }
