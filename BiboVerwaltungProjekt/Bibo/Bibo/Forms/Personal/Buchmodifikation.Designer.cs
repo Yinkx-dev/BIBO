@@ -121,6 +121,17 @@
             // 
             this.dropdownGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdownGenre.FormattingEnabled = true;
+            this.dropdownGenre.Items.AddRange(new object[] {
+            "Fantasy",
+            "Horror",
+            "Humor/Satire",
+            "Kinderbuch",
+            "Kochen",
+            "Romance",
+            "Science-Fiction",
+            "Thriller",
+            "True Crime",
+            "Young Adult"});
             this.dropdownGenre.Location = new System.Drawing.Point(158, 304);
             this.dropdownGenre.Name = "dropdownGenre";
             this.dropdownGenre.Size = new System.Drawing.Size(344, 28);
@@ -130,6 +141,11 @@
             // 
             this.dropdownAlter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdownAlter.FormattingEnabled = true;
+            this.dropdownAlter.Items.AddRange(new object[] {
+            "Erwachsene",
+            "Jugendliche",
+            "Kind",
+            "Kleinkind"});
             this.dropdownAlter.Location = new System.Drawing.Point(772, 304);
             this.dropdownAlter.Name = "dropdownAlter";
             this.dropdownAlter.Size = new System.Drawing.Size(344, 28);

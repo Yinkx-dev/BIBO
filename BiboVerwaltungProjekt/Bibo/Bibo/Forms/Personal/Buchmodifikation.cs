@@ -1,13 +1,8 @@
 ﻿using Bibo.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Globalization;
+using System.IO;
 
 namespace Bibo.Forms.Personal
 {
@@ -19,6 +14,46 @@ namespace Bibo.Forms.Personal
         {
             InitializeComponent();
             _buch = buch;
+            InsertData();
+        }
+
+        private void InsertData()
+        {
+            if( _buch != null)
+            {
+                //"simple" Textboxen
+                textBoxTitel.Text = _buch.Titel;
+                textBoxAutor.Text = _buch.Autor;
+                textBoxISBN.Text = _buch.ISBN;
+                richTextBoxKurzbeschreibung.Text = _buch.Kurzbeschreibung;
+
+                //Textbox Erscheinungsdatum [Umwandlung in richtiges Format]
+                DateTime date = DateTime.ParseExact(_buch.Erscheinungsdatum, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                string output = date.ToString("dd.MM.yyyy");
+                textBoxErscheinungsdatum.Text = output;
+
+                //Dropdown Genre + Alter [IndexOf für evtl. kleine Abweichungen]
+                int idxGenre = dropdownGenre.Items.IndexOf(_buch.Genre);
+                if (idxGenre >= 0)
+                    dropdownGenre.SelectedIndex = idxGenre;
+
+                int idxAge = dropdownAlter.Items.IndexOf(_buch.Altersgruppe);
+                if (idxAge >= 0)
+                    dropdownAlter.SelectedIndex = idxAge;
+
+                //Cover
+                string isbn = _buch.ISBN;
+                string coverPfad = $@"..\..\Images\{isbn}.jpg";
+
+                if (File.Exists(coverPfad))
+                {
+                    pictureBoxCover.Image = Image.FromFile(coverPfad);
+                }
+                else
+                {
+                    pictureBoxCover.Image = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
+                }
+            }
         }
 
         private void buttonHomeBuchModi_Click(object sender, EventArgs e)
