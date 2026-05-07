@@ -123,7 +123,7 @@ namespace Bibo.Forms.Personal
                 }
 
                 //ISBN "speichern"
-                dgvRow.Tag = buchdaten.Buch;
+                dgvRow.Tag = buchdaten;
             }
         }
 
@@ -134,7 +134,8 @@ namespace Bibo.Forms.Personal
             //Doppelklick/Enter auf Tabellenzeile
             ActionOnDoubleclickOrEnterDatagridview(tableBuecherliste, row =>
             {
-                Buch selectedBook = (Buch)row.Tag;
+                BuecherlistePersonalViewModel selectedRowBookVm = (BuecherlistePersonalViewModel)row.Tag;
+                Buch selectedBook = selectedRowBookVm.Buch;
                 Globals.NavigateToNextForm<Buchmodifikation>(this, selectedBook);
             });
         }
@@ -250,10 +251,46 @@ namespace Bibo.Forms.Personal
 
 
 
-        //Klick auf Button für Leihstatus ändern
+        //Klick auf Button für Leihstatus ändern -> Leihfrist verlängern oder leihenden Kunden setzen (mit Frist)
         private void tableBuecherliste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.ColumnIndex == tableBuecherliste.Columns["colLeihfristButton"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = tableBuecherliste.Rows[e.RowIndex];
 
+                //Prüfung, ob Tag wirlich vm ist
+                if (row.Tag is BuecherlistePersonalViewModel buchVm)
+                {
+                    //Schon ausgeliehen?
+                    if (buchVm.Ausleihen != null)
+                    {
+                        //Leihfrist verlängern + nach Bestätigung in db speichern
+                        DateTime rueckgabeDatum = DateTime.ParseExact(buchVm.Ausleihen.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        DateTime neueFrist = rueckgabeDatum.AddDays(14);
+
+                        DialogResult result = MessageBox.Show("Leihfrist um 14 Tage verlängern","Bestätigung", MessageBoxButtons.OKCancel);
+                        if (result == DialogResult.OK)
+                        {
+                            buchVm.Ausleihen.Rueckgabedatum = neueFrist.ToString("yyyy-MM-dd");
+
+                            //neue Leihfrist in db schreiben
+                            var sql = @" UPDATE Ausleihen
+                                            SET Rueckgabedatum = @Rueckgabedatum
+                                            WHERE AusleihID = @AusleihID";
+                            var param = new
+                            {
+                                Rueckgabedatum = buchVm.Ausleihen.Rueckgabedatum,
+                                AusleihID = buchVm.Ausleihen.AusleihID
+                            };
+                            Globals.Db.Execute(sql, param);
+
+                            //Tabelle aktualisieren
+                            tableBuecherliste.Rows.Clear();
+                            InsertData();
+                        }
+                    }
+                }
+            }
         }
     }
 }
