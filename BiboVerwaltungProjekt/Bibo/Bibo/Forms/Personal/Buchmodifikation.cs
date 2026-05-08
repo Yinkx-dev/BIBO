@@ -68,6 +68,7 @@ namespace Bibo.Forms.Personal
                 string isbn = _buch.ISBN;
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
                 pictureBoxCover.Image = LoadCoverSafeBigger(coverPfad);
+                _selectedCoverPath = coverPfad;
             }
 
             //Default-SelectedItem für Dropdowns wegen Speichern-Error wenn null
