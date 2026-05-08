@@ -252,8 +252,10 @@ namespace Bibo.Forms.Personal
 
 
         //Klick auf Button für Leihstatus ändern -> Leihfrist verlängern oder leihenden Kunden setzen (mit Frist)
+        //Klick auf löschen -> Abfrage ob und löschen aus db
         private void tableBuecherliste_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Button Leihstatus
             if (e.ColumnIndex == tableBuecherliste.Columns["colLeihfristButton"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow row = tableBuecherliste.Rows[e.RowIndex];
@@ -291,8 +293,44 @@ namespace Bibo.Forms.Personal
                     }
                     else
                     {
+                        //Kunde leiht Buch aus, Kunde wählen über KundenID
                         IdEingabeKunde idEingabeForm = new IdEingabeKunde(buchVm);
                         idEingabeForm.ShowDialog();
+
+                        //Tabelle aktualisieren
+                        tableBuecherliste.Rows.Clear();
+                        InsertData();
+                    }
+                }
+            }
+
+            //Button löschen
+            if (e.ColumnIndex == tableBuecherliste.Columns["colDeleteButton"].Index && e.RowIndex >= 0)
+            {
+                //Tag des Eintrags
+                DataGridViewRow row = tableBuecherliste.Rows[e.RowIndex];
+
+                //Prüfung, ob Tag wirlich vm ist
+                if (row.Tag is BuecherlistePersonalViewModel buchVm)
+                {
+                    //Abfrage ob sicher
+                    DialogResult result = MessageBox.Show("Buch wirklich löschen?", "Bestätigung", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        //ISBN holen
+                        string isbn = buchVm.Buch.ISBN;
+
+                        //Sql-Statement
+                        var sql = @"DELETE FROM Buch
+                        WHERE ISBN = @ISBN";
+
+                        var param = new
+                        {
+                            ISBN = isbn
+                        };
+
+                        //Eintrag löschen
+                        Globals.Db.Execute(sql, param);
 
                         //Tabelle aktualisieren
                         tableBuecherliste.Rows.Clear();
