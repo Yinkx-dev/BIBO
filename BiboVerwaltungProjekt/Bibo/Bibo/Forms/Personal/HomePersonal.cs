@@ -29,7 +29,11 @@ namespace Bibo.Forms.Personal
         //Neues Buch anlegen
         private void buttonNeuesBuch_Click(object sender, EventArgs e)
         {
-            Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch());
+            //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+            int caller = 0;
+
+            //Zu Buchmodi
+            Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch(), caller);
         }
 
         //Zu Kundenliste

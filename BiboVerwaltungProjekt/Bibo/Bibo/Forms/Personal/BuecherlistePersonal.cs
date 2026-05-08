@@ -127,9 +127,15 @@ namespace Bibo.Forms.Personal
             //Doppelklick/Enter auf Tabellenzeile
             ActionOnDoubleclickOrEnterDatagridview(tableBuecherliste, row =>
             {
+                //Gewähltes Buch
                 BuecherlistePersonalViewModel selectedRowBookVm = (BuecherlistePersonalViewModel)row.Tag;
                 Buch selectedBook = selectedRowBookVm.Buch;
-                Globals.NavigateToNextForm<Buchmodifikation>(this, selectedBook);
+
+                //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+                int caller = 1;
+
+                //Zu Buchmodi
+                Globals.NavigateToNextForm<Buchmodifikation>(this, selectedBook, caller);
             });
         }
 

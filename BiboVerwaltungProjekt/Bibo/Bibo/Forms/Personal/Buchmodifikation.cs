@@ -10,14 +10,19 @@ namespace Bibo.Forms.Personal
 {
     public partial class Buchmodifikation : UI_Helper
     {
+        //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+        private int _caller;
+
         private Buch _buch;
         private CursorManager cursorManager;
         private string _selectedCoverPath;
 
-        public Buchmodifikation(Buch buch)
+        public Buchmodifikation(Buch buch, int caller)
         {
             InitializeComponent();
             _buch = buch;
+            _caller = caller;
+
             InsertData();
             CursorChangeOnInteractiveElements();
             DisableIsbnTextboxIsBorrowed();
@@ -64,6 +69,10 @@ namespace Bibo.Forms.Personal
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
                 pictureBoxCover.Image = LoadCoverSafeBigger(coverPfad);
             }
+
+            //Default-SelectedItem für Dropdowns wegen Speichern-Error wenn null
+            dropdownAlter.SelectedIndex = 0;
+            dropdownGenre.SelectedIndex = 0;
         }
 
 
@@ -74,10 +83,21 @@ namespace Bibo.Forms.Personal
         }
 
 
-        //Abbrechen und zurück zu Home
+        //Abbrechen und zurück zu Ursprungs-Form
         private void buttonAbbrechenBuchmodi_Click(object sender, EventArgs e)
         {
-            Globals.NavigateToNextForm<HomePersonal>(this);
+            //Navigation nach Ursprungs-Form
+            //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+            if (_caller == 0)
+            {
+                //Zu Home
+                Globals.NavigateToNextForm<HomePersonal>(this);
+            }
+            if(_caller == 1)
+            {
+                //Zu BücherlistePersonal
+                Globals.NavigateToNextForm<BuecherlistePersonal>(this);
+            }
         }
 
 
@@ -134,7 +154,24 @@ namespace Bibo.Forms.Personal
                 return;
             }
 
-            //Trim() entfernt evtl. Leerzeichen, etc. außen
+
+            //Prüfung, dass alle Felder ausgefüllt
+            if (!BuchdatenGueltig(_buch))
+            {
+                MessageBox.Show("Bitte alle Daten ausfüllen");
+                return;
+            }
+
+
+            //Abfrage, ob alle Daten korrekt
+            DialogResult result = MessageBox.Show("Sind alle Daten korrekt?", "Bestätigung", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.Cancel)
+            {
+                return;
+            }
+
+
+            //Trim() entfernt evtl. Leerzeichen, etc. außen von ISBN
             string isbn = textBoxISBN.Text.Trim();
 
             //Ort Projektordner bestimmen
@@ -212,8 +249,31 @@ namespace Bibo.Forms.Personal
                     IstAusgeliehen = _buch.IstAusgeliehen
                 });
             }
-            //Zurück zu Bücherliste
-            Globals.NavigateToNextForm<BuecherlistePersonal>(this);
+
+            //Navigation nach Ursprungs-Form
+            //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+            if (_caller == 0)
+            {
+                //Zu Home
+                Globals.NavigateToNextForm<HomePersonal>(this);
+            }
+            if (_caller == 1)
+            {
+                //Zu BücherlistePersonal
+                Globals.NavigateToNextForm<BuecherlistePersonal>(this);
+            }
+        }
+
+        private bool BuchdatenGueltig(Buch b)
+        {
+            return b != null &&
+            !string.IsNullOrWhiteSpace(b.ISBN) &&
+            !string.IsNullOrWhiteSpace(b.Titel) &&
+            !string.IsNullOrWhiteSpace(b.Kurzbeschreibung) &&
+            !string.IsNullOrWhiteSpace(b.Autor) &&
+            !string.IsNullOrWhiteSpace(b.Erscheinungsdatum) &&
+            !string.IsNullOrWhiteSpace(b.Altersgruppe) &&
+            !string.IsNullOrWhiteSpace(b.Genre);
         }
 
 
