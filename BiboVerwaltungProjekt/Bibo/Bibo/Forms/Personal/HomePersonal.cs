@@ -23,7 +23,11 @@ namespace Bibo.Forms.Personal
         //Neuen Kunden anlegen
         private void buttonNeuerKunde_Click(object sender, EventArgs e)
         {
-            Globals.NavigateToNextForm<Kundenmodifikation>(this, new Kunde());
+            //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+            int caller = 0;
+
+            //Zu Kundenmodi neu
+            Globals.NavigateToNextForm<Kundenmodifikation>(this, new Kunde(), caller);
         }
 
         //Neues Buch anlegen
@@ -32,7 +36,7 @@ namespace Bibo.Forms.Personal
             //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
             int caller = 0;
 
-            //Zu Buchmodi
+            //Zu Buchmodi neu
             Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch(), caller);
         }
 

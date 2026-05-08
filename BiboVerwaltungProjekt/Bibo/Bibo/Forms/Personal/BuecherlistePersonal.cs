@@ -4,7 +4,6 @@ using Bibo.Services;
 using Bibo.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -151,7 +150,10 @@ namespace Bibo.Forms.Personal
         //Zu Neues Buch
         private void buttonNeuesBuch_Click(object sender, EventArgs e)
         {
-            Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch());
+            //int für Herkunft 0=Home 1=Liste [unschön, ich weiß]
+            int caller = 1;
+
+            Globals.NavigateToNextForm<Buchmodifikation>(this, new Buch(), caller);
         }
 
 
@@ -181,21 +183,6 @@ namespace Bibo.Forms.Personal
                 InsertData();
             }
         }
-
-
-        //Mauszeiger anpassen bei bestimmten ELementen
-        private void CursorChangeOnInteractiveElements()
-        {
-            cursorManager = new CursorManager();
-
-            cursorManager.AttachHandCursor(buttonNeuesBuch);
-            cursorManager.AttachHandCursor(buttonSucheBuecherlistePersonal);
-            cursorManager.AttachHandCursor(buttonSucheaufheben);
-            cursorManager.AttachHandCursor(buttonQuick);
-            cursorManager.AttachHandCursor(buttonHomeBuecherListePersonal);
-            cursorManager.AttachHandCursor(tableBuecherliste);
-        }
-
 
 
         //Suchleiste, sucht in Buch:ISBN,Titel,Autor und Kunde:Name
@@ -347,6 +334,20 @@ namespace Bibo.Forms.Personal
                     }
                 }
             }
+        }
+
+
+        //Mauszeiger anpassen bei bestimmten ELementen
+        private void CursorChangeOnInteractiveElements()
+        {
+            cursorManager = new CursorManager();
+
+            cursorManager.AttachHandCursor(buttonNeuesBuch);
+            cursorManager.AttachHandCursor(buttonSucheBuecherlistePersonal);
+            cursorManager.AttachHandCursor(buttonSucheaufheben);
+            cursorManager.AttachHandCursor(buttonQuick);
+            cursorManager.AttachHandCursor(buttonHomeBuecherListePersonal);
+            cursorManager.AttachHandCursor(tableBuecherliste);
         }
     }
 }
