@@ -8,10 +8,11 @@ namespace Bibo.Models
     {
         public static Kunde CurrentKunde { get; set; }
 
+        //Pfad von DefaultCover
+        public static string DefaultCoverPath = $@"..\..\Images\DefaultCover.jpg";
 
         //Dateipfad relativ zu bin/Debug
         //public static Database Db = new Database(@"Data Source=..\..\Data\database_BiBO.db;Version=3");
-
         public static Database Db = CreateDb();
 
         private static Database CreateDb()

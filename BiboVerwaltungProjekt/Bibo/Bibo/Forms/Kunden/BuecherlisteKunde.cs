@@ -48,15 +48,7 @@ namespace Bibo
                 //Cover setzen
                 string isbn = buch.ISBN;
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
-
-                if (File.Exists(coverPfad))
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile(coverPfad);
-                }
-                else
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
-                }
+                dgvRow.Cells["colCover"].Value = LoadCoverSafe(coverPfad);
 
                 //Übrige "normale"/simple Zellen der Zeile befüllen
                 dgvRow.Cells["colBewertung"].Value = GetStarString(buch.SterneDurchschnitt);

@@ -52,18 +52,11 @@ namespace Bibo.Forms.Personal
                 int rowIndex = dgv.Rows.Add();
                 DataGridViewRow dgvRow = dgv.Rows[rowIndex];
 
+
                 //Cover setzen
                 string isbn = buchdaten.Buch.ISBN;
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
-
-                if (File.Exists(coverPfad))
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile(coverPfad);
-                }
-                else
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
-                }
+                dgvRow.Cells["colCover"].Value = LoadCoverSafe(coverPfad);
 
 
                 //Übrige "normale"/simple Zellen der Zeile befüllen
@@ -122,7 +115,7 @@ namespace Bibo.Forms.Personal
                     dgvRow.Cells["ColKundeLeih"].Value = "Nicht ausgeliehen";
                 }
 
-                //ISBN "speichern"
+                //Alle Buchdaten "speichern" in Tag
                 dgvRow.Tag = buchdaten;
             }
         }
@@ -329,8 +322,18 @@ namespace Bibo.Forms.Personal
                             ISBN = isbn
                         };
 
-                        //Eintrag löschen
+                        //Eintrag in db löschen
                         Globals.Db.Execute(sql, param);
+
+                        //Bild aus Image-Ordner löschen
+                        //Ort Projektordner bestimmen
+                        string projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\.."));
+                        //Image-Ordner finden
+                        string targetFolder = Path.Combine(projectRoot, "Images");
+                        //Kompletter Dateipfad dieses Covers
+                        string coverPath = Path.Combine(targetFolder, isbn + ".jpg");
+                        //Bild löschen, falls vorhanden
+                        if (File.Exists(coverPath)) File.Delete(coverPath);
 
                         //Tabelle aktualisieren
                         tableBuecherliste.Rows.Clear();

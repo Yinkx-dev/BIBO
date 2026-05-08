@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Bibo.Models;
+using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 public class UI_Helper : Form
@@ -119,5 +122,32 @@ public class UI_Helper : Form
                 action();
             }
         };
+    }
+
+
+    //Bilder in Zwischenspeicher statt Image FromFile, weil sonst Bild "festgehalten" wird
+    //LISTENANSICHT
+    protected static Image LoadCoverSafe(string path, int width = 60, int height = 90)
+    {
+        //Ob Datei da, sonst defaultCover
+        string finalPath = File.Exists(path) ? path : Globals.DefaultCoverPath;
+
+        //Bild in RAM
+        using (var imgTemp = new Bitmap(finalPath))
+        {
+            //Größe ändern um RAM-Last zu minimieren
+            return new Bitmap(imgTemp, new Size(width, height));
+        }
+    }
+
+    //EINZELANSICHT
+    protected static Image LoadCoverSafeBigger(string path)
+    {
+        string finalPath = File.Exists(path) ? path : Globals.DefaultCoverPath;
+
+        using (var imgTemp = new Bitmap(finalPath))
+        {
+            return new Bitmap(imgTemp, new Size(250, 350));
+        }
     }
 }

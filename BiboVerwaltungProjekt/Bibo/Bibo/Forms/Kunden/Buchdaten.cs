@@ -48,12 +48,7 @@ namespace Bibo
             //COVER
             string isbn = buchdatenVM.Buch.ISBN;
             string coverPfad = $@"..\..\Images\{isbn}.jpg";
-            
-            //Cover nur setzen, wenn vorhanden (Default in Designer gesetzt)
-            if (File.Exists(coverPfad))
-            {
-                pictureBoxCover.Image = Image.FromFile(coverPfad);
-            }
+            pictureBoxCover.Image = LoadCoverSafeBigger(coverPfad);
 
 
             //TITEL

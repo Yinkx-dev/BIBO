@@ -39,8 +39,10 @@ namespace Bibo
                 new { Globals.CurrentKunde.KundenID }
             );
 
+            //Tabelle füllen über FillRows
             FillRows(result, tableKundeHome);
 
+            //Labels mit Kundendaten setzen
             nameText.Text = Globals.CurrentKunde.Name;
             string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.PLZ} {Globals.CurrentKunde.Wohnort}";
             addressText.Text = stringAddress;
@@ -52,23 +54,18 @@ namespace Bibo
             //Bewertungs-Button verkleinern
             dgv.Columns["colBewertung"].DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
             
+            //Tabelle füllen
             foreach (var buch in buecher)
             {
                 int rowIndex = dgv.Rows.Add();
                 DataGridViewRow dgvRow = dgv.Rows[rowIndex];
 
+                //Cover
                 string isbn = buch.ISBN;
                 string coverPfad = $@"..\..\Images\{isbn}.jpg";
+                dgvRow.Cells["colCover"].Value = LoadCoverSafe(coverPfad);
 
-                if (File.Exists(coverPfad))
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile(coverPfad);
-                }
-                else
-                {
-                    dgvRow.Cells["colCover"].Value = Image.FromFile($@"..\..\Images\DefaultCover.jpg");
-                }
-
+                //Titel, Autor
                 dgvRow.Cells["colTitle"].Value = buch.Titel;
                 dgvRow.Cells["colAutor"].Value = buch.Autor;
 
