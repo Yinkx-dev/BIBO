@@ -197,7 +197,7 @@ namespace Bibo.Forms.Personal
             }
             else
             {
-                //null abfangen
+                //"null" abfangen
                 input = "";
             }
 
@@ -215,15 +215,6 @@ namespace Bibo.Forms.Personal
         }
 
 
-
-        //Suche "Löschen", Tabelle neu machen
-        private void buttonSucheaufheben_Click(object sender, EventArgs e)
-        {
-            tableBuecherliste.Rows.Clear();
-            FillRows(_buecherlistePersonal, tableBuecherliste);
-        }
-
-
         //Enter in Suchleiste zum Auslösen von buttonSucheBuecherlistePersonal_Click
         private void textBoxSucheBuecherlistePersonal_KeyDown(object sender, KeyEventArgs e)
         {
@@ -235,6 +226,16 @@ namespace Bibo.Forms.Personal
             }
         }
 
+
+        //Suche "Löschen", Tabelle neu machen
+        private void buttonSucheaufheben_Click(object sender, EventArgs e)
+        {
+            //Suchfeld leeren
+            textBoxSucheBuecherlistePersonal.Text = null;
+
+            tableBuecherliste.Rows.Clear();
+            FillRows(_buecherlistePersonal, tableBuecherliste);
+        }
 
 
         //Klick auf Button für Leihstatus ändern -> Leihfrist verlängern oder leihenden Kunden setzen (mit Frist)
@@ -300,7 +301,7 @@ namespace Bibo.Forms.Personal
                 if (row.Tag is BuecherlistePersonalViewModel buchVm)
                 {
                     //Abfrage ob sicher
-                    DialogResult result = MessageBox.Show("Buch wirklich löschen?", "Bestätigung", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show($"Buch '{buchVm.Buch.Titel}' wirklich löschen?", "Bestätigung", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
                         //ISBN holen
@@ -308,7 +309,7 @@ namespace Bibo.Forms.Personal
 
                         //Sql-Statement
                         var sql = @"DELETE FROM Buch
-                        WHERE ISBN = @ISBN";
+                                    WHERE ISBN = @ISBN";
 
                         var param = new
                         {

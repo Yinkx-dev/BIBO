@@ -35,6 +35,7 @@
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.homeText = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonSucheaufheben = new System.Windows.Forms.PictureBox();
             this.buttonSucheKundenListe = new System.Windows.Forms.PictureBox();
             this.textBoxSucheKundenListe = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,9 +53,11 @@
             this.colHausnummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPlz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWohnort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeleteButton = new System.Windows.Forms.DataGridViewImageColumn();
             this.HeaderBuecherliste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSucheaufheben)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSucheKundenListe)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonNeuerKunde)).BeginInit();
@@ -108,12 +111,24 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.buttonSucheaufheben);
             this.panel3.Controls.Add(this.buttonSucheKundenListe);
             this.panel3.Controls.Add(this.textBoxSucheKundenListe);
             this.panel3.Location = new System.Drawing.Point(413, 73);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(429, 46);
             this.panel3.TabIndex = 8;
+            // 
+            // buttonSucheaufheben
+            // 
+            this.buttonSucheaufheben.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheaufheben.Image")));
+            this.buttonSucheaufheben.Location = new System.Drawing.Point(400, 8);
+            this.buttonSucheaufheben.Name = "buttonSucheaufheben";
+            this.buttonSucheaufheben.Size = new System.Drawing.Size(21, 26);
+            this.buttonSucheaufheben.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonSucheaufheben.TabIndex = 16;
+            this.buttonSucheaufheben.TabStop = false;
+            this.buttonSucheaufheben.Click += new System.EventHandler(this.buttonSucheaufheben_Click);
             // 
             // buttonSucheKundenListe
             // 
@@ -124,14 +139,16 @@
             this.buttonSucheKundenListe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonSucheKundenListe.TabIndex = 3;
             this.buttonSucheKundenListe.TabStop = false;
+            this.buttonSucheKundenListe.Click += new System.EventHandler(this.buttonSucheKundenListe_Click);
             // 
             // textBoxSucheKundenListe
             // 
             this.textBoxSucheKundenListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSucheKundenListe.Location = new System.Drawing.Point(52, 8);
             this.textBoxSucheKundenListe.Name = "textBoxSucheKundenListe";
-            this.textBoxSucheKundenListe.Size = new System.Drawing.Size(370, 26);
+            this.textBoxSucheKundenListe.Size = new System.Drawing.Size(342, 26);
             this.textBoxSucheKundenListe.TabIndex = 6;
+            this.textBoxSucheKundenListe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSucheKundenListe_KeyDown);
             // 
             // panel2
             // 
@@ -209,7 +226,8 @@
             this.colStrasse,
             this.colHausnummer,
             this.colPlz,
-            this.colWohnort});
+            this.colWohnort,
+            this.colDeleteButton});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,16 +251,18 @@
             this.tableKundenliste.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableKundenliste.Size = new System.Drawing.Size(1236, 626);
             this.tableKundenliste.TabIndex = 2;
+            this.tableKundenliste.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableKundenliste_CellMouseClick);
             // 
             // colKundenID
             // 
-            this.colKundenID.FillWeight = 50F;
+            this.colKundenID.FillWeight = 47.37235F;
             this.colKundenID.HeaderText = "ID";
             this.colKundenID.Name = "colKundenID";
             this.colKundenID.ReadOnly = true;
             // 
             // colNutzername
             // 
+            this.colNutzername.FillWeight = 94.7447F;
             this.colNutzername.HeaderText = "Nutzername";
             this.colNutzername.MinimumWidth = 6;
             this.colNutzername.Name = "colNutzername";
@@ -250,6 +270,7 @@
             // 
             // colPasswort
             // 
+            this.colPasswort.FillWeight = 94.7447F;
             this.colPasswort.HeaderText = "Passwort";
             this.colPasswort.MinimumWidth = 6;
             this.colPasswort.Name = "colPasswort";
@@ -257,6 +278,7 @@
             // 
             // colName
             // 
+            this.colName.FillWeight = 94.7447F;
             this.colName.HeaderText = "Name";
             this.colName.MinimumWidth = 6;
             this.colName.Name = "colName";
@@ -264,6 +286,7 @@
             // 
             // colGeburtsdatum
             // 
+            this.colGeburtsdatum.FillWeight = 94.7447F;
             this.colGeburtsdatum.HeaderText = "Geburtsdatum";
             this.colGeburtsdatum.MinimumWidth = 6;
             this.colGeburtsdatum.Name = "colGeburtsdatum";
@@ -271,6 +294,7 @@
             // 
             // colStrasse
             // 
+            this.colStrasse.FillWeight = 94.7447F;
             this.colStrasse.HeaderText = "Straße";
             this.colStrasse.MinimumWidth = 6;
             this.colStrasse.Name = "colStrasse";
@@ -278,6 +302,7 @@
             // 
             // colHausnummer
             // 
+            this.colHausnummer.FillWeight = 94.7447F;
             this.colHausnummer.HeaderText = "Hausnummer";
             this.colHausnummer.MinimumWidth = 6;
             this.colHausnummer.Name = "colHausnummer";
@@ -285,6 +310,7 @@
             // 
             // colPlz
             // 
+            this.colPlz.FillWeight = 94.7447F;
             this.colPlz.HeaderText = "PLZ";
             this.colPlz.MinimumWidth = 6;
             this.colPlz.Name = "colPlz";
@@ -292,10 +318,20 @@
             // 
             // colWohnort
             // 
+            this.colWohnort.FillWeight = 94.7447F;
             this.colWohnort.HeaderText = "Wohnort";
             this.colWohnort.MinimumWidth = 6;
             this.colWohnort.Name = "colWohnort";
             this.colWohnort.ReadOnly = true;
+            // 
+            // colDeleteButton
+            // 
+            this.colDeleteButton.FillWeight = 25F;
+            this.colDeleteButton.HeaderText = "";
+            this.colDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("colDeleteButton.Image")));
+            this.colDeleteButton.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colDeleteButton.Name = "colDeleteButton";
+            this.colDeleteButton.ReadOnly = true;
             // 
             // Kundenliste
             // 
@@ -316,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonSucheaufheben)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSucheKundenListe)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buttonNeuerKunde)).EndInit();
@@ -341,6 +378,7 @@
         private System.Windows.Forms.PictureBox buttonHomeKundenListe;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView tableKundenliste;
+        private System.Windows.Forms.PictureBox buttonSucheaufheben;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKundenID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNutzername;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPasswort;
@@ -350,5 +388,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHausnummer;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPlz;
         private System.Windows.Forms.DataGridViewTextBoxColumn colWohnort;
+        private System.Windows.Forms.DataGridViewImageColumn colDeleteButton;
     }
 }
