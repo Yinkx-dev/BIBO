@@ -55,8 +55,10 @@ namespace Bibo
                 pictureBoxCover.Image = Image.FromFile(coverPfad);
             }
 
+
             //TITEL
             richTextBoxTitel.Text = buchdatenVM.Buch.Titel;
+
 
             //BUCHINFOS -> Autor, ISBN, Genre, Altersgruppe, Erscheinungsdatum
             DateTime datum;
@@ -71,8 +73,10 @@ namespace Bibo
 
             richTextBoxInfos.Text = additionalInformationBook;
 
+
             //KURZBESCHREIBUNG
             richTextBoxBeschreibung.Text = buchdatenVM.Buch.Kurzbeschreibung;
+
 
             //LEIHSTATUS +++ BewertungsButton
             //Wenn Buch in Bibliothek ist
@@ -84,10 +88,12 @@ namespace Bibo
             else if (buchdatenVM.Leihdaten.KundenID == Globals.CurrentKunde.KundenID)
             {
                 //Leihstatus
-                string rueckgabeDatum = buchdatenVM.Leihdaten.Rueckgabedatum;
-                string rueckgabeDatumString = rueckgabeDatum.Replace("-", ".");
+                DateTime rueckDatum; 
+                DateTime.TryParseExact(buchdatenVM.Leihdaten.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out rueckDatum);
+                string rueckgabeDatumString = rueckDatum.ToString("dd.MM.yyyy");
 
                 richTextBoxLeihstatus.Text = "Zurückgeben bis: " + rueckgabeDatumString;
+
 
                 //Bewertungs-Button (+label)
                 labelBewertungSchreiben.Visible = true;
