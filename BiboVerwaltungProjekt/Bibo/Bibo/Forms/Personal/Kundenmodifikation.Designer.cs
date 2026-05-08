@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kundenmodifikation));
             this.textBoxNachname = new System.Windows.Forms.TextBox();
-            this.textBoxGeburtsdatum = new System.Windows.Forms.TextBox();
             this.textBoxStrasse = new System.Windows.Forms.TextBox();
             this.labelStrasse = new System.Windows.Forms.Label();
             this.labelGeburtsdatum = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.labelNutzername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonZurueckZuKundenliste = new System.Windows.Forms.PictureBox();
+            this.datePickerGebDatum = new System.Windows.Forms.DateTimePicker();
             this.HeaderBuchmodifaktion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,14 +71,6 @@
             this.textBoxNachname.Name = "textBoxNachname";
             this.textBoxNachname.Size = new System.Drawing.Size(344, 26);
             this.textBoxNachname.TabIndex = 26;
-            // 
-            // textBoxGeburtsdatum
-            // 
-            this.textBoxGeburtsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxGeburtsdatum.Location = new System.Drawing.Point(158, 216);
-            this.textBoxGeburtsdatum.Name = "textBoxGeburtsdatum";
-            this.textBoxGeburtsdatum.Size = new System.Drawing.Size(344, 26);
-            this.textBoxGeburtsdatum.TabIndex = 27;
             // 
             // textBoxStrasse
             // 
@@ -344,11 +336,21 @@
             this.buttonZurueckZuKundenliste.TabStop = false;
             this.buttonZurueckZuKundenliste.Click += new System.EventHandler(this.buttonZurueckZuKundenliste_Click);
             // 
+            // datePickerGebDatum
+            // 
+            this.datePickerGebDatum.CustomFormat = "dd.MM.yyyy";
+            this.datePickerGebDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerGebDatum.Location = new System.Drawing.Point(158, 211);
+            this.datePickerGebDatum.Name = "datePickerGebDatum";
+            this.datePickerGebDatum.Size = new System.Drawing.Size(339, 26);
+            this.datePickerGebDatum.TabIndex = 46;
+            // 
             // Kundenmodifikation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.datePickerGebDatum);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPasswort);
             this.Controls.Add(this.labelPasswort);
@@ -365,7 +367,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.HeaderBuchmodifaktion);
             this.Controls.Add(this.textBoxNachname);
-            this.Controls.Add(this.textBoxGeburtsdatum);
             this.Controls.Add(this.textBoxStrasse);
             this.Controls.Add(this.labelStrasse);
             this.Controls.Add(this.labelGeburtsdatum);
@@ -391,7 +392,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxNachname;
-        private System.Windows.Forms.TextBox textBoxGeburtsdatum;
         private System.Windows.Forms.TextBox textBoxStrasse;
         private System.Windows.Forms.Label labelStrasse;
         private System.Windows.Forms.Label labelGeburtsdatum;
@@ -417,5 +417,6 @@
         private System.Windows.Forms.Label labelNutzername;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox buttonZurueckZuKundenliste;
+        private System.Windows.Forms.DateTimePicker datePickerGebDatum;
     }
 }

@@ -47,7 +47,7 @@ namespace Bibo.Forms.Personal
                 dgvRow.Cells["colKundenID"].Value = kundendaten.KundenID;
                 dgvRow.Cells["colNutzername"].Value = kundendaten.Nutzername;
                 dgvRow.Cells["colPasswort"].Value = kundendaten.Passwort;
-                dgvRow.Cells["colName"].Value = kundendaten.Name;
+                dgvRow.Cells["colName"].Value = kundendaten.Vorname + " " + kundendaten.Nachname;
                 dgvRow.Cells["colStrasse"].Value = kundendaten.Strasse;
                 dgvRow.Cells["colHausnummer"].Value = kundendaten.Hausnummer;
                 dgvRow.Cells["colPlz"].Value = kundendaten.PLZ;
@@ -118,7 +118,8 @@ namespace Bibo.Forms.Personal
             //Kundenliste durchsuchen, auch ToLower, Ergebnisliste erstellen
             var resultListe = _kundenliste.Where(x=>
                 (x.KundenID != null && x.KundenID.ToString().Contains(input)) ||
-                (x.Name != null && x.Name.ToLower().Contains(input))
+                (x.Vorname != null && x.Vorname.ToLower().Contains(input)) ||
+                (x.Nachname != null && x.Nachname.ToLower().Contains(input))
             ).ToList();
 
             //Tabelle leeren und mit Ergebnis füllen
@@ -164,7 +165,7 @@ namespace Bibo.Forms.Personal
                 if (row.Tag is Kunde k)
                 {
                     //Abfrage ob sicher
-                    DialogResult result = MessageBox.Show($"Kunde '{k.Name}' wirklich löschen?", "Bestätigung", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show($"Kunde '{k.Vorname + " " + k.Nachname}' wirklich löschen?", "Bestätigung", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
                         //KundenId holen

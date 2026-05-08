@@ -137,7 +137,7 @@ namespace Bibo
                         );
 
                     //Den Namen des Verfassers ins dgv schreiben
-                    nameVerfasser = verfasser.Name;
+                    nameVerfasser = verfasser.Vorname + " " + verfasser.Nachname;
                 }
                 else
                 {

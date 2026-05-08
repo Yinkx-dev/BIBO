@@ -40,7 +40,7 @@ namespace Bibo.Forms.Personal
         }
 
 
-        //Übergebene Daten anzeigen
+        //Ggf. Übergebene Daten anzeigen
         private void InsertData()
         {
             if( _buch.Titel != null)

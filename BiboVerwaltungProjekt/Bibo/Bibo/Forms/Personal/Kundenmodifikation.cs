@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,30 @@ namespace Bibo.Forms.Personal
             InitializeComponent();
             _kunde = kunde;
             _caller = caller;
+
+            InsertData();
+        }
+
+
+        //Ggf. Übergebene Daten anzeigen
+        private void InsertData()
+        {
+            if (_kunde.Vorname != null)
+            {
+                //"simple" Textboxen
+                textBoxVorname.Text = _kunde.Vorname;
+                textBoxNachname.Text = _kunde.Nachname;
+                textBoxStrasse.Text = _kunde.Strasse;
+                textBoxHausnummer.Text = _kunde.Hausnummer;
+                textBoxPostleitzahl.Text = _kunde.PLZ.ToString();
+                textBoxWohnort.Text = _kunde.Wohnort;
+                textBoxNutzername.Text = _kunde.Nutzername;
+                textBoxPasswort.Text = _kunde.Passwort;
+
+                //Textbox Geburtsdatum [Umwandlung in richtiges Format]
+                DateTime date = DateTime.ParseExact(_kunde.Geburtsdatum, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                datePickerGebDatum.Value = date;
+            }
         }
 
 

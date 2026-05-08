@@ -43,7 +43,7 @@ namespace Bibo
             FillRows(result, tableKundeHome);
 
             //Labels mit Kundendaten setzen
-            nameText.Text = Globals.CurrentKunde.Name;
+            nameText.Text = Globals.CurrentKunde.Vorname + " " + Globals.CurrentKunde.Nachname;
             string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.PLZ} {Globals.CurrentKunde.Wohnort}";
             addressText.Text = stringAddress;
             //Geburtsdatum Format ändern

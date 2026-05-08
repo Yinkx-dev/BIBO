@@ -103,7 +103,7 @@ namespace Bibo.Forms.Personal
                 if(buchdaten.KundeLeih != null)
                 {
                     string kundendatenString =
-                        buchdaten.KundeLeih.Name + "\n" +
+                        buchdaten.KundeLeih.Vorname + " " + buchdaten.KundeLeih.Nachname + "\n" +
                         buchdaten.KundeLeih.Strasse + buchdaten.KundeLeih.Hausnummer + "\n" +
                         buchdaten.KundeLeih.PLZ + buchdaten.KundeLeih.Wohnort;
 
@@ -206,7 +206,8 @@ namespace Bibo.Forms.Personal
                 (x.Buch.ISBN != null && x.Buch.ISBN.ToLower().Contains(input)) ||
                 (x.Buch.Titel != null && x.Buch.Titel.ToLower().Contains(input)) ||
                 (x.Buch.Autor != null && x.Buch.Autor.ToLower().Contains(input)) ||
-                (x.KundeLeih != null && x.KundeLeih.Name != null && x.KundeLeih.Name.ToLower().Contains(input))
+                (x.KundeLeih != null && x.KundeLeih.Vorname != null && x.KundeLeih.Vorname.ToLower().Contains(input)) ||
+                (x.KundeLeih != null && x.KundeLeih.Nachname != null && x.KundeLeih.Nachname.ToLower().Contains(input))
             ).ToList();
 
             //Tabelle leeren und mit Ergebnis füllen

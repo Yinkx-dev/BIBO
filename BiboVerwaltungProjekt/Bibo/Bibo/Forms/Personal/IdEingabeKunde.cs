@@ -111,7 +111,7 @@ namespace Bibo.Forms.Personal
             {
                 labelKundeName.Visible = true;
                 labelKundeName.ForeColor = Color.Black;
-                labelKundeName.Text = resultKunde.Name;
+                labelKundeName.Text = resultKunde.Vorname + " " + resultKunde.Nachname;
 
                 //Werte TEMPORÄR setzen
                 //Bool in Buch
