@@ -46,7 +46,10 @@ namespace Bibo
             nameText.Text = Globals.CurrentKunde.Name;
             string stringAddress = $"{Globals.CurrentKunde.Strasse} {Globals.CurrentKunde.Hausnummer}\n{Globals.CurrentKunde.PLZ} {Globals.CurrentKunde.Wohnort}";
             addressText.Text = stringAddress;
-            birthdateText.Text = Globals.CurrentKunde.Geburtsdatum;
+            //Geburtsdatum Format ändern
+            DateTime gebdatum;
+            DateTime.TryParseExact(Globals.CurrentKunde.Geburtsdatum, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out gebdatum);
+            birthdateText.Text = gebdatum.ToString("dd.MM.yyyy");
         }
 
         private void FillRows(List<KundeAusgeliehenViewModel> buecher, DataGridView dgv)
