@@ -37,7 +37,6 @@
             this.dropdownAlter = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonCoverhochladen2 = new System.Windows.Forms.PictureBox();
             this.buttonCoverhochladen = new System.Windows.Forms.Button();
             this.pictureBoxCover = new System.Windows.Forms.PictureBox();
             this.buttonSpeichernBuchmodi = new System.Windows.Forms.Button();
@@ -51,17 +50,18 @@
             this.labelGenre = new System.Windows.Forms.Label();
             this.labelAlter = new System.Windows.Forms.Label();
             this.labelKurzbeschreibung = new System.Windows.Forms.Label();
-            this.textBoxErscheinungsdatum = new System.Windows.Forms.TextBox();
             this.textBoxAutor = new System.Windows.Forms.TextBox();
             this.textBoxISBN = new System.Windows.Forms.TextBox();
             this.richTextBoxKurzbeschreibung = new System.Windows.Forms.RichTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonZurueckBuecherliste = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.datePickerErschDatum = new System.Windows.Forms.DateTimePicker();
+            this.labelIsbnDeactivated = new System.Windows.Forms.Label();
             this.HeaderBuchmodifaktion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonCoverhochladen2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuchModi)).BeginInit();
@@ -119,6 +119,7 @@
             // 
             // dropdownGenre
             // 
+            this.dropdownGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdownGenre.FormattingEnabled = true;
             this.dropdownGenre.Items.AddRange(new object[] {
@@ -139,6 +140,7 @@
             // 
             // dropdownAlter
             // 
+            this.dropdownAlter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdownAlter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dropdownAlter.FormattingEnabled = true;
             this.dropdownAlter.Items.AddRange(new object[] {
@@ -165,39 +167,28 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.buttonCoverhochladen2);
             this.panel3.Controls.Add(this.buttonCoverhochladen);
             this.panel3.Location = new System.Drawing.Point(-1, -1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(165, 40);
             this.panel3.TabIndex = 29;
             // 
-            // buttonCoverhochladen2
-            // 
-            this.buttonCoverhochladen2.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCoverhochladen2.Image = ((System.Drawing.Image)(resources.GetObject("buttonCoverhochladen2.Image")));
-            this.buttonCoverhochladen2.Location = new System.Drawing.Point(100, 3);
-            this.buttonCoverhochladen2.Name = "buttonCoverhochladen2";
-            this.buttonCoverhochladen2.Size = new System.Drawing.Size(60, 32);
-            this.buttonCoverhochladen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonCoverhochladen2.TabIndex = 27;
-            this.buttonCoverhochladen2.TabStop = false;
-            // 
             // buttonCoverhochladen
             // 
-            this.buttonCoverhochladen.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCoverhochladen.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonCoverhochladen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCoverhochladen.FlatAppearance.BorderSize = 0;
             this.buttonCoverhochladen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCoverhochladen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCoverhochladen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCoverhochladen.Location = new System.Drawing.Point(-3, -1);
             this.buttonCoverhochladen.Name = "buttonCoverhochladen";
-            this.buttonCoverhochladen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCoverhochladen.Size = new System.Drawing.Size(165, 40);
+            this.buttonCoverhochladen.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.buttonCoverhochladen.Size = new System.Drawing.Size(167, 40);
             this.buttonCoverhochladen.TabIndex = 9;
-            this.buttonCoverhochladen.Text = "Ändern";
+            this.buttonCoverhochladen.Text = "Bild hochladen";
             this.buttonCoverhochladen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCoverhochladen.UseVisualStyleBackColor = false;
+            this.buttonCoverhochladen.Click += new System.EventHandler(this.buttonCoverhochladen_Click);
             // 
             // pictureBoxCover
             // 
@@ -225,6 +216,7 @@
             this.buttonSpeichernBuchmodi.TabIndex = 10;
             this.buttonSpeichernBuchmodi.Text = "Speichern";
             this.buttonSpeichernBuchmodi.UseVisualStyleBackColor = false;
+            this.buttonSpeichernBuchmodi.Click += new System.EventHandler(this.buttonSpeichernBuchmodi_Click);
             // 
             // buttonAbbrechenBuchmodi
             // 
@@ -289,7 +281,7 @@
             // 
             this.labelAutor.AutoSize = true;
             this.labelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAutor.Location = new System.Drawing.Point(155, 174);
+            this.labelAutor.Location = new System.Drawing.Point(155, 190);
             this.labelAutor.Name = "labelAutor";
             this.labelAutor.Size = new System.Drawing.Size(55, 24);
             this.labelAutor.TabIndex = 16;
@@ -299,7 +291,7 @@
             // 
             this.labelErscheinungsdatum.AutoSize = true;
             this.labelErscheinungsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErscheinungsdatum.Location = new System.Drawing.Point(769, 186);
+            this.labelErscheinungsdatum.Location = new System.Drawing.Point(769, 190);
             this.labelErscheinungsdatum.Name = "labelErscheinungsdatum";
             this.labelErscheinungsdatum.Size = new System.Drawing.Size(179, 24);
             this.labelErscheinungsdatum.TabIndex = 17;
@@ -335,18 +327,10 @@
             this.labelKurzbeschreibung.TabIndex = 20;
             this.labelKurzbeschreibung.Text = "Kurzbeschreibung";
             // 
-            // textBoxErscheinungsdatum
-            // 
-            this.textBoxErscheinungsdatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxErscheinungsdatum.Location = new System.Drawing.Point(772, 218);
-            this.textBoxErscheinungsdatum.Name = "textBoxErscheinungsdatum";
-            this.textBoxErscheinungsdatum.Size = new System.Drawing.Size(344, 26);
-            this.textBoxErscheinungsdatum.TabIndex = 6;
-            // 
             // textBoxAutor
             // 
             this.textBoxAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAutor.Location = new System.Drawing.Point(158, 206);
+            this.textBoxAutor.Location = new System.Drawing.Point(158, 222);
             this.textBoxAutor.Name = "textBoxAutor";
             this.textBoxAutor.Size = new System.Drawing.Size(344, 26);
             this.textBoxAutor.TabIndex = 3;
@@ -389,16 +373,46 @@
             this.buttonZurueckBuecherliste.TabStop = false;
             this.buttonZurueckBuecherliste.Click += new System.EventHandler(this.buttonZurueckBuecherliste_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(173, 627);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "*nur .jpg-Dateien kompatibel";
+            // 
+            // datePickerErschDatum
+            // 
+            this.datePickerErschDatum.CustomFormat = "dd.MM.yyyy";
+            this.datePickerErschDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickerErschDatum.Location = new System.Drawing.Point(773, 222);
+            this.datePickerErschDatum.Name = "datePickerErschDatum";
+            this.datePickerErschDatum.Size = new System.Drawing.Size(339, 26);
+            this.datePickerErschDatum.TabIndex = 23;
+            // 
+            // labelIsbnDeactivated
+            // 
+            this.labelIsbnDeactivated.AutoSize = true;
+            this.labelIsbnDeactivated.Location = new System.Drawing.Point(771, 160);
+            this.labelIsbnDeactivated.Name = "labelIsbnDeactivated";
+            this.labelIsbnDeactivated.Size = new System.Drawing.Size(172, 13);
+            this.labelIsbnDeactivated.TabIndex = 24;
+            this.labelIsbnDeactivated.Text = "*deaktiviert, weil Buch ausgeliehen";
+            this.labelIsbnDeactivated.Visible = false;
+            // 
             // Buchmodifikation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.labelIsbnDeactivated);
+            this.Controls.Add(this.datePickerErschDatum);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.richTextBoxKurzbeschreibung);
             this.Controls.Add(this.textBoxISBN);
             this.Controls.Add(this.textBoxAutor);
-            this.Controls.Add(this.textBoxErscheinungsdatum);
             this.Controls.Add(this.labelKurzbeschreibung);
             this.Controls.Add(this.labelAlter);
             this.Controls.Add(this.labelGenre);
@@ -423,7 +437,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonCoverhochladen2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCover)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuchModi)).EndInit();
@@ -455,14 +468,15 @@
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.Label labelAlter;
         private System.Windows.Forms.Label labelKurzbeschreibung;
-        private System.Windows.Forms.TextBox textBoxErscheinungsdatum;
         private System.Windows.Forms.TextBox textBoxAutor;
         private System.Windows.Forms.TextBox textBoxISBN;
         private System.Windows.Forms.RichTextBox richTextBoxKurzbeschreibung;
-        private System.Windows.Forms.PictureBox buttonCoverhochladen2;
         private System.Windows.Forms.Button buttonCoverhochladen;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox buttonZurueckBuecherliste;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker datePickerErschDatum;
+        private System.Windows.Forms.Label labelIsbnDeactivated;
     }
 }
