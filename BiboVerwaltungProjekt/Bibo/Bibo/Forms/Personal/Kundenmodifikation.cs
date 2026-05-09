@@ -236,5 +236,18 @@ namespace Bibo.Forms.Personal
         {
             Globals.NavigateToNextForm<Kundenliste>(this);
         }
+
+
+        //Vor Schließen, Warnung, dass nicht gespeichert, wenn  Anwendung beendet
+        protected override bool ConfirmApplicationExit()
+        {
+            DialogResult result = MessageBox.Show(
+                "Anwendung wirklich beeenden? Eingaben werden nicht gespeichert",
+                "Bestätigung",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            return result == DialogResult.Yes;
+        }
     }
 }
