@@ -145,6 +145,7 @@
     <Compile Include="Models\Bewertung.cs" />
     <Compile Include="Models\Buch.cs" />
     <Compile Include="Core\Globals.cs" />
+    <Compile Include="Models\Medium.cs" />
     <Compile Include="Services\BuchdatenService.cs" />
     <Compile Include="Services\BuecherlistePersonalService.cs" />
     <Compile Include="Services\IBuchdatenService.cs" />
