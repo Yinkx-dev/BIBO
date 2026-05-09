@@ -15,6 +15,7 @@ namespace Bibo
 {
     public partial class HomeKunde: UI_Helper
     {
+        private readonly SessionService _sessionService = new SessionService();
         private CursorManager cursorManager;
         private Kunde _kunde;
         public HomeKunde()
@@ -108,7 +109,7 @@ namespace Bibo
         //Ausloggen
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            Globals.CurrentKunde = new Kunde();
+            _sessionService.Logout();
             Globals.NavigateToNextForm<Login>(this);
         }
 

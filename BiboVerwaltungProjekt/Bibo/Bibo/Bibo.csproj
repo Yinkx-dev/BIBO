@@ -152,6 +152,7 @@
     <Compile Include="Services\BuecherlistePersonalService.cs" />
     <Compile Include="Services\IBuchdatenService.cs" />
     <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\SessionService.cs" />
     <Compile Include="ViewModels\BewertungBuchViewModel.cs" />
     <Compile Include="ViewModels\BuchdatenViewModel.cs" />
     <Compile Include="ViewModels\BuecherlistePersonalViewModel.cs" />
