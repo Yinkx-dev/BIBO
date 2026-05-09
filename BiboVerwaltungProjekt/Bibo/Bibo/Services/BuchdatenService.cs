@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bibo.Services
 {
-    public class BuchdatenService
+    public class BuchdatenService : IBuchdatenService
     {
         private readonly Database _db;
 

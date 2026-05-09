@@ -147,6 +147,7 @@
     <Compile Include="Core\Globals.cs" />
     <Compile Include="Services\BuchdatenService.cs" />
     <Compile Include="Services\BuecherlistePersonalService.cs" />
+    <Compile Include="Services\IBuchdatenService.cs" />
     <Compile Include="ViewModels\BewertungBuchViewModel.cs" />
     <Compile Include="ViewModels\BuchdatenViewModel.cs" />
     <Compile Include="ViewModels\BuecherlistePersonalViewModel.cs" />
