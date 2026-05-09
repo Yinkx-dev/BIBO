@@ -1,54 +1,53 @@
-﻿using System;
-using System.Windows.Forms;
-using Bibo.Models;
+﻿using Bibo.Core;
 using Bibo.Forms.Personal;
+using Bibo.Models;
+using Bibo.Services;
+using System;
+using System.Windows.Forms;
 
 namespace Bibo
 {
     public partial class Login: UI_Helper
     {
+        private LoginService loginService;
+
         public Login()
         {
             InitializeComponent();
+            loginService = new LoginService();
             CloseApplicationOnUserClose = true;
         }
 
         //Login-Button Klick -> geht auch mit Enter
         private void login_btn_Click(object sender, EventArgs e)
         {
+            //Eingaben in Variablen
             string username = username_tb.Text.Trim();
             string password = pw_tb.Text.Trim();
 
-            //PERSONAL-LOGIN!
-            //Prüfen, ob Admin sich einloggt, wenn ja, ab zu PersonalHome
-            var personal = Globals.Db.QuerySingle<Personal>("SELECT * FROM Personal");
-            
-            if(username == personal.Nutzername && password == personal.Kennwort)
+            //Eingaben mit Service prüfen
+            var response = loginService.CheckLogin(username, password);
+            //Aktion nach Ergebnis
+            switch (response.Result)
             {
-                HomePersonal homePersonal = new HomePersonal();
-                homePersonal.Show();
-                Hide();
-                return;
-            }
+                //Admin loggt sich ein
+                case LoginResult.Personal:
+                    new HomePersonal().Show();
+                    Hide();
+                    break;
 
+                //Kunde loggt sich ein
+                case LoginResult.Kunde:
+                    Globals.CurrentKunde = response.Kunde;
 
-            //KUNDEN-LOGIN!
-            //Datenbank Connection für Kunde
-            var kunde = Globals.Db.QuerySingle<Kunde>(
-                "SELECT * FROM Kunde WHERE Nutzername = @username AND Passwort = @password",
-                new { username, password }
-            );
-            //Nur einloggen versuchen, wenn ein Kunde vorhanden ist
-            if (kunde != null)
-            {
-                Globals.CurrentKunde = kunde;
-                HomeKunde homeKundeForm = new HomeKunde();
-                homeKundeForm.Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Benutzer nicht gefunden");
+                    new HomeKunde().Show();
+                    Hide();
+                    break;
+
+                //Eingabe falsch
+                default:
+                    MessageBox.Show("Benutzer nicht gefunden");
+                    break;
             }
         }
 
