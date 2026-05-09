@@ -265,6 +265,8 @@ namespace Bibo.Forms.Personal
             }
         }
 
+
+        //Prüfung, dass Buchdaten nicht null oder leer sind
         private bool BuchdatenGueltig(Buch b)
         {
             return b != null &&

@@ -223,6 +223,7 @@
             this.buttonSpeichernKundenmodi.TabIndex = 34;
             this.buttonSpeichernKundenmodi.Text = "Speichern";
             this.buttonSpeichernKundenmodi.UseVisualStyleBackColor = false;
+            this.buttonSpeichernKundenmodi.Click += new System.EventHandler(this.buttonSpeichernKundenmodi_Click);
             // 
             // textBoxHausnummer
             // 
