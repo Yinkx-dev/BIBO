@@ -38,6 +38,7 @@
             this.buttonBuecherliste = new System.Windows.Forms.Button();
             this.logoutButtonPersonal = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonKundeImport = new System.Windows.Forms.Button();
             this.homeHeaderPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButtonPersonal)).BeginInit();
@@ -92,10 +93,10 @@
             this.buttonKundenliste.FlatAppearance.BorderSize = 0;
             this.buttonKundenliste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKundenliste.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKundenliste.Location = new System.Drawing.Point(200, 219);
+            this.buttonKundenliste.Location = new System.Drawing.Point(200, 193);
             this.buttonKundenliste.Name = "buttonKundenliste";
             this.buttonKundenliste.Padding = new System.Windows.Forms.Padding(50, 15, 50, 15);
-            this.buttonKundenliste.Size = new System.Drawing.Size(277, 79);
+            this.buttonKundenliste.Size = new System.Drawing.Size(296, 98);
             this.buttonKundenliste.TabIndex = 12;
             this.buttonKundenliste.Text = "Kundenliste";
             this.buttonKundenliste.UseVisualStyleBackColor = false;
@@ -109,10 +110,10 @@
             this.buttonNeuesBuch.FlatAppearance.BorderSize = 0;
             this.buttonNeuesBuch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNeuesBuch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNeuesBuch.Location = new System.Drawing.Point(794, 440);
+            this.buttonNeuesBuch.Location = new System.Drawing.Point(763, 395);
             this.buttonNeuesBuch.Name = "buttonNeuesBuch";
             this.buttonNeuesBuch.Padding = new System.Windows.Forms.Padding(50, 15, 50, 15);
-            this.buttonNeuesBuch.Size = new System.Drawing.Size(266, 79);
+            this.buttonNeuesBuch.Size = new System.Drawing.Size(296, 98);
             this.buttonNeuesBuch.TabIndex = 15;
             this.buttonNeuesBuch.Text = "Neues Buch";
             this.buttonNeuesBuch.UseVisualStyleBackColor = false;
@@ -126,10 +127,10 @@
             this.buttonNeuerKunde.FlatAppearance.BorderSize = 0;
             this.buttonNeuerKunde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNeuerKunde.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNeuerKunde.Location = new System.Drawing.Point(200, 440);
+            this.buttonNeuerKunde.Location = new System.Drawing.Point(200, 395);
             this.buttonNeuerKunde.Name = "buttonNeuerKunde";
             this.buttonNeuerKunde.Padding = new System.Windows.Forms.Padding(50, 15, 50, 15);
-            this.buttonNeuerKunde.Size = new System.Drawing.Size(279, 79);
+            this.buttonNeuerKunde.Size = new System.Drawing.Size(296, 98);
             this.buttonNeuerKunde.TabIndex = 13;
             this.buttonNeuerKunde.Text = "Neuer Kunde";
             this.buttonNeuerKunde.UseVisualStyleBackColor = false;
@@ -143,10 +144,10 @@
             this.buttonBuecherliste.FlatAppearance.BorderSize = 0;
             this.buttonBuecherliste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuecherliste.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuecherliste.Location = new System.Drawing.Point(794, 219);
+            this.buttonBuecherliste.Location = new System.Drawing.Point(763, 193);
             this.buttonBuecherliste.Name = "buttonBuecherliste";
             this.buttonBuecherliste.Padding = new System.Windows.Forms.Padding(50, 15, 50, 15);
-            this.buttonBuecherliste.Size = new System.Drawing.Size(261, 79);
+            this.buttonBuecherliste.Size = new System.Drawing.Size(296, 98);
             this.buttonBuecherliste.TabIndex = 14;
             this.buttonBuecherliste.Text = "Bücherliste";
             this.buttonBuecherliste.UseVisualStyleBackColor = false;
@@ -174,11 +175,29 @@
             this.panel1.Size = new System.Drawing.Size(54, 54);
             this.panel1.TabIndex = 17;
             // 
+            // buttonKundeImport
+            // 
+            this.buttonKundeImport.AutoSize = true;
+            this.buttonKundeImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(136)))), ((int)(((byte)(191)))));
+            this.buttonKundeImport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonKundeImport.FlatAppearance.BorderSize = 0;
+            this.buttonKundeImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKundeImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKundeImport.Location = new System.Drawing.Point(200, 557);
+            this.buttonKundeImport.Name = "buttonKundeImport";
+            this.buttonKundeImport.Padding = new System.Windows.Forms.Padding(50, 15, 50, 15);
+            this.buttonKundeImport.Size = new System.Drawing.Size(296, 98);
+            this.buttonKundeImport.TabIndex = 18;
+            this.buttonKundeImport.Text = "Neuen Kunden\r\nimportieren";
+            this.buttonKundeImport.UseVisualStyleBackColor = false;
+            this.buttonKundeImport.Click += new System.EventHandler(this.buttonKundeImport_Click);
+            // 
             // HomePersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.buttonKundeImport);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonBuecherliste);
             this.Controls.Add(this.buttonNeuerKunde);
@@ -210,5 +229,6 @@
         private System.Windows.Forms.Button buttonBuecherliste;
         private System.Windows.Forms.PictureBox logoutButtonPersonal;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonKundeImport;
     }
 }

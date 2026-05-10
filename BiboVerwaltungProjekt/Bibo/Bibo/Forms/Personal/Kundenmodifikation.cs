@@ -1,13 +1,7 @@
 ﻿using Bibo.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bibo.Forms.Personal
@@ -24,6 +18,9 @@ namespace Bibo.Forms.Personal
         {
             InitializeComponent();
             _kunde = kunde;
+            //Dass bei Import auch auf NeuerKunde gesetzt wird
+            _istNeuerKunde = (_kunde.KundenID == 0);
+
             _caller = caller;
 
             InsertData();
