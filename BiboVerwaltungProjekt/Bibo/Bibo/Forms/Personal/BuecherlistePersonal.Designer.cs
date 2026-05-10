@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuecherlistePersonal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.HeaderBuecherliste = new System.Windows.Forms.Panel();
             this.pictureHome = new System.Windows.Forms.PictureBox();
             this.homeText = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@
             this.buttonSucheaufheben = new System.Windows.Forms.PictureBox();
             this.buttonSucheBuecherlistePersonal = new System.Windows.Forms.PictureBox();
             this.textBoxSucheBuecherlistePersonal = new System.Windows.Forms.TextBox();
+            this.buttonExport = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.HeaderBuecherliste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHomeBuecherListePersonal)).BeginInit();
@@ -173,14 +175,14 @@
             this.tableBuecherliste.AllowUserToResizeColumns = false;
             this.tableBuecherliste.AllowUserToResizeRows = false;
             this.tableBuecherliste.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableBuecherliste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableBuecherliste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.tableBuecherliste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableBuecherliste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCover,
@@ -193,15 +195,15 @@
             this.ColKundeLeih,
             this.colLeihfristButton,
             this.colDeleteButton});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableBuecherliste.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableBuecherliste.DefaultCellStyle = dataGridViewCellStyle12;
             this.tableBuecherliste.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableBuecherliste.EnableHeadersVisualStyles = false;
             this.tableBuecherliste.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -222,6 +224,7 @@
             // 
             this.colCover.HeaderText = "Cover";
             this.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colCover.MinimumWidth = 6;
             this.colCover.Name = "colCover";
             this.colCover.ReadOnly = true;
             // 
@@ -266,9 +269,9 @@
             // 
             // colLeihfrist
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.colLeihfrist.DefaultCellStyle = dataGridViewCellStyle10;
             this.colLeihfrist.FillWeight = 90F;
             this.colLeihfrist.HeaderText = "Leihfrist";
             this.colLeihfrist.MinimumWidth = 6;
@@ -278,19 +281,21 @@
             // ColKundeLeih
             // 
             this.ColKundeLeih.HeaderText = "Ausgeliehen von";
+            this.ColKundeLeih.MinimumWidth = 6;
             this.ColKundeLeih.Name = "ColKundeLeih";
             this.ColKundeLeih.ReadOnly = true;
             this.ColKundeLeih.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colLeihfristButton
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.colLeihfristButton.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
+            this.colLeihfristButton.DefaultCellStyle = dataGridViewCellStyle11;
             this.colLeihfristButton.FillWeight = 30F;
             this.colLeihfristButton.HeaderText = "";
             this.colLeihfristButton.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colLeihfristButton.MinimumWidth = 6;
             this.colLeihfristButton.Name = "colLeihfristButton";
             this.colLeihfristButton.ReadOnly = true;
             this.colLeihfristButton.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -301,6 +306,7 @@
             this.colDeleteButton.HeaderText = "";
             this.colDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("colDeleteButton.Image")));
             this.colDeleteButton.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colDeleteButton.MinimumWidth = 6;
             this.colDeleteButton.Name = "colDeleteButton";
             this.colDeleteButton.ReadOnly = true;
             this.colDeleteButton.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -352,8 +358,9 @@
             // 
             // buttonSucheBuecherlistePersonal
             // 
+            this.buttonSucheBuecherlistePersonal.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonSucheBuecherlistePersonal.Image = ((System.Drawing.Image)(resources.GetObject("buttonSucheBuecherlistePersonal.Image")));
-            this.buttonSucheBuecherlistePersonal.Location = new System.Drawing.Point(4, 6);
+            this.buttonSucheBuecherlistePersonal.Location = new System.Drawing.Point(4, 8);
             this.buttonSucheBuecherlistePersonal.Name = "buttonSucheBuecherlistePersonal";
             this.buttonSucheBuecherlistePersonal.Size = new System.Drawing.Size(43, 30);
             this.buttonSucheBuecherlistePersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,15 +373,43 @@
             this.textBoxSucheBuecherlistePersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSucheBuecherlistePersonal.Location = new System.Drawing.Point(46, 9);
             this.textBoxSucheBuecherlistePersonal.Name = "textBoxSucheBuecherlistePersonal";
-            this.textBoxSucheBuecherlistePersonal.Size = new System.Drawing.Size(370, 26);
+            this.textBoxSucheBuecherlistePersonal.Size = new System.Drawing.Size(370, 30);
             this.textBoxSucheBuecherlistePersonal.TabIndex = 0;
             this.textBoxSucheBuecherlistePersonal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSucheBuecherlistePersonal_KeyDown);
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonExport.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonExport.BackgroundImage")));
+            this.buttonExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExport.Location = new System.Drawing.Point(830, 70);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(48, 46);
+            this.buttonExport.TabIndex = 16;
+            this.buttonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonExport.UseVisualStyleBackColor = false;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(880, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 32);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Suchergebnis\r\nexportieren";
             // 
             // BuecherlistePersonal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -401,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonSucheaufheben)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSucheBuecherlistePersonal)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -431,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColKundeLeih;
         private System.Windows.Forms.DataGridViewImageColumn colLeihfristButton;
         private System.Windows.Forms.DataGridViewImageColumn colDeleteButton;
+        private System.Windows.Forms.Button buttonExport;
+        private System.Windows.Forms.Label label1;
     }
 }

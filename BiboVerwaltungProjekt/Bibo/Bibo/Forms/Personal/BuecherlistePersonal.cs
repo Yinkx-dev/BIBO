@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Text.Json;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -17,6 +18,8 @@ namespace Bibo.Forms.Personal
         private CursorManager cursorManager;
         private BuecherlistePersonalService service = new BuecherlistePersonalService(Globals.Db);
         private List<BuecherlistePersonalViewModel> _buecherlistePersonal;
+        //Damit Export möglich
+        private List<BuecherlistePersonalViewModel> _aktuelleAnzeigeListe;
 
         //Zum umschalten des QuickfilterButtons ohne extra button
         private int quickButtonZaehler = 0;
@@ -37,6 +40,9 @@ namespace Bibo.Forms.Personal
             //Datenbank Connection + ViewModelListe füllen
             var buecherlistePers = service.HoleGanzeBuecherlistePersonal();
             _buecherlistePersonal = buecherlistePers;
+
+            //Falls Export gewünscht
+            _aktuelleAnzeigeListe = _buecherlistePersonal;
 
             FillRows(_buecherlistePersonal, tableBuecherliste);
         }
@@ -69,7 +75,7 @@ namespace Bibo.Forms.Personal
                 //Leihfrist, entsprechend ausgeliehen oder nicht (inkl. optische Differenzierung) + ButtonLeihstatus
                 //TryParseExact falls Datum Fehler/null
                 DateTime datum;
-                if(buchdaten.Ausleihen != null)
+                if (buchdaten.Ausleihen != null)
                 {
                     if (DateTime.TryParseExact(buchdaten.Ausleihen.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out datum))
                     {
@@ -78,7 +84,7 @@ namespace Bibo.Forms.Personal
                         //Datum rot, wenn Leihfrist überschritten
                         if (datum < DateTime.Today)
                         {
-                        dgvRow.Cells["colLeihfrist"].Style.ForeColor = Color.Red;
+                            dgvRow.Cells["colLeihfrist"].Style.ForeColor = Color.Red;
                         }
 
                         //Button auf "Verlängern"
@@ -100,7 +106,7 @@ namespace Bibo.Forms.Personal
 
 
                 //Ausgeliehen von
-                if(buchdaten.KundeLeih != null)
+                if (buchdaten.KundeLeih != null)
                 {
                     string kundendatenString =
                         buchdaten.KundeLeih.Vorname + " " + buchdaten.KundeLeih.Nachname + "\n" +
@@ -169,6 +175,9 @@ namespace Bibo.Forms.Personal
                 tableBuecherliste.Rows.Clear();
                 FillRows(buecherlisteAusgeliehen, tableBuecherliste);
 
+                //Falls Export gewünscht
+                _aktuelleAnzeigeListe = buecherlisteAusgeliehen;
+
                 //Sortieren, dass abgelaufene ganz oben bzw. kürzeste Leihfrist zuerst
                 tableBuecherliste.Sort(tableBuecherliste.Columns["colLeihfrist"], System.ComponentModel.ListSortDirection.Ascending);
 
@@ -179,7 +188,7 @@ namespace Bibo.Forms.Personal
             {
                 quickButtonZaehler = 0;
                 tableBuecherliste.Rows.Clear();
-                
+
                 InsertData();
             }
         }
@@ -210,6 +219,9 @@ namespace Bibo.Forms.Personal
                 (x.KundeLeih != null && x.KundeLeih.Nachname != null && x.KundeLeih.Nachname.ToLower().Contains(input))
             ).ToList();
 
+            //Suchliste in Variable für ggf. Export
+            _aktuelleAnzeigeListe = resultListe;
+
             //Tabelle leeren und mit Ergebnis füllen
             tableBuecherliste.Rows.Clear();
             FillRows(resultListe, tableBuecherliste);
@@ -236,6 +248,9 @@ namespace Bibo.Forms.Personal
 
             tableBuecherliste.Rows.Clear();
             FillRows(_buecherlistePersonal, tableBuecherliste);
+
+            //Falls Export gewünscht
+            _aktuelleAnzeigeListe = _buecherlistePersonal;
         }
 
 
@@ -258,7 +273,7 @@ namespace Bibo.Forms.Personal
                         DateTime rueckgabeDatum = DateTime.ParseExact(buchVm.Ausleihen.Rueckgabedatum, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                         DateTime neueFrist = rueckgabeDatum.AddDays(14);
 
-                        DialogResult result = MessageBox.Show("Leihfrist um 14 Tage verlängern","Bestätigung", MessageBoxButtons.OKCancel);
+                        DialogResult result = MessageBox.Show("Leihfrist um 14 Tage verlängern", "Bestätigung", MessageBoxButtons.OKCancel);
                         if (result == DialogResult.OK)
                         {
                             buchVm.Ausleihen.Rueckgabedatum = neueFrist.ToString("yyyy-MM-dd");
@@ -350,6 +365,39 @@ namespace Bibo.Forms.Personal
             cursorManager.AttachHandCursor(buttonQuick);
             cursorManager.AttachHandCursor(buttonHomeBuecherListePersonal);
             cursorManager.AttachHandCursor(tableBuecherliste);
+        }
+
+
+        // Exportiert die aktuell angezeigten Bücher als JSON
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            //Checken, dass etwas zum Export da ist
+            if (_aktuelleAnzeigeListe == null || _aktuelleAnzeigeListe.Count == 0)
+            {
+                MessageBox.Show("Keine Daten zum Exportieren vorhanden");
+                return;
+            }
+
+            // nur Buchdaten rausziehen
+            var exportListe = _aktuelleAnzeigeListe.Select(x => x.Buch).ToList();
+
+            //Speicherort wählen
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "JSON (*.json)|*.json";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    string json = JsonSerializer.Serialize(exportListe, new JsonSerializerOptions
+                    {
+                        WriteIndented = true
+                    });
+
+                    File.WriteAllText(sfd.FileName, json);
+
+                    MessageBox.Show("Export fertig");
+                }
+            }
         }
     }
 }
