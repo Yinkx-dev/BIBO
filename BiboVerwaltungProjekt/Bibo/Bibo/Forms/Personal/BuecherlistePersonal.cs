@@ -166,6 +166,9 @@ namespace Bibo.Forms.Personal
         //Quickfilter, nur überzogene zeigen
         private void buttonQuick_Click(object sender, EventArgs e)
         {
+            //Suchleiste leeren
+            textBoxSucheBuecherlistePersonal.Text = string.Empty;
+
             //wenn nicht angewendet -> Nur geliehene Bücher anzeigen
             if (quickButtonZaehler == 0)
             {
