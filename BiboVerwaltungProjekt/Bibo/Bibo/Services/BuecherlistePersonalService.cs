@@ -1,27 +1,21 @@
 ﻿using Bibo.Models;
 using Bibo.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bibo.Services
 {
     public class BuecherlistePersonalService
     {
-        private readonly Database _db;
 
-        public BuecherlistePersonalService(Database db)
+        public BuecherlistePersonalService()
         {
-            _db = db;
         }
 
 
         //Alle Bücher besorgen, ausgeliehen oder nicht
         public List<BuecherlistePersonalViewModel> HoleGanzeBuecherlistePersonal()
         {
-            var _buecher = _db.QueryList<Buch>("SELECT * FROM Buch");
+            var _buecher = Globals.Db.QueryList<Buch>("SELECT * FROM Buch");
             return GetBuecherlistePersonal(_buecher);
         }
 
@@ -29,7 +23,7 @@ namespace Bibo.Services
         //Nur ausgeliehene Bücher besorgen
         public List<BuecherlistePersonalViewModel> HoleGelieheneBuecherlistePersonal()
         {
-            var gelieheneBuecher = _db.QueryList<Buch>("SELECT * FROM Buch WHERE Buch.IstAusgeliehen = '1'");
+            var gelieheneBuecher = Globals.Db.QueryList<Buch>("SELECT * FROM Buch WHERE Buch.IstAusgeliehen = '1'");
             return GetBuecherlistePersonal(gelieheneBuecher);
         }
 
@@ -52,9 +46,9 @@ namespace Bibo.Services
                 //wenn es ausgeliehen ist, noch Leih- und Kundendaten dazu + bool
                 if (b.IstAusgeliehen)
                 {
-                    Ausleihen a = _db.QuerySingle<Ausleihen>("SELECT * FROM Ausleihen WHERE ISBN = @isbn",
+                    Ausleihen a = Globals.Db.QuerySingle<Ausleihen>("SELECT * FROM Ausleihen WHERE ISBN = @isbn",
                         new { isbn = b.ISBN });
-                    Kunde k = _db.QuerySingle<Kunde>("SELECT * FROM Kunde WHERE KundenID = @kundenid",
+                    Kunde k = Globals.Db.QuerySingle<Kunde>("SELECT * FROM Kunde WHERE KundenID = @kundenid",
                         new { kundenid = a.KundenID });
 
                     BlPVM.Ausleihen = a;

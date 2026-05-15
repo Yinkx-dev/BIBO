@@ -126,7 +126,7 @@ namespace Bibo
                 if (!string.IsNullOrEmpty(isbnSelectedBook))
                 {
                     //Buchdaten-Service kann alle Daten liefern für nötiges BewertungBuchViewModel
-                    IBuchdatenService service = new BuchdatenService(Globals.Db);
+                    IBuchdatenService service = new BuchdatenService();
                     var buchdatenVM = service.GetBuchdaten(isbnSelectedBook);
 
                     Globals.NavigateToNextForm<BewertungBuch>(this, new BewertungBuchViewModel

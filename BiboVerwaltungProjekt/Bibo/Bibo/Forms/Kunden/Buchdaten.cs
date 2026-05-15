@@ -28,7 +28,7 @@ namespace Bibo
         private void InsertData()
         {
             //Datenbank Connection + ViewModel füllen
-            IBuchdatenService service = new BuchdatenService(Globals.Db);
+            IBuchdatenService service = new BuchdatenService();
             var buchdatenVM = service.GetBuchdaten(_isbnSelectedBook);
 
             //lokale Variable setzen für andere Methoden

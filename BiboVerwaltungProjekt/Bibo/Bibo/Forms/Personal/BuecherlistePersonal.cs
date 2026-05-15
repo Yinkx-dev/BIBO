@@ -16,7 +16,7 @@ namespace Bibo.Forms.Personal
     public partial class BuecherlistePersonal : UI_Helper
     {
         private CursorManager cursorManager;
-        private BuecherlistePersonalService service = new BuecherlistePersonalService(Globals.Db);
+        private BuecherlistePersonalService service = new BuecherlistePersonalService();
         private List<BuecherlistePersonalViewModel> _buecherlistePersonal;
         //Damit Export möglich
         private List<BuecherlistePersonalViewModel> _aktuelleAnzeigeListe;

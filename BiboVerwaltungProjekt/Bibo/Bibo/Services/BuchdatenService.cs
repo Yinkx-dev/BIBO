@@ -10,25 +10,22 @@ namespace Bibo.Services
 {
     public class BuchdatenService : IBuchdatenService
     {
-        private readonly Database _db;
-
-        public BuchdatenService(Database db)
+        public BuchdatenService()
         {
-            _db = db;   
         }
 
         //Liefert alle Daten aus den verschiedenen Tabellen zu einem Buch
         public BuchdatenViewModel GetBuchdaten(string isbn)
         {
-            var buch = _db.QuerySingle<Buch>(
+            var buch = Globals.Db.QuerySingle<Buch>(
                 "SELECT * FROM Buch WHERE ISBN = @isbn",
                 new { isbn });
 
-            var bewertungen = _db.QueryList<Bewertung>(
+            var bewertungen = Globals.Db.QueryList<Bewertung>(
                 "SELECT * FROM Bewertung WHERE BuchId = @buchId",
                 new { buchId = buch.BuchID });
 
-            var leihdaten = _db.QuerySingle<Ausleihen>(
+            var leihdaten = Globals.Db.QuerySingle<Ausleihen>(
                 "SELECT * FROM Ausleihen WHERE ISBN = @isbn",
                 new { isbn });
 
